@@ -2,11 +2,11 @@ package com.nowcomputing;
 
 import java.util.logging.Level;
 
-class x extends Thread {
+class UpdateThread extends Thread {
    // $FF: synthetic field
    final MinecraftDownloader a;
 
-   x(MinecraftDownloader var1) {
+   UpdateThread(MinecraftDownloader var1) {
       this.a = var1;
    }
 

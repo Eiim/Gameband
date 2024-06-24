@@ -6,11 +6,11 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.event.HyperlinkEvent.EventType;
 
-class d implements HyperlinkListener {
+class BackupLinkListener implements HyperlinkListener {
    // $FF: synthetic field
    final b a;
 
-   d(b var1) {
+   BackupLinkListener(b var1) {
       this.a = var1;
    }
 

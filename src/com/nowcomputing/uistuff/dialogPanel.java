@@ -15,7 +15,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class dialogPanel extends JPanel {
+public class DialogPanel extends JPanel {
    protected JPanel c;
    protected JPanel d;
    protected JButton e;
@@ -28,7 +28,7 @@ public class dialogPanel extends JPanel {
    private ImageIcon j;
    private String k;
 
-   public dialogPanel() {
+   public DialogPanel() {
       this.setBackground(GamebandColors.a);
       this.setLayout(new BorderLayout());
    }

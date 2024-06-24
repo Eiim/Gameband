@@ -3,15 +3,16 @@ package com.nowcomputing.uistuff;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class c implements ActionListener {
+class ImportListener implements ActionListener {
    // $FF: synthetic field
-   final b a;
+   final D a;
 
-   c(b var1) {
+   ImportListener(D var1) {
       this.a = var1;
    }
 
    public void actionPerformed(ActionEvent var1) {
-      b.a(this.a, var1);
+      D.a(this.a).a(false);
+      this.a.c.b();
    }
 }

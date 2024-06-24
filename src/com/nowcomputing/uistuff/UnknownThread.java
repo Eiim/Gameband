@@ -1,10 +1,10 @@
 package com.nowcomputing.uistuff;
 
-class w extends Thread {
+class UnknownThread extends Thread {
    // $FF: synthetic field
    final MainMenu a;
 
-   w(MainMenu var1) {
+   UnknownThread(MainMenu var1) {
       this.a = var1;
    }
 

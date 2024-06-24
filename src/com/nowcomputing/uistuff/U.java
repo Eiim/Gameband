@@ -1,17 +1,29 @@
 package com.nowcomputing.uistuff;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import com.nowcomputing.Main;
+import java.util.logging.Level;
 
-class U implements ActionListener {
+class u implements Runnable {
    // $FF: synthetic field
-   final GamebandDialog a;
+   final MainMenu a;
 
-   U(GamebandDialog var1) {
+   u(MainMenu var1) {
       this.a = var1;
    }
 
-   public void actionPerformed(ActionEvent var1) {
-      this.a.ok();
+   public void run() {
+      try {
+         synchronized(this.a) {
+            if (!MainMenu.d(this.a)) {
+               Main.a();
+               MainMenu.a(this.a, true);
+            }
+
+            MainMenu.e(this.a).g();
+         }
+      } catch (Throwable var4) {
+         MainMenu.g().log(Level.FINE, "Error writing to Gameband", var4);
+      }
+
    }
 }

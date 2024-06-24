@@ -34,7 +34,7 @@ public class GamebandPopup extends JDialog {
       this.setResizable(false);
       this.pack();
       this.setLocationRelativeTo(this.getOwner());
-      this.addWindowListener(new O(this));
+      this.addWindowListener(new PopupCloseListener(this));
    }
 
    private static JPanel a(GamebandPopup var0, String[] var1, String[] var2) {

@@ -1,7 +1,7 @@
 package com.nowcomputing;
 
 // $FF: synthetic class
-class k {
+class OSDetected {
    // $FF: synthetic field
    static final int[] a = new int[OSDetectionIsHard.values().length];
 

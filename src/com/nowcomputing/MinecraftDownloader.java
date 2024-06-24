@@ -43,7 +43,7 @@ public class MinecraftDownloader {
    }
 
    public Severity a() {
-      com.nowcomputing.c.a.a.c var1 = b();
+      c.a.a.c var1 = b();
       if (var1 != null) {
          switch(Utils.b()) {
             case windows:
@@ -59,13 +59,13 @@ public class MinecraftDownloader {
       return Severity.none;
    }
 
-   public static com.nowcomputing.c.a.a.c b() {
-      com.nowcomputing.c.a.a.c var0 = null;
+   public static c.a.a.c b() {
+      c.a.a.c var0 = null;
 
       try {
          String launcherJSON = Utils.getAllFromInputStream(Utils.b("https://launchermeta.mojang.com/mc/launcher.json"));
           b var2 = new b();
-         var0 = (com.nowcomputing.c.a.a.c)var2.a(launcherJSON);
+         var0 = (c.a.a.c)var2.a(launcherJSON);
       } catch (IOException var3) {
          log.log(Level.FINE, "Error Checking for new Minecraft launcher", var3);
       } catch (UnexpectedDoodadException var4) {
@@ -75,9 +75,9 @@ public class MinecraftDownloader {
       return var0;
    }
 
-   private boolean a(com.nowcomputing.c.a.a.c var1) {
+   private boolean a(c.a.a.c var1) {
       try {
-         com.nowcomputing.c.a.a.c var2 = (com.nowcomputing.c.a.a.c)var1.get("windows");
+         c.a.a.c var2 = (c.a.a.c)var1.get("windows");
          String var3 = (String)var2.get("apphash");
          String var4 = Utils.d(h);
          return !var4.equals(var3);
@@ -86,9 +86,9 @@ public class MinecraftDownloader {
       }
    }
 
-   private boolean b(com.nowcomputing.c.a.a.c var1) {
+   private boolean b(c.a.a.c var1) {
       try {
-         com.nowcomputing.c.a.a.c var2 = (com.nowcomputing.c.a.a.c)var1.get("java");
+         c.a.a.c var2 = (c.a.a.c)var1.get("java");
          String var3 = (String)var2.get("sha1");
          String var4 = Utils.d(c);
          return !var4.equals(var3);
@@ -97,9 +97,9 @@ public class MinecraftDownloader {
       }
    }
 
-   private boolean c(com.nowcomputing.c.a.a.c var1) {
+   private boolean c(c.a.a.c var1) {
       try {
-         com.nowcomputing.c.a.a.c var2 = (com.nowcomputing.c.a.a.c)var1.get("osx");
+         c.a.a.c var2 = (c.a.a.c)var1.get("osx");
          String var3 = (String)var2.get("apphash");
          String var4 = Utils.d(e);
          return !var4.equals(var3);
@@ -114,7 +114,7 @@ public class MinecraftDownloader {
    }
 
    public void d() throws IOException {
-      com.nowcomputing.c.a.a.c var1 = b();
+      c.a.a.c var1 = b();
       if (var1 != null) {
          switch(Utils.b()) {
             case windows:
@@ -134,8 +134,8 @@ public class MinecraftDownloader {
       }
    }
 
-   private void d(com.nowcomputing.c.a.a.c var1) throws IOException {
-      com.nowcomputing.c.a.a.c var2 = (com.nowcomputing.c.a.a.c)var1.get("osx");
+   private void d(c.a.a.c var1) throws IOException {
+      c.a.a.c var2 = (c.a.a.c)var1.get("osx");
       this.a((String)var2.get("applink"), g, (String)var2.get("downloadhash"));
       File var3 = new File(g);
       Utils.a(var3, new File(f), (List)null);
@@ -146,8 +146,8 @@ public class MinecraftDownloader {
 
    }
 
-   private void e(com.nowcomputing.c.a.a.c var1) throws IOException {
-      com.nowcomputing.c.a.a.c var2 = (com.nowcomputing.c.a.a.c)var1.get("windows");
+   private void e(c.a.a.c var1) throws IOException {
+      c.a.a.c var2 = (c.a.a.c)var1.get("windows");
       this.a((String)var2.get("applink"), i, (String)var2.get("apphash"));
       Utils.b(new File(i), new File(h));
       Utils.hideFile(new File(h));
@@ -157,9 +157,9 @@ public class MinecraftDownloader {
 
    }
 
-   private void f(com.nowcomputing.c.a.a.c var1) throws IOException {
-      com.nowcomputing.c.a.a.c var2 = (com.nowcomputing.c.a.a.c)var1.get("java");
-      com.nowcomputing.c.a.a.c var3 = (com.nowcomputing.c.a.a.c)var2.get("lzma");
+   private void f(c.a.a.c var1) throws IOException {
+      c.a.a.c var2 = (c.a.a.c)var1.get("java");
+      c.a.a.c var3 = (c.a.a.c)var2.get("lzma");
       this.a((String)var3.get("url"), d, (String)var3.get("sha1"));
       Utils.a(d, c);
       String var4 = (String)var2.get("sha1");

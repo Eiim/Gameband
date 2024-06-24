@@ -63,7 +63,7 @@ public class GamebandDialog extends JFrame {
       this.setLocationRelativeTo((Component)null);
       this.getRootPane().getInputMap(2).put(KeyStroke.getKeyStroke(27, 0), "close");
       this.getRootPane().getActionMap().put("close", new S(this));
-      this.addWindowListener(new T(this));
+      this.addWindowListener(new GamebandDialogListener(this));
    }
 
    private JPanel f() {
@@ -84,12 +84,12 @@ public class GamebandDialog extends JFrame {
       am.a(var1, this.progressBar, GamebandFonts.p, GamebandColors.a(), 136, 114, 534, 24);
       if (this.k) {
          this.cancelButton.setBackground(GamebandColors.k);
-         this.cancelButton.addActionListener(new U(this));
+         this.cancelButton.addActionListener(new GamebandDialogCancelListener(this));
          am.a(var1, this.cancelButton, GamebandFonts.q, Color.white, 550, 152, 120, 32);
       }
 
       this.okButton.setBackground(GamebandColors.e());
-      this.okButton.addActionListener(new V(this));
+      this.okButton.addActionListener(new GamebandDialogOKListener(this));
       am.a(var1, this.okButton, GamebandFonts.n, GamebandColors.f(), 387, 120, 60, 32);
       this.okButton.setVisible(false);
       return var1;

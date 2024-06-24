@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-public class o {
+public class GamebandFont {
    private static Font a;
    private static FontMetrics b;
    private static BufferedImage c = new BufferedImage(20, 7, 2);

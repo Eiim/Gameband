@@ -28,6 +28,19 @@ public class G {
    }
 
    public static File b() {
-      // $FF: Couldn't be decompiled
+    String str2;
+    String str3;
+    String str1 = System.getProperty("user.home", ".");
+    switch (H.a[S.b().ordinal()]) {
+      case 1:
+        return new File(str1, ".minecraft/");
+      case 2:
+        str2 = System.getenv("APPDATA");
+        str3 = (str2 != null) ? str2 : str1;
+        return new File(str3, ".minecraft");
+      case 3:
+        return new File(str1, "Library/Application Support/minecraft");
+    } 
+    return null;
    }
 }

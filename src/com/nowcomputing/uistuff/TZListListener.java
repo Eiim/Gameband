@@ -6,11 +6,11 @@ import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-class j implements ListSelectionListener {
+class TZListListener implements ListSelectionListener {
    // $FF: synthetic field
    final i a;
 
-   j(i var1) {
+   TZListListener(i var1) {
       this.a = var1;
    }
 

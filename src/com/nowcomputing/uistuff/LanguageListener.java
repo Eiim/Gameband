@@ -6,13 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Locale;
 
-class g implements ActionListener {
+class LanguageListener implements ActionListener {
    // $FF: synthetic field
    final Locale a;
    // $FF: synthetic field
    final f b;
 
-   g(f var1, Locale var2) {
+   LanguageListener(f var1, Locale var2) {
       this.b = var1;
       this.a = var2;
    }

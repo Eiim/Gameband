@@ -3,15 +3,15 @@ package com.nowcomputing.uistuff;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-class t extends WindowAdapter {
+class PopupCloseListener extends WindowAdapter {
    // $FF: synthetic field
-   final MainMenu a;
+   final GamebandPopup a;
 
-   t(MainMenu var1) {
+   PopupCloseListener(GamebandPopup var1) {
       this.a = var1;
    }
 
    public void windowClosing(WindowEvent var1) {
-      // $FF: Couldn't be decompiled
+      this.a.a(-1);
    }
 }
