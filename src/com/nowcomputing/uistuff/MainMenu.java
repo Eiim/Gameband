@@ -1,8 +1,5 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.*;
-import com.nowcomputing.pixelfurnace.GBComms;
-
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -14,10 +11,21 @@ import java.io.InputStream;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-public class MainMenu extends JFrame implements e, com.nowcomputing.n, resetAction, ActionListener {
+import com.nowcomputing.GamebandConfig;
+import com.nowcomputing.Image;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Main;
+import com.nowcomputing.Utils;
+import com.nowcomputing.WindowsVersionComparator;
+import com.nowcomputing.latchedCommandRun;
+import com.nowcomputing.resetAction;
+import com.nowcomputing.pixelfurnace.GBComms;
+
+public class MainMenu extends JFrame implements BackupLinkListenerInterface, com.nowcomputing.n, resetAction, ActionListener {
    private static final Logger a = Logger.getLogger(Utils.class.getName());
    private GamebandConfig b;
    private latchedCommandRun c;
@@ -26,7 +34,7 @@ public class MainMenu extends JFrame implements e, com.nowcomputing.n, resetActi
    private aa f;
    private GBComms g;
    private boolean h;
-   private b i;
+   private BackupPanel i;
    private CountDownLatch j = null;
 
    public MainMenu(GamebandConfig config, GBComms gbComms) {
@@ -57,19 +65,19 @@ public class MainMenu extends JFrame implements e, com.nowcomputing.n, resetActi
       this.addWindowListener(new t(this));
 
       try {
-         var5 = b.class.getResourceAsStream("/icon.png");
+         var5 = BackupPanel.class.getResourceAsStream("/icon.png");
          if (var5 != null) {
             this.setIconImage(ImageIO.read(var5));
          }
       } catch (IOException var6) {
       }
 
-      LocaleUtil.a((resetAction)this);
+      LocaleUtil.a(this);
    }
 
    private void h() {
       this.e = new M();
-      this.i = new b(this);
+      this.i = new BackupPanel(this);
       this.f = new aa(this.g, this.b);
       this.j();
    }
@@ -136,7 +144,7 @@ public class MainMenu extends JFrame implements e, com.nowcomputing.n, resetActi
          try {
             boolean var1 = Main.a();
             if (!var1) {
-               GamebandPopup.PopupDialog((Component)this, (String[])(new String[]{LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TITLE"), LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TEXT"), LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TEXT_1")}), (String) LocaleUtil.getLocalizedString("ERROR_WINDOW_TITLE"), (String)"www.nowcomputing.com/contact");
+               GamebandPopup.PopupDialog(this, (new String[]{LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TITLE"), LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TEXT"), LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TEXT_1")}), LocaleUtil.getLocalizedString("ERROR_WINDOW_TITLE"), "www.nowcomputing.com/contact");
             }
          } finally {
             this.setCursor(Cursor.getDefaultCursor());
@@ -159,14 +167,16 @@ public class MainMenu extends JFrame implements e, com.nowcomputing.n, resetActi
       this.pack();
    }
 
-   public void d() {
+   @Override
+public void BackupLinkListener() {
       if (this.c.b() != null && !this.c.b().c()) {
          this.c.b().b();
       }
 
    }
 
-   public void actionPerformed(ActionEvent var1) {
+   @Override
+public void actionPerformed(ActionEvent var1) {
       // $FF: Couldn't be decompiled
    }
 
@@ -180,7 +190,8 @@ public class MainMenu extends JFrame implements e, com.nowcomputing.n, resetActi
       Main.e();
    }
 
-   public void reset() {
+   @Override
+public void reset() {
       a.log(Level.FINE, "GamebandApplication.onLocaleChange()");
       this.i();
       this.r();
@@ -211,14 +222,16 @@ public class MainMenu extends JFrame implements e, com.nowcomputing.n, resetActi
       this.e.l();
    }
 
-   public void a() {
+   @Override
+public void a() {
    }
 
-   public void b() {
+   @Override
+public void b() {
    }
 
    // $FF: synthetic method
-   static b a(MainMenu var0) {
+   static BackupPanel a(MainMenu var0) {
       return var0.i;
    }
 

@@ -5,13 +5,14 @@ import java.awt.event.ActionListener;
 
 class A implements ActionListener {
    // $FF: synthetic field
-   final dialogPanel a;
+   final DialogPanel a;
 
-   A(dialogPanel var1) {
+   A(DialogPanel var1) {
       this.a = var1;
    }
 
-   public void actionPerformed(ActionEvent var1) {
+   @Override
+public void actionPerformed(ActionEvent var1) {
       this.a.l();
    }
 }

@@ -604,7 +604,7 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
       this.a(var1, this.u.k());
    }
 
-   private void a(JMenu var1, com.nowcomputing.b.a.a.b var2) {
+   private void a(JMenu var1, com.nowcomputing.b.a.a.BackupPanel var2) {
       JMenuItem var3 = new JMenuItem(var2);
       var3.setIcon((Icon)null);
       var1.add(var3);

@@ -1,9 +1,5 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.Utils;
-import com.nowcomputing.resetAction;
-import com.sun.java.swing.Painter;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dialog;
@@ -12,6 +8,7 @@ import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.util.logging.Level;
+
 import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -19,6 +16,10 @@ import javax.swing.KeyStroke;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
+
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Utils;
+import com.sun.java.swing.Painter;
 
 public abstract class am {
    private static Painter b = new Y(); // very naughty deprecated class usage (javax vs com.sun.javax crap)
@@ -40,7 +41,7 @@ public abstract class am {
    }
 
    public static void a(JFrame var0, String var1, String var2, String var3, String var4, String var5) {
-      I var6 = new I(var0, var1, var2, var3, var4, var5);
+	  ErrorPanel var6 = new ErrorPanel(var0, var1, var2, var3, var4, var5);
       var6.setVisible(true);
    }
 
@@ -96,7 +97,7 @@ public abstract class am {
             }
          }
 
-         LocaleUtil.a((resetAction)(new an()));
+         LocaleUtil.a((new an()));
       } catch (Exception var7) {
          Utils.logger.log(Level.SEVERE, (String)null, var7);
       }

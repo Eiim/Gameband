@@ -1,13 +1,14 @@
 package com.nowcomputing.uistuff;
 
-import com.codeminders.hidapi.ClassPathLibraryLoader;
-import com.nowcomputing.PathUtils;
-
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Insets;
 import java.util.concurrent.CountDownLatch;
+
 import javax.swing.JFrame;
+
+import com.codeminders.hidapi.ClassPathLibraryLoader;
+import com.nowcomputing.PathUtils;
 
 public class ai extends JFrame implements as {
    private CountDownLatch b = new CountDownLatch(1);
@@ -15,20 +16,20 @@ public class ai extends JFrame implements as {
    private aq c;
 
    public ai() {
-      ClassPathLibraryLoader.loadNativeHIDLibrary(PathUtils.b());
+      ClassPathLibraryLoader.loadNativeHIDLibrary(PathUtils.getLibPath());
       this.c = new aq();
       this.getContentPane().add(this.c);
-      this.c.a((as)this);
-      this.c.a((at)(new ao()));
-      this.c.a((at)(new f()));
-      this.c.a((at)(new i()));
+      this.c.a(this);
+      this.c.a((new ao()));
+      this.c.a((new f()));
+      this.c.a((new i()));
       G var1 = new G();
       if (var1.a()) {
-         this.c.a((at)(new D(var1)));
+         this.c.a((new D(var1)));
       }
 
-      this.c.a((at)(new l()));
-      this.c.a((at)(new o()));
+      this.c.a((new DisclaimerPanel()));
+      this.c.a((new o()));
       this.c.b(new ag());
       this.c.b();
       this.setDefaultCloseOperation(0);
@@ -55,12 +56,14 @@ public class ai extends JFrame implements as {
       this.dispose();
    }
 
-   public void a(at var1) {
+   @Override
+public void a(at var1) {
       this.a = true;
       this.b();
    }
 
-   public void b(at var1) {
+   @Override
+public void b(at var1) {
       this.b();
    }
 

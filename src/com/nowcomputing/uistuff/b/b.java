@@ -14,10 +14,10 @@ import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
 public class b extends e implements ActionListener {
-   Image.b a;
+   Image.BackupPanel a;
    private AnimatedImage.g g;
 
-   public b(t var1, Image.b var2) {
+   public b(t var1, Image.BackupPanel var2) {
       super(var1, LocaleUtil.getLocalizedString("DATE"));
       this.a = var2;
       this.h();

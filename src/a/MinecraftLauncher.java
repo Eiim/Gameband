@@ -121,7 +121,7 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
          String var2 = PathUtils.getMinecraftPath().getPath();
          File var3 = new File(PathUtils.getMinecraftPath(), "launcher_profiles.json");
          String var4 = Utils.readFile(var3);
-         c.a.scanner.a.b var5 = new c.a.scanner.a.b();
+         c.a.scanner.a.BackupPanel var5 = new c.a.scanner.a.BackupPanel();
          c var6 = (c)var5.a(var4);
          boolean var7 = false;
          c var8 = (c)var6.get("profiles");

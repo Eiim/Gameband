@@ -1,9 +1,5 @@
 package com.nowcomputing.uistuff;
 
-import b.a.a.a.Class3;
-import com.nowcomputing.*;
-import com.nowcomputing.pixelfurnace.GBComms;
-
 import java.awt.Component;
 import java.awt.ComponentOrientation;
 import java.awt.FlowLayout;
@@ -16,6 +12,7 @@ import java.util.ResourceBundle;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -32,7 +29,17 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
-public class aa extends dialogPanel implements ActionListener {
+import com.nowcomputing.GamebandConfig;
+import com.nowcomputing.Image;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Main;
+import com.nowcomputing.Utils;
+import com.nowcomputing.WindowsVersionComparator;
+import com.nowcomputing.pixelfurnace.GBComms;
+
+import b.a.a.a.Class3;
+
+public class aa extends DialogPanel implements ActionListener {
    private static final Logger j = Logger.getLogger(Utils.class.getName());
    private ResourceBundle[] k = LocaleUtil.d();
    private ArrayList l = new ArrayList();
@@ -88,9 +95,10 @@ public class aa extends dialogPanel implements ActionListener {
       return var2;
    }
 
-   public void a() {
+   @Override
+public void a() {
       this.removeAll();
-      this.a((String) LocaleUtil.getLocalizedString("OPTIONS_HEADING").toUpperCase());
+      this.a(LocaleUtil.getLocalizedString("OPTIONS_HEADING").toUpperCase());
       this.a(true);
       this.b(true);
       super.a();
@@ -100,7 +108,8 @@ public class aa extends dialogPanel implements ActionListener {
       this.setVisible(false);
    }
 
-   protected Component b() {
+   @Override
+protected Component b() {
       super.b();
       Class3 var1 = (new Class3(this.d)).method8(5.0D, 5.0D, 0.0D, 5.0D);
       this.c(var1);
@@ -377,7 +386,8 @@ public class aa extends dialogPanel implements ActionListener {
 
    }
 
-   public void actionPerformed(ActionEvent var1) {
+   @Override
+public void actionPerformed(ActionEvent var1) {
       String var2 = var1.getActionCommand();
       if (var2.equals("LEFT")) {
          this.p = 1;
@@ -407,15 +417,15 @@ public class aa extends dialogPanel implements ActionListener {
       return this.p;
    }
 
-   public void a(apackage.e var1) {
-      if (var1 instanceof apackage.j) {
-         GamebandPopup.PopupDialog((Component)this, (String[])(new String[]{LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TEXT1"), LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TEXT2")}), (String) LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TITLE"), (String)"www.nowcomputing.com/contact");
+   public void a(a.AbstractMinecraftLauncher var1) {
+      if (var1 instanceof a.j) {
+         GamebandPopup.PopupDialog(this, (new String[]{LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TEXT1"), LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TEXT2")}), LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TITLE"), "www.nowcomputing.com/contact");
          this.s.setSelectedIndex(0);
       } else {
-         if (!(var1 instanceof apackage.g) && !var1.g()) {
+         if (!(var1 instanceof a.MinecraftLauncher) && !var1.g()) {
             String[] var2 = new String[]{LocaleUtil.getLocalizedString("NO"), LocaleUtil.getLocalizedString("YES")};
             String[] var3 = new String[]{LocaleUtil.getLocalizedString("LAUNCHER_DISCLAIMER"), LocaleUtil.getLocalizedString("LAUNCHER_DISCLAIMER_1")};
-            int var4 = GamebandPopup.a((Component)this, (String[])var3, (String)"Gameband", (String[])var2);
+            int var4 = GamebandPopup.a(this, var3, "Gameband", var2);
             if (var4 == 0) {
                this.s.setSelectedIndex(0);
                return;

@@ -11,20 +11,22 @@ class t extends WindowAdapter {
       this.a = var1;
    }
 
-   public void windowClosing(WindowEvent var1) {
-      if (this.a.getContentPane().equals(s.a(this.a))) {
-		  this.a.d();
-		} else {
-		  v v = Main.d();
-		  switch (x.a[v.ordinal()]) {
-			case 1:
-			  return;
-			case 2:
-			  s.b(this.a);
-			  break;
-		  } 
-		} 
-		if (s.c(this.a) != null);
-		System.exit(0);
+   @Override
+public void windowClosing(WindowEvent var1) {
+	   // Non-functional
+//      if (this.a.getContentPane().equals(s.a(this.a))) {
+//		  this.a.d();
+//		} else {
+//		  v v = Main.d();
+//		  switch (x.a[v.ordinal()]) {
+//			case 1:
+//			  return;
+//			case 2:
+//			  s.b(this.a);
+//			  break;
+//		  } 
+//		} 
+//		if (s.c(this.a) != null);
+//		System.exit(0);
    }
 }

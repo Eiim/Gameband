@@ -5,9 +5,9 @@ import java.awt.event.ActionListener;
 
 class DisclaimerOKListener implements ActionListener {
    // $FF: synthetic field
-   final l a;
+   final DisclaimerPanel a;
 
-   DisclaimerOKListener(l var1) {
+   DisclaimerOKListener(DisclaimerPanel var1) {
       this.a = var1;
    }
 

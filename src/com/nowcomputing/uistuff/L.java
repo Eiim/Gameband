@@ -1,52 +1,49 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-
 import java.awt.Color;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.io.IOException;
 
-public class DisclaimerPanel extends at {
-   protected DisclaimerPanel() {
-      super("Disclaimer");
-      this.a();
+import javax.imageio.ImageIO;
+import javax.swing.JComponent;
+
+public class L extends JComponent {
+   static BufferedImage a;
+   private boolean b;
+
+   public L(Color var1) {
+      this.setBackground(var1);
+      if (a == null) {
+         try {
+            a = ImageIO.read(this.getClass().getResource("/resources/led.png"));
+            GamebandColors.a(a, GamebandColors.a());
+         } catch (IOException var3) {
+            var3.printStackTrace();
+         }
+      }
+
    }
 
-   protected void a() {
-      JPanel var1 = new JPanel();
-      var1.setOpaque(false);
-      this.add(var1);
-      var1.setLayout(new BoxLayout(var1, 1));
-      var1.setBorder(new EmptyBorder(140, 0, 0, 0));
-      C var2 = new C(LocaleUtil.getLocalizedString("DISCLAIMER_HEADING"), 420, "center");
-      var2.setAlignmentX(0.5F);
-      am.a(var1, var2, GamebandFonts.i, GamebandColors.a());
-      var1.add(Box.createVerticalStrut(20));
-      C var3 = new C(LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_1"), 420, "center");
-      var3.setAlignmentX(0.5F);
-      am.a(var1, var3, GamebandFonts.k, Color.white);
-      var1.add(Box.createVerticalStrut(6));
-      C var4 = new C(LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_2"), 420, "center");
-      var4.setAlignmentX(0.5F);
-      am.a(var1, var4, GamebandFonts.k, Color.white);
-      var1.add(Box.createVerticalStrut(6));
-      C var5 = new C(LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_3"), 420, "center");
-      var5.setAlignmentX(0.5F);
-      am.a(var1, var5, GamebandFonts.k, Color.white);
-      var1.add(Box.createVerticalStrut(10));
-      C var6 = new C(LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_4"), 420, "center");
-      var6.setAlignmentX(0.5F);
-      am.a(var1, var6, GamebandFonts.k, Color.white);
-      var1.add(Box.createVerticalStrut(40));
-      JButton var7 = new JButton(LocaleUtil.getLocalizedString("OK"));
-      var7.setFont(GamebandFonts.n);
-      var7.setAlignmentX(0.5F);
-      var7.setBackground(GamebandColors.e());
-      var7.setForeground(GamebandColors.f());
-      var7.addActionListener(new DisclaimerOKListener(this));
-      var1.add(var7);
+   public boolean a() {
+      return this.b;
+   }
+
+   public void a(boolean var1) {
+      this.b = var1;
+   }
+
+   @Override
+public void paintComponent(Graphics var1) {
+      if (this.isOpaque()) {
+         var1.setColor(this.getBackground());
+         var1.fillRect(0, 0, this.getWidth(), this.getHeight());
+      }
+
+      if (this.b) {
+         var1.drawImage(a, 0, 0, this.getWidth(), this.getHeight(), (ImageObserver)null);
+      }
+
    }
 }

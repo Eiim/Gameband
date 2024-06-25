@@ -26,7 +26,7 @@ public class a extends JPanel {
       var3.setFont(LocaleUtil.q.v);
       var3.setForeground(Color.WHITE);
       var3.setBounds(27, 76, 166, 25);
-      GamebandConfig.d[] var4 = new GamebandConfig.d[]{GamebandConfig.d.b, GamebandConfig.d.c, GamebandConfig.d.d, GamebandConfig.d.a};
+      GamebandConfig.d[] var4 = new GamebandConfig.d[]{GamebandConfig.d.BackupPanel, GamebandConfig.d.c, GamebandConfig.d.d, GamebandConfig.d.a};
       this.b = new JComboBox(var4);
       this.b.setSelectedItem(var1.g().c());
       this.add(this.b);

@@ -1,8 +1,5 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.Utils;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -13,6 +10,7 @@ import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.util.Timer;
 import java.util.logging.Logger;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -24,36 +22,41 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
-public class b extends dialogPanel {
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Utils;
+
+public class BackupPanel extends DialogPanel {
    private static final Logger logger = Logger.getLogger(Utils.class.getName());
    private boolean i = false;
-   private final e j;
+   private final BackupLinkListenerInterface j;
    protected final JPanel a = new JPanel();
    private final JLabel k = new JLabel();
    private final JLabel l = new JLabel();
    private final JLabel m = new JLabel();
    private final JProgressBar n = new JProgressBar();
    private JPanel o;
-   private final y p = new y();
-   private final y q = new y();
+   private final GamebandButton p = new GamebandButton();
+   private final GamebandButton q = new GamebandButton();
    private final JTextPane r = new JTextPane();
    private JPanel s;
    protected JPanel b;
    private Timer t = new Timer();
-   private y u = new y();
+   private GamebandButton u = new GamebandButton();
 
-   public b(e var1) {
+   public BackupPanel(BackupLinkListenerInterface var1) {
       this.j = var1;
       this.a();
    }
 
-   public void a() {
+   @Override
+public void a() {
       this.removeAll();
       this.a(LocaleUtil.getLocalizedString("BACKUP_WINDOW_TITLE"));
       super.a();
    }
 
-   protected Component b() {
+   @Override
+protected Component b() {
       super.b();
       this.d.setLayout(new BorderLayout());
       JPanel var1 = new JPanel();
@@ -94,7 +97,7 @@ public class b extends dialogPanel {
       this.a.add(this.o);
       this.p.setBackground(LocaleUtil.h.k);
       this.p.setText(LocaleUtil.getLocalizedString("BACKUP_CANCEL_BUTTON"));
-      this.p.addActionListener(new c(this));
+      this.p.addActionListener(new BackupButtonListener(this));
       this.o.setVisible(true);
       this.o.add(this.p);
       this.q.setText(LocaleUtil.getLocalizedString("QUIT_AND_EJECT"));
@@ -119,7 +122,7 @@ public class b extends dialogPanel {
       this.r.setBackground(Color.BLACK);
       this.r.setContentType("text/html");
       this.r.setText("<html><body style='background-color:#000000'><div style='width:100%; height:50px;'></div><center><h1 style='color:#e0d0d0'>Loading news..</h1></center></body></html>");
-      this.r.addHyperlinkListener(new d(this));
+      this.r.addHyperlinkListener(new BackupLinkListener(this));
       JScrollPane var2 = new JScrollPane(this.r);
       var2.setBounds(30, 0, 740, 290);
       this.b.add(var2);
@@ -172,16 +175,18 @@ public class b extends dialogPanel {
       this.revalidate();
    }
 
-   public JButton e() {
+   @Override
+public JButton e() {
       return this.q;
    }
 
-   public JButton f() {
+   @Override
+public JButton f() {
       return this.u;
    }
 
    // $FF: synthetic method
-   static void a(b var0, ActionEvent var1) {
+   static void a(BackupPanel var0, ActionEvent var1) {
       var0.a(var1);
    }
 }

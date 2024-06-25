@@ -243,7 +243,7 @@ public class p {
       this.d(true);
    }
 
-   public void a(com.nowcomputing.uistuff.b.e var1) {
+   public void a(com.nowcomputing.uistuff.BackupPanel.e var1) {
       var1.e();
       LockingUtil.a var2 = new LockingUtil.a(this.i, var1.c(), true);
       var2.a();

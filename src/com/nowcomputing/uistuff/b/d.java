@@ -30,7 +30,7 @@ public class d extends e {
       var3.gentlyCoerceImageIntoHole(var2, var2.getWidth() - 20, 0, 20, 7, 0, 0);
       this.a.i().a(var3);
       this.a.i().b(new Image(20, 7));
-      this.g.a(var1, AnimatedImage.h.b, 1000, 20, true);
+      this.g.a(var1, AnimatedImage.h.BackupPanel, 1000, 20, true);
       super.d();
    }
 }

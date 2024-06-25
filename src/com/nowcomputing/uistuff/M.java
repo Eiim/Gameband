@@ -1,24 +1,25 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.Utils;
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.util.logging.Logger;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class M extends dialogPanel {
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Utils;
+
+public class M extends DialogPanel {
    private static final Logger a = Logger.getLogger(Utils.class.getName());
-   private JButton b = new y();
-   private JButton h = new y();
-   private JButton i = new y();
+   private JButton b = new GamebandButton();
+   private JButton h = new GamebandButton();
+   private JButton i = new GamebandButton();
    private ImageIcon j = new ImageIcon(this.getClass().getResource("/resources/gameband_logo.png"));
    private JLabel k = new JLabel();
    private JPanel l;
@@ -28,7 +29,8 @@ public class M extends dialogPanel {
       this.a();
    }
 
-   public void a() {
+   @Override
+public void a() {
       this.removeAll();
       this.a(this.j);
       this.a(false);
@@ -37,10 +39,11 @@ public class M extends dialogPanel {
       super.a();
    }
 
-   protected Component b() {
+   @Override
+protected Component b() {
       JPanel var1 = new JPanel();
       var1.setLayout(new BorderLayout());
-      var1.setBackground(LocaleUtil.h.a);
+      var1.setBackground(GamebandColors.a);
       var1.add(this.c(), "North");
       var1.add(this.o(), "Center");
       var1.add(this.p(), "South");

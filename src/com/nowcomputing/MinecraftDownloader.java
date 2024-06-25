@@ -64,7 +64,7 @@ public class MinecraftDownloader {
 
       try {
          String launcherJSON = Utils.getAllFromInputStream(Utils.b("https://launchermeta.mojang.com/mc/launcher.json"));
-          b var2 = new b();
+          BackupPanel var2 = new BackupPanel();
          var0 = (c.a.a.c)var2.a(launcherJSON);
       } catch (IOException var3) {
          log.log(Level.FINE, "Error Checking for new Minecraft launcher", var3);

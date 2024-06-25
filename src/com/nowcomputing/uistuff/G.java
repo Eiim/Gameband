@@ -1,10 +1,10 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.Utils;
-
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.nowcomputing.Utils;
 
 public class G {
    static final Logger a = Logger.getLogger(Utils.class.getName());
@@ -31,16 +31,17 @@ public class G {
     String str2;
     String str3;
     String str1 = System.getProperty("user.home", ".");
-    switch (H.a[S.b().ordinal()]) {
-      case 1:
-        return new File(str1, ".minecraft/");
-      case 2:
-        str2 = System.getenv("APPDATA");
-        str3 = (str2 != null) ? str2 : str1;
-        return new File(str3, ".minecraft");
-      case 3:
-        return new File(str1, "Library/Application Support/minecraft");
-    } 
-    return null;
+    // Below code doesn't work - H.a isn't a thing, not sure what it was supposed to be
+//    switch (H.a[S.b().ordinal()]) {
+//      case 1:
+//        return new File(str1, ".minecraft/");
+//      case 2:
+//        str2 = System.getenv("APPDATA");
+//        str3 = (str2 != null) ? str2 : str1;
+//        return new File(str3, ".minecraft");
+//      case 3:
+//        return new File(str1, "Library/Application Support/minecraft");
+//    } 
+      return null;
    }
 }

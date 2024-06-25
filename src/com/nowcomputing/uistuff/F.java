@@ -1,17 +1,18 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.Locale;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.nowcomputing.LocaleUtil;
 
 public class f extends at {
    protected f() {
@@ -19,7 +20,8 @@ public class f extends at {
       this.a();
    }
 
-   protected void a() {
+   @Override
+protected void a() {
       this.setLayout(new BoxLayout(this, 1));
       this.setBorder(new EmptyBorder(175, 246, 0, 0));
       C var1 = new C(LocaleUtil.getLocalizedString("CHOOSE_LANGUAGE_HEADING"), 240);
@@ -63,11 +65,12 @@ public class f extends at {
       }
 
       var2.setFont(GamebandFonts.b);
-      var2.addActionListener(new g(this, var1));
+      var2.addActionListener(new LanguageListener(this, var1));
       return var2;
    }
 
-   public boolean b() {
+   @Override
+public boolean b() {
       this.c.a();
       return false;
    }

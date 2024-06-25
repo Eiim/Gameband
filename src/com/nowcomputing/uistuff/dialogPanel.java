@@ -1,11 +1,10 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.io.IOException;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -14,6 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import com.nowcomputing.LocaleUtil;
 
 public class DialogPanel extends JPanel {
    protected JPanel c;
@@ -81,7 +82,7 @@ public class DialogPanel extends JPanel {
       var1.setOpaque(false);
       if (this.i()) {
 //         try {
-            this.e = new B(new ImageIcon(this.getClass().getResource("/resources/home.png")));
+            this.e = new UnknownButton(new ImageIcon(this.getClass().getResource("/resources/home.png")));
             this.e.setPressedIcon(new ImageIcon(GamebandColors.getImage("/resources/home_pressed.png")));
             this.e.setToolTipText(LocaleUtil.getLocalizedString("GOTO_MAIN_MENU"));
 //         } catch (IOException var3) {
@@ -107,7 +108,7 @@ public class DialogPanel extends JPanel {
 
       if (this.j()) {
 //         try {
-            this.f = new B(new ImageIcon(this.getClass().getResource("/resources/eject.png")));
+            this.f = new UnknownButton(new ImageIcon(this.getClass().getResource("/resources/eject.png")));
             this.f.setPressedIcon(new ImageIcon(GamebandColors.getImage("/resources/eject_pressed.png")));
             this.f.setToolTipText(LocaleUtil.getLocalizedString("EJECT"));
 //         } catch (IOException var3) {
@@ -122,7 +123,7 @@ public class DialogPanel extends JPanel {
 
    private void a(JPanel var1) throws IOException {
 //      try {
-         this.g = new B(new ImageIcon(this.getClass().getResource("/resources/help.png")));
+         this.g = new UnknownButton(new ImageIcon(this.getClass().getResource("/resources/help.png")));
          this.g.setPressedIcon(new ImageIcon(GamebandColors.getImage("/resources/help_pressed.png")));
          this.g.setToolTipText(LocaleUtil.getLocalizedString("HELP"));
 //      } catch (IOException var3) {
@@ -176,6 +177,6 @@ public class DialogPanel extends JPanel {
    }
 
    public void l() {
-      GamebandPopup.PopupDialog(this, new String[]{LocaleUtil.getLocalizedString("DISCLAIMER_HEADING"), LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_1"), LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_2"), LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_3"), LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_4")}, (String)"Gameband", (String)"www.nowcomputing.com/support");
+      GamebandPopup.PopupDialog(this, new String[]{LocaleUtil.getLocalizedString("DISCLAIMER_HEADING"), LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_1"), LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_2"), LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_3"), LocaleUtil.getLocalizedString("DISCLAIMER_TEXT_4")}, "Gameband", "www.nowcomputing.com/support");
    }
 }

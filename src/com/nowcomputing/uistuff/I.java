@@ -1,8 +1,5 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.Utils;
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -12,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.logging.Logger;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -24,6 +22,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Utils;
 
 public class i extends at implements ActionListener, MouseListener {
    private static final Logger d = Logger.getLogger(Utils.class.getName());
@@ -49,25 +50,26 @@ public class i extends at implements ActionListener, MouseListener {
       this.k = var1;
       if (var1 == 0) {
          this.j.setSelected(this.b.getModel(), true);
-         this.g.setForeground(LocaleUtil.h.a());
+         this.g.setForeground(GamebandColors.a());
          this.f.setForeground(Color.WHITE);
       } else if (var1 == 1) {
          this.j.setSelected(this.a.getModel(), true);
          this.g.setForeground(Color.WHITE);
-         this.f.setForeground(LocaleUtil.h.a());
+         this.f.setForeground(GamebandColors.a());
       }
 
    }
 
-   protected void a() {
+   @Override
+protected void a() {
       this.setLayout(new BoxLayout(this, 1));
       this.setBorder(new EmptyBorder(40, 230, 0, 0));
-      this.a(LocaleUtil.getLocalizedString("WHERE_ARE_YOU"), GamebandFonts.k, LocaleUtil.h.a());
+      this.a(LocaleUtil.getLocalizedString("WHERE_ARE_YOU"), GamebandFonts.k, GamebandColors.a());
       this.a(LocaleUtil.getLocalizedString("CONFIRM_TIMEZONE"), GamebandFonts.k, Color.WHITE);
       this.add(Box.createVerticalStrut(5));
       this.f();
       this.add(Box.createVerticalStrut(30));
-      this.a(LocaleUtil.getLocalizedString("LEFT_OR_RIGHT"), GamebandFonts.k, LocaleUtil.h.a());
+      this.a(LocaleUtil.getLocalizedString("LEFT_OR_RIGHT"), GamebandFonts.k, GamebandColors.a());
       this.a(LocaleUtil.getLocalizedString("ORIENTATION_1"), GamebandFonts.k, Color.WHITE);
       this.a(LocaleUtil.getLocalizedString("ORIENTATION_2"), GamebandFonts.m, Color.WHITE);
       this.add(Box.createVerticalStrut(10));
@@ -86,7 +88,7 @@ public class i extends at implements ActionListener, MouseListener {
       this.e = new JList(com.nowcomputing.O.a());
       this.e.setSelectionMode(0);
       this.e.setLayoutOrientation(0);
-      this.e.setBackground(LocaleUtil.h.p);
+      this.e.setBackground(GamebandColors.p);
       this.e.setForeground(Color.WHITE);
       this.e.setBorder((Border)null);
       JScrollPane var1 = new JScrollPane(this.e);
@@ -134,7 +136,7 @@ public class i extends at implements ActionListener, MouseListener {
       var2.setMaximumSize(new Dimension(158, 24));
       var2.setHorizontalAlignment(0);
       var2.setOpaque(true);
-      var2.setBackground(LocaleUtil.h.p);
+      var2.setBackground(GamebandColors.p);
       var2.setForeground(Color.WHITE);
       var2.setFont(GamebandFonts.k);
       var3.add(var2);
@@ -149,13 +151,14 @@ public class i extends at implements ActionListener, MouseListener {
       this.add(var1);
       JButton var2 = new JButton(LocaleUtil.getLocalizedString("CONFIRM"));
       var2.setFont(GamebandFonts.n);
-      var2.setBackground(LocaleUtil.h.e());
-      var2.setForeground(LocaleUtil.h.f());
+      var2.setBackground(GamebandColors.e());
+      var2.setForeground(GamebandColors.f());
       var2.addActionListener(new k(this));
       var1.add(var2);
    }
 
-   public void actionPerformed(ActionEvent var1) {
+   @Override
+public void actionPerformed(ActionEvent var1) {
       Object var2 = var1.getSource();
       if (var2.equals(this.a)) {
          this.a((short)1);
@@ -165,7 +168,8 @@ public class i extends at implements ActionListener, MouseListener {
 
    }
 
-   public void mouseClicked(MouseEvent var1) {
+   @Override
+public void mouseClicked(MouseEvent var1) {
       Object var2 = var1.getSource();
       if (var2.equals(this.f)) {
          this.a((short)1);
@@ -175,16 +179,20 @@ public class i extends at implements ActionListener, MouseListener {
 
    }
 
-   public void mousePressed(MouseEvent var1) {
+   @Override
+public void mousePressed(MouseEvent var1) {
    }
 
-   public void mouseReleased(MouseEvent var1) {
+   @Override
+public void mouseReleased(MouseEvent var1) {
    }
 
-   public void mouseEntered(MouseEvent var1) {
+   @Override
+public void mouseEntered(MouseEvent var1) {
    }
 
-   public void mouseExited(MouseEvent var1) {
+   @Override
+public void mouseExited(MouseEvent var1) {
    }
 
    // $FF: synthetic method

@@ -1,10 +1,9 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Insets;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -14,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
+
+import com.nowcomputing.LocaleUtil;
 
 public class ErrorPanel extends JDialog {
    private JLabel a;
@@ -73,7 +74,7 @@ public class ErrorPanel extends JDialog {
       this.f.setForeground(GamebandColors.f());
       this.f.setAlignmentX(0.5F);
       this.f.setText(LocaleUtil.getLocalizedString("OK"));
-      this.f.addActionListener(new K(this));
+      this.f.addActionListener(new ErrorCloseListener(this));
       var7.add(this.f);
    }
 }

@@ -8,9 +8,9 @@ import javax.swing.event.HyperlinkEvent.EventType;
 
 class BackupLinkListener implements HyperlinkListener {
    // $FF: synthetic field
-   final b a;
+   final BackupPanel a;
 
-   BackupLinkListener(b var1) {
+   BackupLinkListener(BackupPanel var1) {
       this.a = var1;
    }
 

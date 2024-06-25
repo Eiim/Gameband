@@ -1,15 +1,16 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.nowcomputing.LocaleUtil;
 
 public class D extends at {
    private G a;
@@ -20,7 +21,8 @@ public class D extends at {
       this.a();
    }
 
-   protected void a() {
+   @Override
+protected void a() {
       JPanel var1 = new JPanel();
       var1.setOpaque(false);
       this.add(var1);
@@ -67,7 +69,7 @@ public class D extends at {
       var5.setFont(GamebandFonts.n);
       var5.setBackground(GamebandColors.e());
       var5.setForeground(GamebandColors.f());
-      var5.addActionListener(new F(this));
+      var5.addActionListener(new ImportListener(this));
       var3.add(var5);
    }
 
