@@ -1,10 +1,5 @@
 package a;
 
-import c.a.scanner.c;
-import com.nowcomputing.*;
-import com.nowcomputing.uistuff.GamebandDialog;
-import com.nowcomputing.uistuff.GamebandPopup;
-
 import java.awt.Component;
 import java.io.File;
 import java.io.IOException;
@@ -12,12 +7,25 @@ import java.io.Writer;
 import java.util.Iterator;
 import java.util.logging.Level;
 
+import com.nowcomputing.GamebandConfig;
+import com.nowcomputing.MinecraftDownloader;
+import com.nowcomputing.OSDetectionIsHard;
+import com.nowcomputing.PathUtils;
+import com.nowcomputing.Severity;
+import com.nowcomputing.Utils;
+import com.nowcomputing.WindowsVersionComparator;
+import com.nowcomputing.uistuff.GamebandDialog;
+import com.nowcomputing.uistuff.GamebandPopup;
+
+import c.a.scanner.c;
+
 public class MinecraftLauncher extends AbstractMinecraftLauncher {
    public MinecraftLauncher(GamebandConfig var1) {
       super(var1);
    }
 
-   public String[] buildJavaCommand() {
+   @Override
+public String[] buildJavaCommand() {
       String[] stringArray = super.buildJavaCommand();
       if (this.validateJavaLaunchCommand(stringArray)) {
          switch (i.a[Utils.b().ordinal()]) {
@@ -69,20 +77,24 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
       return var0;
    }
 
-   public String getDisplayName() {
+   @Override
+public String getDisplayName() {
       return "Minecraft";
    }
 
-   public String getSupportURL() {
+   @Override
+public String getSupportURL() {
       return "https://help.mojang.com";
    }
 
-   public boolean setLaunchCMD() {
+   @Override
+public boolean setLaunchCMD() throws IOException {
       this.config.setProperty("launch_cmd", "");
       return true;
    }
 
-   public boolean isJavaLaunchCommandValid() {
+   @Override
+public boolean isJavaLaunchCommandValid() {
       return this.validateJavaLaunchCommand(this.buildJavaCommand());
    }
 
@@ -94,19 +106,21 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
       }
    }
 
-   public void f() {
+   @Override
+public void f() {
       MinecraftDownloader var1 = new MinecraftDownloader(this.config);
       if (var1.a() != Severity.none) {
          GamebandDialog infoDialog = new GamebandDialog("Getting the latest Minecraft Launcher", "This won't take long...", "", true);
          infoDialog.setVisible(true);
-         var1.a((com.nowcomputing.R)(new MinecraftDownloadDialog(this, infoDialog, var1)));
+         var1.a((new MinecraftDownloadDialog(this, infoDialog, var1)));
          var1.c();
          infoDialog.c();
       }
 
    }
 
-   public void i() throws IOException {
+   @Override
+public void i() throws IOException {
       this.m();
       if (!this.n()) {
          throw new IOException("Can't download Minecraft.exe");
@@ -121,7 +135,7 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
          String var2 = PathUtils.getMinecraftPath().getPath();
          File var3 = new File(PathUtils.getMinecraftPath(), "launcher_profiles.json");
          String var4 = Utils.readFile(var3);
-         c.a.scanner.a.BackupPanel var5 = new c.a.scanner.a.BackupPanel();
+         c.a.scanner.a.b var5 = new c.a.scanner.a.b();
          c var6 = (c)var5.a(var4);
          boolean var7 = false;
          c var8 = (c)var6.get("profiles");
@@ -185,7 +199,7 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
          String[] var1 = this.buildJavaCommand();
          File var2 = new File(var1[0]);
          if (!var2.exists()) {
-            GamebandPopup.PopupDialog((Component)null, (String[])(new String[]{"We're having problems downloading Minecraft :(", "This is usually due to being blocked by antivirus or firewall software. Please add Gameband to your antivirus software's whitelist.", "Alternatively, you can manually download the minecraft.exe file and copy it into the minecraft folder on Gameband:"}), (String)"Gameband Error", (String)"https://launcher.mojang.com/download/Minecraft.exe");
+            GamebandPopup.PopupDialog((Component)null, (new String[]{"We're having problems downloading Minecraft :(", "This is usually due to being blocked by antivirus or firewall software. Please add Gameband to your antivirus software's whitelist.", "Alternatively, you can manually download the minecraft.exe file and copy it into the minecraft folder on Gameband:"}), "Gameband Error", "https://launcher.mojang.com/download/Minecraft.exe");
             File var3 = new File(PathUtils.getMinecraftPath(), "minecraft.exe");
             return var3.exists();
          }
@@ -194,7 +208,8 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
       return true;
    }
 
-   public boolean g() {
+   @Override
+public boolean g() {
       return true;
    }
 }

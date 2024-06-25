@@ -3,6 +3,7 @@ package b.a.a.a;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.swing.JComponent;
 
 abstract class Class44 extends Class32 implements Class5 {
@@ -12,7 +13,8 @@ abstract class Class44 extends Class32 implements Class5 {
    private int field103 = 0;
    private int field104 = 0;
 
-   public Class5 method197(JComponent... var1) {
+   @Override
+public Class5 method16(JComponent... var1) {
       JComponent[] var2 = var1;
       int var3 = var1.length;
 
@@ -26,12 +28,12 @@ abstract class Class44 extends Class32 implements Class5 {
       return this;
    }
 
-   public Class5 method198() {
+   public Class5 method17() {
       this.field101 = true;
       return this;
    }
 
-   List method199() {
+   List method138() {
       return this.field100;
    }
 
@@ -53,7 +55,7 @@ abstract class Class44 extends Class32 implements Class5 {
       this.field103 = var1 > 0 && !this.field102 ? var1 : this.method202();
    }
 
-   int method204(Class6 var1, int var2, int var3, int var4, int var5, int var6, int var7, List var8) {
+   int method141(Class6 var1, int var2, int var3, int var4, int var5, int var6, int var7, List var8) {
       int var9 = var2 + this.field104;
       int var10 = this.field100.size();
       int var11 = this.field103;
@@ -89,7 +91,7 @@ abstract class Class44 extends Class32 implements Class5 {
             var13 = var4;
          }
 
-         var10 = Math.max(var10, var1.method21(var12.method80(), var7, var13, this.method117(), this.method116()));
+         var10 = Math.max(var10, var1.method21(var12.method60(), var7, var13, this.method117(), this.method116()));
          var7 += var13 + var3;
       }
 

@@ -5,8 +5,6 @@
 
 package a;
 
-import com.nowcomputing.*;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +12,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.nowcomputing.GamebandConfig;
+import com.nowcomputing.OSDetectionIsHard;
+import com.nowcomputing.PathUtils;
+import com.nowcomputing.Utils;
+import com.nowcomputing.latchedCommandRun;
 
 public abstract class AbstractMinecraftLauncher {
     protected static final Logger logger = Logger.getLogger(Utils.class.getName());
@@ -27,7 +31,7 @@ public abstract class AbstractMinecraftLauncher {
 
     public abstract String getSupportURL();
 
-    public abstract boolean setLaunchCMD();
+    public abstract boolean setLaunchCMD() throws IOException;
 
     public abstract boolean isJavaLaunchCommandValid();
 
@@ -123,7 +127,8 @@ public abstract class AbstractMinecraftLauncher {
         return Boolean.parseBoolean(this.config.getProperty("minecraft_output", "false"));
     }
 
-    public String toString() {
+    @Override
+	public String toString() {
         return this.getDisplayName();
     }
 

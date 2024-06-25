@@ -1,32 +1,35 @@
 package com.nowcomputing.a;
 
-import com.nowcomputing.Image;
-import com.nowcomputing.AnimatedImage;
-
 import java.io.File;
-import java.io.IOException;
+
+import com.nowcomputing.AnimatedImage;
+import com.nowcomputing.Image;
 
 public class ImagePlayer extends Transition { // My guess is as good as yours buddy
    private AnimatedImage animatedImage;
    private int e;
 
-   protected void disable() {
+   @Override
+protected void disable() {
       super.disable();
       this.e = 0;
    }
 
-   public void startTimer() {
+   @Override
+public void startTimer() {
       if (this.animatedImage != null && this.animatedImage.getFrameCount() > 0) {
          super.startTimer();
       }
 
    }
 
-   public boolean isEmpty() {
+   @Override
+public boolean isEmpty() {
       return this.e < this.animatedImage.getFrameCount();
    }
 
-   public Image e() {
+   @Override
+public Image e() {
       Image var1 = null;
       if (this.e == this.animatedImage.getFrameCount()) {
          this.setBool(true);
@@ -37,7 +40,7 @@ public class ImagePlayer extends Transition { // My guess is as good as yours bu
       return var1;
    }
 
-   public void a(File var1) throws IOException {
+   public void a(File var1) {
       this.a(AnimatedImage.LoadFromFile(var1));
    }
 

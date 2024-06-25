@@ -30,7 +30,6 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 import com.nowcomputing.GamebandConfig;
-import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.Main;
 import com.nowcomputing.Utils;
@@ -79,7 +78,7 @@ public class aa extends DialogPanel implements ActionListener {
          this.l.add(var7);
       }
 
-      this.t = this.d(Main.c().b());
+      this.t = this.d(Main.c().getSupportURL());
       this.a();
    }
 
@@ -87,7 +86,7 @@ public class aa extends DialogPanel implements ActionListener {
       JEditorPane var2 = new JEditorPane();
       var2.setBorder(BorderFactory.createEmptyBorder());
       var2.setEditable(false);
-      var2.setFont(LocaleUtil.q.s);
+      var2.setFont(GamebandFonts.s);
       var2.setContentType("text/html");
       String var3 = "<html><body bgcolor='#232323'><a style='color:#e0d0d0;font-size:12px;font-family:helvetica;' href='" + var1 + "'>" + var1;
       var2.setText(var3);
@@ -222,7 +221,7 @@ protected Component b() {
       this.s = new JComboBox(var1);
       this.s.setSelectedItem(Main.c());
       this.s.setPrototypeDisplayValue("1234567890");
-      this.s.setFont(LocaleUtil.q.C);
+      this.s.setFont(GamebandFonts.C);
       this.s.addActionListener(new ac(this));
       return this.s;
    }
@@ -238,7 +237,7 @@ protected Component b() {
       }
 
       var1.setPrototypeDisplayValue("1234567890");
-      var1.setFont(LocaleUtil.q.c);
+      var1.setFont(GamebandFonts.c);
       var1.addActionListener(new ae(this));
       return var1;
    }
@@ -248,12 +247,12 @@ protected Component b() {
       var1.setPrototypeDisplayValue("12345678901234567890");
       String var2 = com.nowcomputing.O.a(LocaleUtil.e());
       var1.setSelectedItem(var2);
-      var1.setFont(LocaleUtil.q.C);
+      var1.setFont(GamebandFonts.C);
       var1.addActionListener(new af(this));
       return var1;
    }
 
-   protected Image.f d() {
+   protected GBComms d() {
       return this.q;
    }
 
@@ -277,22 +276,22 @@ protected Component b() {
 
    private JLabel e(String var1) {
       JLabel var2 = new JLabel(var1);
-      var2.setFont(LocaleUtil.q.A);
-      var2.setForeground(LocaleUtil.h.b());
+      var2.setFont(GamebandFonts.A);
+      var2.setForeground(GamebandColors.b());
       return var2;
    }
 
    private JLabel f(String var1) {
       JLabel var2 = new JLabel(var1);
-      var2.setFont(LocaleUtil.q.B);
-      var2.setForeground(LocaleUtil.h.b());
+      var2.setFont(GamebandFonts.B);
+      var2.setForeground(GamebandColors.b());
       return var2;
    }
 
    private JLabel g(String var1) {
       JLabel var2 = new JLabel(var1);
-      var2.setFont(LocaleUtil.q.j);
-      var2.setForeground(LocaleUtil.h.b());
+      var2.setFont(GamebandFonts.j);
+      var2.setForeground(GamebandColors.b());
       return var2;
    }
 
@@ -300,9 +299,9 @@ protected Component b() {
       JTextField var2 = new JTextField();
       var2.setText(var1);
       var2.setEditable(false);
-      var2.setBackground(LocaleUtil.h.a);
-      var2.setForeground(LocaleUtil.h.b());
-      var2.setFont(LocaleUtil.q.B);
+      var2.setBackground(GamebandColors.a);
+      var2.setForeground(GamebandColors.b());
+      var2.setFont(GamebandFonts.B);
       var2.setBorder((Border)null);
       return var2;
    }
@@ -433,8 +432,8 @@ public void actionPerformed(ActionEvent var1) {
          }
 
          try {
-            var1.d();
-            String var6 = "<html><body bgcolor='#232323'><a style='color:#e0d0d0;font-size:12px;font-family:helvetica;' href='" + Main.c().b() + "'>" + Main.c().b();
+            var1.setLaunchCMD();
+            String var6 = "<html><body bgcolor='#232323'><a style='color:#e0d0d0;font-size:12px;font-family:helvetica;' href='" + Main.c().getSupportURL() + "'>" + Main.c().getSupportURL();
             this.t.setText(var6);
          } catch (IOException var5) {
             this.s.setSelectedIndex(0);

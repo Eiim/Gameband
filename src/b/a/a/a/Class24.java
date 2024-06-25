@@ -13,23 +13,23 @@ class Class24 implements Class13 {
       this.field56 = var1;
    }
 
-   public JComponent method80() {
+   public JComponent method60() {
       return this.field56;
    }
 
-   public int method81() {
-      return this.method80().getPreferredSize().height;
+   public int method61() {
+      return this.method60().getPreferredSize().height;
    }
 
-   public int method82() {
-      return this.method80().getMinimumSize().width;
+   public int method62() {
+      return this.method60().getMinimumSize().width;
    }
 
-   public int method83() {
-      return this.method80().getPreferredSize().width;
+   public int method63() {
+      return this.method60().getPreferredSize().width;
    }
 
-   public int method84() {
-      return Class27.method91(this.method80());
+   public int method64() {
+      return Class27.method91(this.method60());
    }
 }

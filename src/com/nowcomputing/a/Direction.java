@@ -9,12 +9,18 @@ public enum Direction {
    down("DOWN");
 
    private String text;
-
+   
+   public static Direction[] a() {
+	   //return (Direction[])f.clone(); Not sure what that was supposed to mean
+	   return new Direction[] {left, right, up, down}; // TODO: check order
+   }
+   
    Direction(String var3) {
       this.text = var3;
    }
 
-   public String toString() {
+   @Override
+public String toString() {
       return LocaleUtil.getLocalizedString(this.text);
    }
 }

@@ -1,7 +1,28 @@
 package com.nowcomputing;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.security.DigestInputStream;
 import java.security.KeyManagementException;
 import java.security.MessageDigest;
@@ -18,6 +39,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLContext;
@@ -40,7 +62,7 @@ public class Utils {
       }catch (IOException e){
          logger.log(Level.WARNING, e.toString());
       } finally {
-         closeButUnsafe((Closeable)var2);
+         closeButUnsafe(var2);
       }
 
       return var1;
@@ -137,8 +159,8 @@ public class Utils {
       } catch (IOException var14) {
          logger.log(Level.FINE, "Error calculating md5 of file " + var0.getName(), var14);
       } finally {
-         closeButUnsafe((Closeable)var1);
-         closeButUnsafe((Closeable)var2);
+         closeButUnsafe(var1);
+         closeButUnsafe(var2);
       }
 
       return "";
@@ -193,7 +215,7 @@ public class Utils {
    }
 
    public static void a(File var0, File var1) throws IOException {
-      a((InputStream)(new FileInputStream(var0)), (File)var1);
+      a((new FileInputStream(var0)), var1);
    }
 
    public static void a(InputStream is, File f) throws IOException{
@@ -211,11 +233,11 @@ public class Utils {
       }catch (FileNotFoundException e){
          throw new RuntimeException(e);
       } finally {
-         closeButUnsafe((Closeable)is);
+         closeButUnsafe(is);
          if (fos != null) {
             fos.flush();
             fos.getFD().sync();
-            closeButUnsafe((Closeable)fos);
+            closeButUnsafe(fos);
          }
 
       }
@@ -329,11 +351,11 @@ public class Utils {
 
          var2.closeEntry();
       } finally {
-         closeButUnsafe((Closeable)var2);
+         closeButUnsafe(var2);
       }
    }
 
-   public static void a(File var0, File var1, List var2) throws IOException {
+   public static void a(File var0, File var1, List var2) {
       ZipInputStream var3 = null;
 
       try {
@@ -380,7 +402,7 @@ public class Utils {
                      } catch (IOException var22) {
                      }
 
-                     closeButUnsafe((Closeable)var9);
+                     closeButUnsafe(var9);
                   }
 
                }
@@ -388,8 +410,11 @@ public class Utils {
          }
 
          var3.closeEntry();
+      } catch(IOException e) {
+    	  // TODO: something meaningful
+    	  e.printStackTrace();
       } finally {
-         closeButUnsafe((Closeable)var3);
+         closeButUnsafe(var3);
       }
    }
 
@@ -523,8 +548,8 @@ public class Utils {
       } catch (Throwable var8) {
          logger.log(Level.FINE, "Error deserializing object file " + var0.getPath());
       } finally {
-         closeButUnsafe((Closeable)var3);
-         closeButUnsafe((Closeable)var2);
+         closeButUnsafe(var3);
+         closeButUnsafe(var2);
       }
 
       return var1;
@@ -580,7 +605,7 @@ public class Utils {
             }
          }
 
-         closeButUnsafe((Closeable)var3);
+         closeButUnsafe(var3);
       } catch (IOException var5) {
       }
 
@@ -653,7 +678,7 @@ public class Utils {
             for(String var4 = null; (var4 = var3.readLine()) != null; var0 = var4) {
             }
 
-            closeButUnsafe((Closeable)var3);
+            closeButUnsafe(var3);
             if (var0 == null) {
                throw new IOException("Can't find lsregister");
             }
@@ -712,7 +737,7 @@ public class Utils {
       } catch (Exception var11) {
          var3 = "";
       } finally {
-         closeButUnsafe((Closeable)var1);
+         closeButUnsafe(var1);
       }
 
       return var3;
@@ -751,8 +776,8 @@ public class Utils {
             throw new IOException("Error in data stream");
          }
       } finally {
-         closeButUnsafe((Closeable)var2);
-         closeButUnsafe((Closeable)var3);
+         closeButUnsafe(var2);
+         closeButUnsafe(var3);
       }
 
    }

@@ -203,7 +203,7 @@ public class t extends JPanel implements MouseListener, MouseMotionListener {
          case 32:
             try {
                com.nowcomputing.uistuff.b.a var11 = new com.nowcomputing.uistuff.b.a(this, (RawAnimation)var6);
-               var11.a(((RawAnimation)var6).b());
+               var11.a(((RawAnimation)var6).getAnimation());
                this.c(var11);
             } catch (IOException var12) {
                a.log(Level.WARNING, "", var12);

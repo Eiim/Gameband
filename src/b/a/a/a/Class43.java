@@ -9,15 +9,15 @@ abstract class Class43 implements Class11 {
       this.field99 = var1;
    }
 
-   public final Class method192() {
+   public final Class method58() {
       return this.field99;
    }
 
-   public final boolean method193(Component var1) {
+   public final boolean method189(Component var1) {
       return this.method195((Component)this.field99.cast(var1));
    }
 
-   public final int method194(Component var1, int var2) {
+   public final int method190(Component var1, int var2) {
       return this.method196((Component)this.field99.cast(var1), var2);
    }
 

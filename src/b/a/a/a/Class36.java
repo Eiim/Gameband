@@ -6,7 +6,11 @@ final class Class36 {
    private static String field83 = null;
 
    static int method170() {
-      // $FF: Couldn't be decompiled
+	   switch (Class39.field94[method171().ordinal()]) {
+	      case 1:
+	        return 11;
+	    } 
+	    return 10;
    }
 
    private static Class12 method171() {

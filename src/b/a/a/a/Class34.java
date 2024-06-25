@@ -39,7 +39,7 @@ final class Class34 extends Class32 implements Class7 {
       return this;
    }
 
-   public Class7 method148() {
+   public Class7 a() {
       return this.method149(1);
    }
 
@@ -54,7 +54,7 @@ final class Class34 extends Class32 implements Class7 {
    private Class7 method151(JLabel var1, int var2) {
       if (this.field72 != null) {
          this.field72.method177(1);
-         this.field73 += this.field72.method176();
+         this.field73 += this.field72.c();
       }
 
       Class37 var3 = this.field75 != null ? this.field75.method167(this.field73) : null;
@@ -98,7 +98,7 @@ final class Class34 extends Class32 implements Class7 {
       int var1 = 0;
 
       Class37 var3;
-      for(Iterator var2 = this.field76.iterator(); var2.hasNext(); var1 += var3.method176() > 0 ? var3.method176() : 1) {
+      for(Iterator var2 = this.field76.iterator(); var2.hasNext(); var1 += var3.c() > 0 ? var3.c() : 1) {
          var3 = (Class37)var2.next();
       }
 
@@ -112,7 +112,7 @@ final class Class34 extends Class32 implements Class7 {
       while(var3.hasNext()) {
          Class37 var4 = (Class37)var3.next();
          if (var3.hasNext()) {
-            var2 -= var4.method176();
+            var2 -= var4.c();
          } else {
             var4.method177(var2);
          }
@@ -177,7 +177,7 @@ final class Class34 extends Class32 implements Class7 {
       return this.field76.isEmpty() ? null : ((Class37)this.field76.get(0)).method175();
    }
 
-   List method164() {
+   List b() {
       return this.field77;
    }
 
@@ -211,7 +211,7 @@ final class Class34 extends Class32 implements Class7 {
          int var17 = var11;
 
          int var18;
-         for(var18 = 1; var18 < var15.method176(); ++var18) {
+         for(var18 = 1; var18 < var15.c(); ++var18) {
             var17 += var4 + var11;
             int var19 = (Integer)var13.next();
             if (var19 > 0) {
@@ -219,7 +219,7 @@ final class Class34 extends Class32 implements Class7 {
             }
          }
 
-         var12 += var15.method176();
+         var12 += var15.c();
          if (var12 == this.field74) {
             var18 = var7 % this.field74;
             var17 += var18;
@@ -246,7 +246,7 @@ final class Class34 extends Class32 implements Class7 {
             return var4;
          }
 
-         var2 += var4.method176();
+         var2 += var4.c();
          if (var2 > var1) {
             break;
          }

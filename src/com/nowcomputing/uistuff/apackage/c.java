@@ -1,10 +1,11 @@
 package com.nowcomputing.uistuff.apackage;
 
-import com.nowcomputing.GamebandConfig;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JComboBox;
+
+import com.nowcomputing.e.Transition;
 
 class c implements ActionListener {
    // $FF: synthetic field
@@ -17,9 +18,10 @@ class c implements ActionListener {
       this.a = var2;
    }
 
-   public void actionPerformed(ActionEvent var1) {
+   @Override
+public void actionPerformed(ActionEvent var1) {
       JComboBox var2 = (JComboBox)var1.getSource();
-      GamebandConfig.d var3 = (GamebandConfig.d)var2.getSelectedItem();
+      Transition var3 = (Transition)var2.getSelectedItem();
       this.a.e();
       this.a.g().a(var3);
       this.a.d(true);

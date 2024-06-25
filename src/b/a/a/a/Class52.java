@@ -16,12 +16,12 @@ class Class52 extends Class46 {
    }
 
    public JComponent method225() {
-      return this.field111 != null ? this.field111.method225() : super.method80();
+      return this.field111 != null ? this.field111.method225() : super.method60();
    }
 
    public int method226() {
       if (this.field111 == null && this.field112 == null) {
-         return super.method81();
+         return super.method61();
       } else if (this.field112 != null) {
          return 0;
       } else {
@@ -32,7 +32,7 @@ class Class52 extends Class46 {
             var1 += var3.method117() + var3.method113();
          }
 
-         return Math.max(0, super.method81() - var1);
+         return Math.max(0, super.method61() - var1);
       }
    }
 

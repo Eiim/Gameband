@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.imageio.IIOException;
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
@@ -37,7 +38,7 @@ public class AnimatedImage {
       this.frames = new ArrayList(imageThingy.frames.size());
 
       for(int var2 = 0; var2 < imageThingy.frames.size(); ++var2) {
-         this.frames.add(new Image((Image)imageThingy.frames.get(var2)));
+         this.frames.add(new Image(imageThingy.frames.get(var2)));
       }
 
    }
@@ -92,10 +93,10 @@ public class AnimatedImage {
       this.anInt = var1;
    }
 
-   public static AnimatedImage LoadFromFile(File gifFile) throws IOException {
+   public static AnimatedImage LoadFromFile(File gifFile) {
       ImageDisplay imageDisplay = new ImageDisplay();
       if (imageDisplay.a(gifFile.getPath()) != 0) {
-         throw new IOException();
+         throw new RuntimeException(new IOException());
       } else {
          AnimatedImage animatedImage = new AnimatedImage(imageDisplay.getList());
          return animatedImage;

@@ -1,13 +1,10 @@
 package com.nowcomputing.uistuff.apackage;
 
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.AnimatedImage;
-import com.nowcomputing.uistuff.GamebandPopup;
-import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 import java.io.File;
 import java.io.IOException;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -22,6 +19,13 @@ import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.AbstractDocument;
 
+import com.nowcomputing.GamebandFont;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.a.Direction;
+import com.nowcomputing.uistuff.GamebandColors;
+import com.nowcomputing.uistuff.GamebandFonts;
+import com.nowcomputing.uistuff.GamebandPopup;
+
 public class f extends JPanel {
    private p a;
    private JRadioButton b;
@@ -33,8 +37,8 @@ public class f extends JPanel {
    private final JLabel h = new JLabel();
    private JFileChooser i;
    private final JLabel j = new JLabel();
-   private JComboBox k;
-   private JComboBox l;
+   private JComboBox<Direction> k;
+   private JComboBox<Direction> l;
    private final JCheckBox m;
    private final JCheckBox n;
 
@@ -46,11 +50,11 @@ public class f extends JPanel {
       JPanel var2 = new JPanel();
       var2.setBounds(78, 62, 644, 486);
       var2.setLayout((LayoutManager)null);
-      var2.setBackground(LocaleUtil.h.r);
+      var2.setBackground(GamebandColors.r);
       this.add(var2);
       this.a(var2);
       JPanel var3 = new JPanel();
-      var3.setBackground(LocaleUtil.h.q);
+      var3.setBackground(GamebandColors.q);
       var3.setBounds(0, 0, 644, 20);
       var2.add(var3);
       var2.add(this.a(this.b));
@@ -60,7 +64,8 @@ public class f extends JPanel {
       var2.add(this.a());
    }
 
-   public void setVisible(boolean var1) {
+   @Override
+public void setVisible(boolean var1) {
       if (var1) {
          this.g = new JFileChooser(".");
          this.g.setFileFilter(new FileNameExtensionFilter("Images", new String[]{"png", "gif"}));
@@ -97,12 +102,12 @@ public class f extends JPanel {
       this.f = new JTextField();
       this.f.setBounds(86, 50, 160, 36);
       this.f.setColumns(16);
-      this.f.setFont(com.nowcomputing.o.a(24));
+      this.f.setFont(GamebandFont.a(24));
       ((AbstractDocument)this.f.getDocument()).setDocumentFilter(new u(100));
       this.f.addFocusListener(new g(this));
       this.f.addActionListener(new h(this));
       var2.add(this.f);
-      this.k = new JComboBox(AnimatedImage.d.a());
+      this.k = new JComboBox<Direction>(Direction.a());
       JPanel var3 = this.a(this.k, this.m);
       this.k.addActionListener(new i(this));
       var2.add(var3);
@@ -112,15 +117,15 @@ public class f extends JPanel {
    private JPanel b(JRadioButton var1) {
       JPanel var2 = this.e(var1);
       var2.setBounds(0, 116, 644, 92);
-      this.h.setFont(LocaleUtil.q.x);
+      this.h.setFont(GamebandFonts.x);
       this.h.setBounds(195, 48, 120, 26);
       var2.add(this.h);
       JButton var3 = new JButton(LocaleUtil.getLocalizedString("OPEN_BUTTON"));
-      var3.setFont(LocaleUtil.q.x);
+      var3.setFont(GamebandFonts.x);
       var3.setBounds(86, 50, 100, 26);
       var2.add(var3);
       var3.addActionListener(new j(this));
-      this.l = new JComboBox(AnimatedImage.d.a());
+      this.l = new JComboBox<Direction>(Direction.a());
       JPanel var4 = this.a(this.l, this.n);
       var2.add(var4);
       return var2;
@@ -129,11 +134,11 @@ public class f extends JPanel {
    private JPanel c(JRadioButton var1) {
       JPanel var2 = this.e(var1);
       var2.setBounds(0, 212, 644, 92);
-      this.j.setFont(LocaleUtil.q.x);
+      this.j.setFont(GamebandFonts.x);
       this.j.setBounds(195, 48, 220, 26);
       var2.add(this.j);
       JButton var3 = new JButton(LocaleUtil.getLocalizedString("OPEN_BUTTON"));
-      var3.setFont(LocaleUtil.q.x);
+      var3.setFont(GamebandFonts.x);
       var3.setBounds(86, 50, 100, 26);
       var2.add(var3);
       var3.addActionListener(new k(this));
@@ -149,27 +154,27 @@ public class f extends JPanel {
 
    private JPanel a() {
       JPanel var1 = new JPanel();
-      var1.setBackground(LocaleUtil.h.q);
+      var1.setBackground(GamebandColors.q);
       var1.setLayout(new FlowLayout(1, 30, 20));
       var1.setBounds(0, 404, 644, 104);
       JButton var2 = new JButton(LocaleUtil.getLocalizedString("CANCEL"));
       var1.add(var2);
-      var2.setFont(LocaleUtil.q.w);
+      var2.setFont(GamebandFonts.w);
       var2.addActionListener(new l(this));
       JButton var3 = new JButton(LocaleUtil.getLocalizedString("GO_BUTTON"));
       var1.add(var3);
-      var3.setFont(LocaleUtil.q.w);
+      var3.setFont(GamebandFonts.w);
       var3.addActionListener(new m(this));
       return var1;
    }
 
    private JPanel e(JRadioButton var1) {
       JPanel var2 = new JPanel();
-      var2.setBackground(LocaleUtil.h.q);
+      var2.setBackground(GamebandColors.q);
       var2.setLayout((LayoutManager)null);
       var1.setBounds(65, 25, 280, 20);
-      var1.setFont(LocaleUtil.q.w);
-      var1.setForeground(LocaleUtil.h.s);
+      var1.setFont(GamebandFonts.w);
+      var1.setForeground(GamebandColors.s);
       var2.add(var1);
       return var2;
    }
@@ -186,11 +191,11 @@ public class f extends JPanel {
       var3.add(var4);
       JLabel var5 = new JLabel(LocaleUtil.getLocalizedString("SCROLL_DIRECTION"));
       var5.setBounds(2, 25, 260, 20);
-      var5.setFont(LocaleUtil.q.x);
-      var5.setForeground(LocaleUtil.h.s);
+      var5.setFont(GamebandFonts.x);
+      var5.setForeground(GamebandColors.s);
       var4.add(var5);
       var1.setBounds(0, 50, 100, 26);
-      var1.setFont(LocaleUtil.q.x);
+      var1.setFont(GamebandFonts.x);
       var4.add(var1);
       JPanel var6 = new JPanel();
       var6.setLayout(new FlowLayout(2, 0, 0));
@@ -199,8 +204,8 @@ public class f extends JPanel {
       var3.add(var6);
       var2.setBounds(144, 52, 160, 26);
       var2.setOpaque(false);
-      var2.setFont(LocaleUtil.q.x);
-      var2.setForeground(LocaleUtil.h.s);
+      var2.setFont(GamebandFonts.x);
+      var2.setForeground(GamebandColors.s);
       var2.setHorizontalTextPosition(2);
       var6.add(var2);
       return var3;
@@ -210,7 +215,7 @@ public class f extends JPanel {
       if (this.b.isSelected()) {
          String var1 = this.f.getText();
          if (!var1.equals("")) {
-            this.a.a(var1, (AnimatedImage.d)this.k.getSelectedItem(), this.m.isSelected());
+            this.a.a(var1, (Direction)this.k.getSelectedItem(), this.m.isSelected());
          }
 
          this.a.c(false);
@@ -223,12 +228,12 @@ public class f extends JPanel {
                var2 = o.a(var5);
                if (var2 != o.a && var2 != o.c) {
                   if (var2 == o.b) {
-                     GamebandPopup.a((Component)this, (String[])(new String[]{LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT_HEADER"), LocaleUtil.getLocalizedString("ERROR_NOT_STATIC_IMAGE_1"), LocaleUtil.getLocalizedString("ERROR_NOT_STATIC_IMAGE_2")}));
+                     GamebandPopup.a(this, (new String[]{LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT_HEADER"), LocaleUtil.getLocalizedString("ERROR_NOT_STATIC_IMAGE_1"), LocaleUtil.getLocalizedString("ERROR_NOT_STATIC_IMAGE_2")}));
                   } else {
-                     GamebandPopup.a((Component)this, (String[])(new String[]{LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT_HEADER"), LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT"), LocaleUtil.getLocalizedString("ERROR_NOT_STATIC_IMAGE_2")}));
+                     GamebandPopup.a(this, (new String[]{LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT_HEADER"), LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT"), LocaleUtil.getLocalizedString("ERROR_NOT_STATIC_IMAGE_2")}));
                   }
                } else {
-                  this.a.a(var5, (AnimatedImage.d)this.l.getSelectedItem(), this.n.isSelected());
+                  this.a.a(var5, (Direction)this.l.getSelectedItem(), this.n.isSelected());
                   this.a.c(false);
                }
             }
@@ -237,12 +242,12 @@ public class f extends JPanel {
             if (var5 != null) {
                var2 = o.a(var5);
                if (var2 != o.a && var2 != o.b) {
-                  GamebandPopup.a((Component)this, (String[])(new String[]{LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT_HEADER"), LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT"), LocaleUtil.getLocalizedString("ERROR_NOT_GIF")}));
+                  GamebandPopup.a(this, (new String[]{LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT_HEADER"), LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT"), LocaleUtil.getLocalizedString("ERROR_NOT_GIF")}));
                } else {
                   try {
                      this.a.a(var5);
                   } catch (IOException var4) {
-                     GamebandPopup.a((Component)this, (String[])(new String[]{LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT_HEADER"), LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT"), LocaleUtil.getLocalizedString("ERROR_NOT_GIF")}));
+                     GamebandPopup.a(this, (new String[]{LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT_HEADER"), LocaleUtil.getLocalizedString("ERROR_WRONG_FORMAT"), LocaleUtil.getLocalizedString("ERROR_NOT_GIF")}));
                   }
 
                   this.a.c(false);

@@ -45,17 +45,13 @@ public class GamebandConfig {
       return var1;
    }
 
-   public void setProperty(String var1, String var2) {
+   public void setProperty(String var1, String var2) throws IOException {
       if (var2.isEmpty()) {
          this.properties.remove(var1);
       } else {
          this.properties.setProperty(var1, var2);
       }
 
-      try {
-         this.properties.store(new FileOutputStream(this.configFile), "");
-      } catch (IOException e) {
-         e.printStackTrace();
-      }
+      this.properties.store(new FileOutputStream(this.configFile), "");
    }
 }

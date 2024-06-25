@@ -1,16 +1,17 @@
 package com.nowcomputing;
 
+import java.io.IOException;
 import java.util.concurrent.Callable;
 
 class y implements Callable {
    // $FF: synthetic field
-   final x a;
+   final UpdateThread a;
 
-   y(x var1) {
+   y(UpdateThread var1) {
       this.a = var1;
    }
 
-   public Void a() {
+   public Void a() throws IOException {
       if (MinecraftDownloader.a(this.a.a)) {
          return null;
       } else {
@@ -22,7 +23,8 @@ class y implements Callable {
    }
 
    // $FF: synthetic method
-   public Object call() {
+   @Override
+public Object call() throws IOException {
       return this.a();
    }
 }

@@ -1,7 +1,5 @@
 package a;
 
-import com.nowcomputing.*;
-import com.nowcomputing.uistuff.GamebandDialog;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +8,13 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.logging.Level;
 
+import com.nowcomputing.DownloadRunnable;
+import com.nowcomputing.GamebandConfig;
+import com.nowcomputing.Utils;
+import com.nowcomputing.X;
+import com.nowcomputing.randomInterfaceThatDoesNothing;
+import com.nowcomputing.uistuff.GamebandDialog;
+
 public class VoidLauncher extends AbstractMinecraftLauncher {
    private int c;
 
@@ -17,25 +22,30 @@ public class VoidLauncher extends AbstractMinecraftLauncher {
       super(var1);
    }
 
-   public String getDisplayName() {
+   @Override
+public String getDisplayName() {
       return "VoidLauncher";
    }
 
-   public String getSupportURL() {
+   @Override
+public String getSupportURL() {
       return "http://voidlauncherforums.voidswrath.com";
    }
 
-   public boolean setLaunchCMD() {
+   @Override
+public boolean setLaunchCMD() throws IOException {
       this.config.setProperty("launch_cmd", "java -jar VoidLauncher.jar --gameband_dir=void");
       return true;
    }
 
-   public boolean isJavaLaunchCommandValid() {
+   @Override
+public boolean isJavaLaunchCommandValid() {
       String[] var1 = this.buildJavaCommand();
       return var1 != null && var1[2].equals("VoidLauncher.jar");
    }
 
-   public void f() {
+   @Override
+public void f() {
       File var1 = new File(this.h());
       if (!var1.exists()) {
          var1.mkdirs();
@@ -96,13 +106,14 @@ public class VoidLauncher extends AbstractMinecraftLauncher {
 
    }
 
-   public boolean g() {
+   @Override
+public boolean g() {
       return (new File(this.h(), "VoidLauncher.jar")).exists();
    }
 
    // $FF: synthetic method
    static int a(VoidLauncher var0, long var1) {
-      return var0.c = (int)((long)var0.c + var1);
+      return var0.c = (int)(var0.c + var1);
    }
 
    // $FF: synthetic method

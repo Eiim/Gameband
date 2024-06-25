@@ -1,9 +1,10 @@
 package com.nowcomputing.uistuff.b;
 
-import com.nowcomputing.GamebandConfig;
-import com.nowcomputing.Image;
-import com.nowcomputing.uistuff.apackage.t;
 import javax.swing.border.Border;
+
+import com.nowcomputing.e.Transition;
+import com.nowcomputing.pixelfurnace.Animation;
+import com.nowcomputing.uistuff.apackage.t;
 
 public class c extends e {
    public c(t var1) {
@@ -13,16 +14,20 @@ public class c extends e {
       this.remove(this.f);
    }
 
-   public Image.g b() {
+   @Override
+public Animation b() {
       return null;
    }
 
-   public void d() {
+   @Override
+public void d() {
    }
 
-   public void e() {
+   @Override
+public void e() {
    }
 
-   public void a(GamebandConfig.d var1) {
+   @Override
+public void a(Transition var1) {
    }
 }

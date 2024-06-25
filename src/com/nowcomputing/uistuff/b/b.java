@@ -1,43 +1,48 @@
 package com.nowcomputing.uistuff.b;
 
-import com.nowcomputing.Image;
-import com.nowcomputing.TimeDisplay;
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.AnimatedImage;
-import com.nowcomputing.uistuff.GamebandFonts;
-import com.nowcomputing.uistuff.apackage.t;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
-public class b extends e implements ActionListener {
-   Image.BackupPanel a;
-   private AnimatedImage.g g;
+import com.nowcomputing.Image;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.TimeDisplay;
+import com.nowcomputing.a.duality;
+import com.nowcomputing.pixelfurnace.Animation;
+import com.nowcomputing.pixelfurnace.DateScreen;
+import com.nowcomputing.uistuff.GamebandColors;
+import com.nowcomputing.uistuff.GamebandFonts;
+import com.nowcomputing.uistuff.apackage.t;
 
-   public b(t var1, Image.BackupPanel var2) {
+public class b extends e implements ActionListener {
+   DateScreen a;
+   private com.nowcomputing.a.g g;
+
+   public b(t var1, DateScreen var2) {
       super(var1, LocaleUtil.getLocalizedString("DATE"));
       this.a = var2;
       this.h();
-      this.g = new AnimatedImage.g();
+      this.g = new com.nowcomputing.a.g();
       var2.a(this.g);
       JRadioButton var3 = new JRadioButton(TimeDisplay.normal.a());
       var3.setActionCommand(TimeDisplay.normal.a());
       var3.setOpaque(false);
       var3.setFont(GamebandFonts.u);
-      var3.setForeground(LocaleUtil.h.m);
+      var3.setForeground(GamebandColors.m);
       var3.setBounds(278, 6, 120, 20);
       this.add(var3);
       JRadioButton var4 = new JRadioButton(TimeDisplay.crackhead.a());
       var4.setActionCommand(TimeDisplay.crackhead.a());
       var4.setOpaque(false);
       var4.setFont(GamebandFonts.u);
-      var4.setForeground(LocaleUtil.h.m);
+      var4.setForeground(GamebandColors.m);
       var4.setBounds(278, 24, 120, 20);
       this.add(var4);
-      if (var2.e() == 2) {
+      if (var2.getDateFormat() == 2) {
          var4.setSelected(true);
       } else {
          var3.setSelected(true);
@@ -50,11 +55,13 @@ public class b extends e implements ActionListener {
       var4.addActionListener(this);
    }
 
-   public Image.g b() {
+   @Override
+public Animation b() {
       return this.a;
    }
 
-   public void d() {
+   @Override
+public void d() {
       SimpleDateFormat var1 = new SimpleDateFormat(this.a.b().b(), LocaleUtil.a());
       var1.setTimeZone(LocaleUtil.e());
       String var2 = var1.format(new Date());
@@ -63,15 +70,16 @@ public class b extends e implements ActionListener {
       this.a.h().b(var3);
       this.a.i().a(var3);
       this.a.i().b(new Image(20, 7));
-      this.g.a(var3, AnimatedImage.h.a, 3000, 20);
+      this.g.a(var3, duality.a, 3000, 20);
       super.d();
    }
 
-   public void actionPerformed(ActionEvent var1) {
+   @Override
+public void actionPerformed(ActionEvent var1) {
       if (TimeDisplay.normal.a().equals(var1.getActionCommand())) {
-         this.a.a(TimeDisplay.normal);
+         this.a.SetDateFormat(TimeDisplay.normal);
       } else if (TimeDisplay.crackhead.a().equals(var1.getActionCommand())) {
-         this.a.a(TimeDisplay.crackhead);
+         this.a.SetDateFormat(TimeDisplay.crackhead);
       }
 
       this.e.a(true);
@@ -83,9 +91,9 @@ public class b extends e implements ActionListener {
    }
 
    private Image a(String var1) {
-      int var2 = this.e.d().a() == 0 ? 3 : 0;
+      int var2 = this.e.d().getOrientation() == 0 ? 3 : 0;
       Image var3 = new Image(20, 7);
-      var3.ramImageInForcefully((Image) Image.FromFile(var1), var2, 1);
+      var3.ramImageInForcefully(Image.FromFile(var1), var2, 1);
       return var3;
    }
 }

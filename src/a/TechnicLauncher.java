@@ -1,13 +1,20 @@
 package a;
 
-import c.a.scanner.c;
-import c.a.scanner.a.b;
-import com.nowcomputing.*;
-import com.nowcomputing.uistuff.GamebandDialog;
 import java.io.File;
+import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
 import java.util.logging.Level;
+
+import com.nowcomputing.DownloadRunnable;
+import com.nowcomputing.GamebandConfig;
+import com.nowcomputing.Utils;
+import com.nowcomputing.latchedCommandRun;
+import com.nowcomputing.randomInterfaceThatDoesNothing;
+import com.nowcomputing.uistuff.GamebandDialog;
+
+import c.a.scanner.c;
+import c.a.scanner.a.b;
 
 public class TechnicLauncher extends AbstractMinecraftLauncher {
    private int c;
@@ -16,25 +23,30 @@ public class TechnicLauncher extends AbstractMinecraftLauncher {
       super(var1);
    }
 
-   public String getDisplayName() {
+   @Override
+public String getDisplayName() {
       return "TechnicLauncher";
    }
 
-   public String getSupportURL() {
+   @Override
+public String getSupportURL() {
       return "https://technicpack.zendesk.com/hc/en-us";
    }
 
-   public boolean setLaunchCMD() {
+   @Override
+public boolean setLaunchCMD() throws IOException {
       this.config.setProperty("launch_cmd", "java -Dawt.useSystemAAFontSettings=lcd -Djava.net.preferIPv4Stack=true -jar TechnicLauncher.jar -launcheronly");
       return true;
    }
 
-   public boolean isJavaLaunchCommandValid() {
+   @Override
+public boolean isJavaLaunchCommandValid() {
       String[] var1 = this.buildJavaCommand();
       return var1 != null && var1.length > 4 && var1[4].equals("TechnicLauncher.jar");
    }
 
-   public void f() {
+   @Override
+public void f() {
 //      try {
          String var1 = this.h();
          a(new File(var1, "technic"));
@@ -135,13 +147,14 @@ public class TechnicLauncher extends AbstractMinecraftLauncher {
       Utils.a(var0, var2.toString());
    }
 
-   public boolean g() {
+   @Override
+public boolean g() {
       return (new File(this.h(), "TechnicLauncher.jar")).exists();
    }
 
    // $FF: synthetic method
    static int a(TechnicLauncher var0, long var1) {
-      return var0.c = (int)((long)var0.c + var1);
+      return var0.c = (int)(var0.c + var1);
    }
 
    // $FF: synthetic method

@@ -5,32 +5,37 @@
 
 package a;
 
-import com.nowcomputing.GamebandConfig;
-
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
+
+import com.nowcomputing.GamebandConfig;
 
 public class MinecraftEduLauncher extends AbstractMinecraftLauncher {
     public MinecraftEduLauncher(GamebandConfig var1) {
         super(var1);
     }
 
-    public String h() {
+    @Override
+	public String h() {
         String var1 = super.h();
         return var1 + File.separatorChar + "minecraftedu";
     }
 
-    public String getDisplayName() {
+    @Override
+	public String getDisplayName() {
         return "MinecraftEdu";
     }
 
-    public String getSupportURL() {
+    @Override
+	public String getSupportURL() {
         return "";
     }
 
-    public String[] buildJavaCommand() {
+    @Override
+	public String[] buildJavaCommand() {
         String var1 = a(new File(this.h()));
         ArrayList var2 = new ArrayList();
         var2.add("java");
@@ -41,20 +46,24 @@ public class MinecraftEduLauncher extends AbstractMinecraftLauncher {
         return (String[])var2.toArray(new String[var2.size()]);
     }
 
-    public boolean setLaunchCMD() {
+    @Override
+	public boolean setLaunchCMD() throws IOException {
         this.config.setProperty("launch_cmd", "java -jar Launcher.jar");
         return true;
     }
 
-    public boolean isJavaLaunchCommandValid() {
+    @Override
+	public boolean isJavaLaunchCommandValid() {
         String[] var1 = this.buildJavaCommand();
         return var1 != null && var1[var1.length - 1].equals("Launcher.jar");
     }
 
-    public void f() {
+    @Override
+	public void f() {
     }
 
-    public boolean g() {
+    @Override
+	public boolean g() {
         return (new File(this.h(), "Launcher.jar")).exists();
     }
 

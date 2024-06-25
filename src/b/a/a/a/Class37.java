@@ -44,7 +44,7 @@ final class Class37 implements Class51 {
 
    void method173() {
       if (this.field90) {
-         if (this.field86.method179() != this.method179()) {
+         if (this.field86.a() != this.a()) {
             Iterator var1 = this.field85.iterator();
 
             while(var1.hasNext()) {
@@ -72,13 +72,13 @@ final class Class37 implements Class51 {
       }
    }
 
-   public int method176() {
+   public int c() {
       return this.field89;
    }
 
    public void method177(int var1) {
       if (this.field86 != null && this.field90) {
-         this.field89 = this.field86.method176();
+         this.field89 = this.field86.c();
       }
 
       if (this.field89 == 0) {
@@ -87,11 +87,11 @@ final class Class37 implements Class51 {
 
    }
 
-   public int method178() {
+   public int b() {
       return (this.field88 != null ? this.field88.getPreferredSize().width : 0) + this.field92;
    }
 
-   public int method179() {
+   public int a() {
       int var1 = 0;
 
       Class52 var3;
@@ -102,9 +102,9 @@ final class Class37 implements Class51 {
       return var1;
    }
 
-   public int method180(int var1, Class25 var2) {
+   public int a(int var1, Class25 var2) {
       int var3 = 0;
-      int var4 = this.method179();
+      int var4 = this.a();
       float var5 = (float)var4 / (float)var1;
 
       int var8;
@@ -132,7 +132,7 @@ final class Class37 implements Class51 {
          var8 = var2 + var7 + var5;
       }
 
-      int var10 = this.method179();
+      int var10 = this.a();
       if (var10 > 0) {
          int var11 = var6 - (var10 - 1) * var5;
          int var12 = var11 / var10;

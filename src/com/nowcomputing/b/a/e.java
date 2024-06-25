@@ -15,10 +15,10 @@ class e implements ChangeListener {
    @Override
 public void stateChanged(ChangeEvent var1) {
       JSpinner var2 = (JSpinner)var1.getSource();
-      CustomDialog.a(this.a).b((Integer)var2.getValue());
-      CustomDialog.b(this.a).setMaximum(CustomDialog.a(this.a).a() - 1);
-      CustomDialog.c(this.a).o().setEnabled(CustomDialog.a(this.a).a() > 1);
-      CustomDialog.c(this.a).n().setEnabled(CustomDialog.a(this.a).a() < 50);
-      CustomDialog.c(this.a).q().setEnabled(CustomDialog.a(this.a).a() < 50);
+      CustomDialog.a(this.a).removeFrame((Integer)var2.getValue());
+      CustomDialog.b(this.a).setMaximum(CustomDialog.a(this.a).getFrameCount() - 1);
+      CustomDialog.c(this.a).o().setEnabled(CustomDialog.a(this.a).getFrameCount() > 1);
+      CustomDialog.c(this.a).n().setEnabled(CustomDialog.a(this.a).getFrameCount() < 50);
+      CustomDialog.c(this.a).q().setEnabled(CustomDialog.a(this.a).getFrameCount() < 50);
    }
 }

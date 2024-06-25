@@ -234,7 +234,7 @@ public class p {
       this.d(true);
    }
 
-   public void a(File var1) {
+   public void a(File var1) throws IOException {
       this.e.a(var1);
       this.d(true);
    }

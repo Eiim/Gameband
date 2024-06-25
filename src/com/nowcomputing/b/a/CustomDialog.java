@@ -44,7 +44,6 @@ import javax.swing.border.EmptyBorder;
 import com.nowcomputing.AnimatedImage;
 import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.LockingUtil;
 import com.nowcomputing.uistuff.GamebandColors;
 import com.nowcomputing.uistuff.GamebandFonts;
 import com.nowcomputing.uistuff.L;
@@ -745,7 +744,7 @@ public void actionPerformed(ActionEvent var1) {
       } else if (this.d.size() == 0) {
          return true;
       } else {
-         LockingUtil.a.a.i var1 = this.u.h();
+         com.nowcomputing.b.a.a.i var1 = this.u.h();
          var1.actionPerformed((ActionEvent)null);
          return true;
       }
@@ -774,7 +773,7 @@ public void dispose() {
    }
 
    // $FF: synthetic method
-   static LockingUtil.a.a.a c(CustomDialog var0) {
+   static com.nowcomputing.b.a.a.a c(CustomDialog var0) {
       return var0.u;
    }
 

@@ -1,8 +1,5 @@
 package com.nowcomputing.uistuff.apackage;
 
-import com.nowcomputing.Image;
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.uistuff.y;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.LayoutManager;
@@ -12,24 +9,33 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class q extends JPanel implements Image.m {
+import com.nowcomputing.Image;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.pixelfurnace.Animation;
+import com.nowcomputing.pixelfurnace.UnusedInterface;
+import com.nowcomputing.uistuff.GamebandButton;
+import com.nowcomputing.uistuff.GamebandColors;
+import com.nowcomputing.uistuff.GamebandFonts;
+
+public class q extends JPanel implements UnusedInterface {
    private final com.nowcomputing.uistuff.n a;
    private BufferedImage b;
    private List c;
    private int d;
 
    public q(p var1) {
-      this.a = new com.nowcomputing.uistuff.n(LocaleUtil.n.a, LocaleUtil.n.a, 0);
+      this.a = new com.nowcomputing.uistuff.n(com.nowcomputing.uistuff.n.a, com.nowcomputing.uistuff.n.a, 0);
       this.c = new ArrayList();
       this.setBackground(Color.BLACK);
       boolean var2 = var1.g().getOrientation() == 1;
 
       try {
-         this.b = LocaleUtil.h.a(var2);
+         this.b = GamebandColors.a(var2);
       } catch (IOException var6) {
       }
 
@@ -54,22 +60,23 @@ public class q extends JPanel implements Image.m {
       var4.setBounds(0, 400, 800, 100);
       var4.setOpaque(false);
       var4.setBorder(new EmptyBorder(60, 0, 0, 0));
-      y var5 = new y(LocaleUtil.getLocalizedString("CLOSE_BUTTON"));
-      var5.setFont(LocaleUtil.q.n);
-      var5.setBackground(LocaleUtil.h.e());
-      var5.setForeground(LocaleUtil.h.f());
+      GamebandButton var5 = new GamebandButton(LocaleUtil.getLocalizedString("CLOSE_BUTTON"));
+      var5.setFont(GamebandFonts.n);
+      var5.setBackground(GamebandColors.e());
+      var5.setForeground(GamebandColors.f());
       var4.add(var5);
       var5.addActionListener(new s(this, var1));
    }
 
-   public void paintComponent(Graphics var1) {
+   @Override
+public void paintComponent(Graphics var1) {
       super.paintComponent(var1);
       var1.drawImage(this.b, 0, 0, this.getWidth(), this.getHeight(), (ImageObserver)null);
    }
 
    public void a(List var1) {
       if (this.d != 0) {
-         ((Image.g)this.c.get(this.d - 1)).g();
+         ((Animation)this.c.get(this.d - 1)).g();
          this.d = 0;
       }
 
@@ -78,15 +85,15 @@ public class q extends JPanel implements Image.m {
       Iterator var2 = this.c.iterator();
 
       while(var2.hasNext()) {
-         Image.g var3 = (Image.g)var2.next();
-         var3.a((Image.m)this);
+         Animation var3 = (Animation)var2.next();
+         var3.a(this);
       }
 
    }
 
    public void b() {
       if (this.d != 0) {
-         ((Image.g)this.c.get(this.d - 1)).g();
+         ((Animation)this.c.get(this.d - 1)).stopAnimation();
       }
 
       if (this.d == this.c.size()) {
@@ -94,19 +101,21 @@ public class q extends JPanel implements Image.m {
       }
 
       if (this.c.size() > 0) {
-         ((Image.g)this.c.get(this.d++)).f();
+         ((Animation)this.c.get(this.d++)).f();
       }
 
    }
 
-   public void a(Image var1) {
+   @Override
+public void a(Image var1) {
       if (var1 != null) {
          this.a.a(var1, 0, 0);
       }
 
    }
 
-   public void a() {
+   @Override
+public void a() {
       this.d = 0;
    }
 }

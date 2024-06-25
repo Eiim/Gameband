@@ -16,12 +16,12 @@ class Class26 implements Class41 {
       return this;
    }
 
-   public boolean method88(Component var1) {
+   public boolean method189(Component var1) {
       Class41 var2 = this.method90(var1);
       return var2 != null ? var2.method189(var1) : false;
    }
 
-   public int method89(Component var1, int var2) {
+   public int method190(Component var1, int var2) {
       Class41 var3 = this.method90(var1);
       return var3 != null ? var3.method190(var1, var2) : var2;
    }
