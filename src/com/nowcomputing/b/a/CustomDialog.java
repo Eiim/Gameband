@@ -1,12 +1,5 @@
 package com.nowcomputing.b.a;
 
-import com.nowcomputing.Image;
-import com.nowcomputing.LockingUtil;
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.AnimatedImage;
-import com.nowcomputing.uistuff.GamebandColors;
-import com.nowcomputing.uistuff.GamebandFonts;
-import com.nowcomputing.uistuff.L;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -25,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Deque;
+
 import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -46,6 +40,14 @@ import javax.swing.KeyStroke;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
+
+import com.nowcomputing.AnimatedImage;
+import com.nowcomputing.Image;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.LockingUtil;
+import com.nowcomputing.uistuff.GamebandColors;
+import com.nowcomputing.uistuff.GamebandFonts;
+import com.nowcomputing.uistuff.L;
 
 /**
  * Originally com.nowcomputing.b.a.a hence the confusion
@@ -604,34 +606,38 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
       this.a(var1, this.u.k());
    }
 
-   private void a(JMenu var1, com.nowcomputing.b.a.a.BackupPanel var2) {
+   private void a(JMenu var1, com.nowcomputing.b.a.a.DialogButton var2) {
       JMenuItem var3 = new JMenuItem(var2);
       var3.setIcon((Icon)null);
       var1.add(var3);
    }
 
-   public void mouseClicked(MouseEvent var1) {
+   @Override
+public void mouseClicked(MouseEvent var1) {
       if (this.l() != null) {
          this.l().mouseClicked(var1);
       }
 
    }
 
-   public void mousePressed(MouseEvent var1) {
+   @Override
+public void mousePressed(MouseEvent var1) {
       if (this.l() != null) {
          this.l().mousePressed(var1);
       }
 
    }
 
-   public void mouseReleased(MouseEvent var1) {
+   @Override
+public void mouseReleased(MouseEvent var1) {
       if (this.l() != null) {
          this.l().mouseReleased(var1);
       }
 
    }
 
-   public void mouseEntered(MouseEvent var1) {
+   @Override
+public void mouseEntered(MouseEvent var1) {
       if (this.l() != null) {
          this.setCursor(this.l().b());
          this.l().mouseEntered(var1);
@@ -639,28 +645,32 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
 
    }
 
-   public void mouseExited(MouseEvent var1) {
+   @Override
+public void mouseExited(MouseEvent var1) {
       if (this.l() != null) {
          this.l().mouseExited(var1);
       }
 
    }
 
-   public void mouseDragged(MouseEvent var1) {
+   @Override
+public void mouseDragged(MouseEvent var1) {
       if (this.l() != null) {
          this.l().mouseDragged(var1);
       }
 
    }
 
-   public void mouseMoved(MouseEvent var1) {
+   @Override
+public void mouseMoved(MouseEvent var1) {
       if (this.l() != null) {
          this.l().mouseMoved(var1);
       }
 
    }
 
-   public void actionPerformed(ActionEvent var1) {
+   @Override
+public void actionPerformed(ActionEvent var1) {
       this.a(this.h);
       if (++this.h == this.b.getFrameCount()) {
          this.h = 0;
@@ -741,7 +751,8 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
       }
    }
 
-   public void dispose() {
+   @Override
+public void dispose() {
       if (this.A()) {
          super.dispose();
       }

@@ -1,12 +1,7 @@
 package com.nowcomputing.uistuff.b;
 
-import com.nowcomputing.GamebandConfig;
-import com.nowcomputing.Image;
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.AnimatedImage;
-import com.nowcomputing.uistuff.GamebandFonts;
-import com.nowcomputing.uistuff.apackage.t;
 import java.awt.LayoutManager;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -14,7 +9,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public abstract class e extends JPanel implements Image.m {
+import com.nowcomputing.AnimatedImage;
+import com.nowcomputing.GamebandConfig;
+import com.nowcomputing.Image;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.e.Transition;
+import com.nowcomputing.uistuff.GamebandFonts;
+import com.nowcomputing.uistuff.apackage.t;
+
+public abstract class e extends JPanel implements com.nowcomputing.pixelfurnace.UnusedInterface {
    private boolean a = true;
    private boolean g;
    protected final com.nowcomputing.uistuff.n b;
@@ -91,14 +94,16 @@ public abstract class e extends JPanel implements Image.m {
 
    public abstract Image.g b();
 
-   public void a(Image var1) {
+   @Override
+public void a(Image var1) {
       if (var1 != null) {
          this.b.a(var1, 0, 0);
       }
 
    }
 
-   public void a() {
+   @Override
+public void a() {
       Image.f.l().execute(new i(this));
    }
 
@@ -133,7 +138,7 @@ public abstract class e extends JPanel implements Image.m {
       return this.f;
    }
 
-   public void a(GamebandConfig.d var1) {
+   public void a(Transition var1) {
       this.b().a(GamebandConfig.c.a(var1));
       this.b().b(GamebandConfig.c.b(var1));
    }

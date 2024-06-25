@@ -1,13 +1,5 @@
 package com.nowcomputing.uistuff.apackage;
 
-import com.nowcomputing.*;
-import com.nowcomputing.a.Direction;
-import com.nowcomputing.pixelfurnace.GBComms;
-import com.nowcomputing.pixelfurnace.Animation;
-import com.nowcomputing.uistuff.GamebandColors;
-import com.nowcomputing.uistuff.GamebandFonts;
-import com.nowcomputing.uistuff.dialogPanel;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -19,6 +11,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -28,10 +21,20 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
+import com.nowcomputing.AnimatedImage;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Utils;
+import com.nowcomputing.a.Direction;
+import com.nowcomputing.pixelfurnace.Animation;
+import com.nowcomputing.pixelfurnace.GBComms;
+import com.nowcomputing.uistuff.DialogPanel;
+import com.nowcomputing.uistuff.GamebandColors;
+import com.nowcomputing.uistuff.GamebandFonts;
+
 public class p {
    private static final Logger a = Logger.getLogger(Utils.class.getName());
    private GBComms b;
-   private dialogPanel c;
+   private DialogPanel c;
    private com.nowcomputing.uistuff.apackage.a d;
    private t e;
    private q f;
@@ -62,7 +65,7 @@ public class p {
 
    public void b() throws IOException {
       this.d().removeAll();
-      dialogPanel var1 = new dialogPanel();
+      DialogPanel var1 = new DialogPanel();
       var1.a(LocaleUtil.getLocalizedString("PIXELFURNACE"));
       var1.a(true);
       var1.b(true);
@@ -237,15 +240,15 @@ public class p {
    }
 
    public void i() {
-      LockingUtil.a var1 = new LockingUtil.a(this.i, (AnimatedImage)null, true);
+      com.nowcomputing.b.FrameDingus var1 = new com.nowcomputing.b.FrameDingus(this.i, (AnimatedImage)null, true);
       var1.a();
       this.e.a(var1.b());
       this.d(true);
    }
 
-   public void a(com.nowcomputing.uistuff.BackupPanel.e var1) {
+   public void a(com.nowcomputing.uistuff.b.e var1) {
       var1.e();
-      LockingUtil.a var2 = new LockingUtil.a(this.i, var1.c(), true);
+      com.nowcomputing.b.FrameDingus var2 = new com.nowcomputing.b.FrameDingus(this.i, var1.c(), true);
       var2.a();
       var1.a(var2.b());
       var1.d();

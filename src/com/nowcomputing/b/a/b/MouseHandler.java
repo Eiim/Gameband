@@ -10,7 +10,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.Action;
 import javax.swing.KeyStroke;
 
-public class mouseHandler extends a {
+public class MouseHandler extends a {
    private boolean b;
    private com.nowcomputing.b.a.p c;
    private int d;
@@ -22,7 +22,7 @@ public class mouseHandler extends a {
    private c j = new c(this, 40);
    private c k = new c(this, 10);
 
-   mouseHandler(com.nowcomputing.b.a.CustomDialog var1) {
+   MouseHandler(com.nowcomputing.b.a.CustomDialog var1) {
       super(var1);
    }
 

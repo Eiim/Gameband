@@ -1,29 +1,29 @@
 package com.nowcomputing.uistuff.b;
 
-import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.Image;
-import com.nowcomputing.Image.o;
 import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.AnimatedImage;
+import com.nowcomputing.a.duality;
+import com.nowcomputing.pixelfurnace.Animation;
+import com.nowcomputing.pixelfurnace.ImageAnimation;
 import com.nowcomputing.uistuff.apackage.t;
 
 public class m extends e {
-   private o a;
-   private AnimatedImage.g g;
+   private ImageAnimation a;
+   private com.nowcomputing.a.g g;
 
-   public m(t var1, o var2, boolean var3) {
+   public m(t var1, ImageAnimation var2, boolean var3) {
       super(var1, LocaleUtil.getLocalizedString("ANIMATION"));
       this.a = var2;
-      this.g = new AnimatedImage.g();
+      this.g = new com.nowcomputing.a.g();
       this.a.a(this.g);
-      this.a(GamebandConfig.d.a);
+      this.a(com.nowcomputing.e.Transition.none);
       this.a.h().b(new Image(20, 7));
       this.a.i().b(new Image(20, 7));
-      this.g.a(var2.b(), AnimatedImage.h.a, 0, 20);
+      this.g.a(var2.b(), duality.a, 0, 20);
       this.f();
    }
 
-   public Image.g b() {
+   public Animation b() {
       return this.a;
    }
 }

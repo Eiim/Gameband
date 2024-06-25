@@ -25,7 +25,7 @@ public class f extends JToolBar implements ActionListener {
       this.setOpaque(true);
       d var2 = new d(var1, true);
       this.a(new e(var1), "/resources/select.png", false, LocaleUtil.getLocalizedString("SELECT_TOOL"));
-      this.a(new mouseHandler(var1), "/resources/move.png", false, LocaleUtil.getLocalizedString("MOVE_TOOL"));
+      this.a(new MouseHandler(var1), "/resources/move.png", false, LocaleUtil.getLocalizedString("MOVE_TOOL"));
       this.a(var2, "/resources/pencil.png", true, LocaleUtil.getLocalizedString("PENCIL_TOOL"));
       this.a(new d(var1, false), "/resources/eraser.png", false, LocaleUtil.getLocalizedString("ERASER_TOOL"));
       var1.a((a)var2);

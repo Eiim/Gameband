@@ -75,13 +75,13 @@ protected Component b() {
       this.a.setOpaque(false);
       this.k.setText(LocaleUtil.getLocalizedString("BACKUP_PROGRESS_HEADING"));
       this.k.setAlignmentX(0.5F);
-      am.a(this.a, this.k, q.j, Color.white);
+      am.a(this.a, this.k, GamebandFonts.j, Color.white);
       this.a.add(Box.createVerticalStrut(4));
       this.l.setText(LocaleUtil.getLocalizedString("BACKUP_PROGRESS_1"));
       this.l.setAlignmentX(0.5F);
-      am.a(this.a, this.l, LocaleUtil.q.k, Color.white);
+      am.a(this.a, this.l, GamebandFonts.k, Color.white);
       this.m.setAlignmentX(0.5F);
-      am.a(this.a, this.m, LocaleUtil.q.k, Color.white);
+      am.a(this.a, this.m, GamebandFonts.k, Color.white);
       this.m.setVisible(false);
       this.a.add(Box.createVerticalStrut(10));
       this.n.setBorder(BorderFactory.createEmptyBorder());
@@ -89,13 +89,13 @@ protected Component b() {
       this.n.setMinimumSize(new Dimension(534, 24));
       this.n.setMaximumSize(new Dimension(534, 24));
       this.n.setIndeterminate(true);
-      am.a(this.a, this.n, LocaleUtil.q.p, LocaleUtil.h.a());
+      am.a(this.a, this.n, GamebandFonts.p, GamebandColors.a());
       this.n.setVisible(true);
       this.a.add(Box.createVerticalStrut(10));
       this.o = new JPanel();
       this.o.setOpaque(false);
       this.a.add(this.o);
-      this.p.setBackground(LocaleUtil.h.k);
+      this.p.setBackground(GamebandColors.k);
       this.p.setText(LocaleUtil.getLocalizedString("BACKUP_CANCEL_BUTTON"));
       this.p.addActionListener(new BackupButtonListener(this));
       this.o.setVisible(true);
@@ -137,7 +137,7 @@ protected Component b() {
 
       try {
          if (this.j != null) {
-            this.j.d();
+            this.j.BackupLinkListener();
          }
 
          this.d();

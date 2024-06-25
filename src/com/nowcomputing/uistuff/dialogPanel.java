@@ -46,12 +46,12 @@ public class DialogPanel extends JPanel {
       this.k = var1;
    }
 
-   public void a() throws IOException {
+   public void a() {
       this.add(this.g(), "North");
       this.add(this.b(), "Center");
    }
 
-   protected Component g() throws IOException {
+   protected Component g() {
       this.c = new JPanel();
       this.c.setBackground(GamebandColors.b);
       this.c.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, GamebandColors.a(800, 1)));
@@ -75,19 +75,19 @@ public class DialogPanel extends JPanel {
       return var1;
    }
 
-   private Component m() throws IOException {
+   private Component m() {
       JPanel var1 = new JPanel();
       var1.setPreferredSize(new Dimension(180, 52));
       var1.setLayout(new BoxLayout(var1, 0));
       var1.setOpaque(false);
       if (this.i()) {
-//         try {
+         try {
             this.e = new UnknownButton(new ImageIcon(this.getClass().getResource("/resources/home.png")));
             this.e.setPressedIcon(new ImageIcon(GamebandColors.getImage("/resources/home_pressed.png")));
             this.e.setToolTipText(LocaleUtil.getLocalizedString("GOTO_MAIN_MENU"));
-//         } catch (IOException var3) {
-//            this.e = new JButton("Home");
-//         }
+         } catch (IOException var3) {
+            this.e = new JButton("Home");
+         }
 
          var1.add(this.e);
       }
@@ -96,7 +96,7 @@ public class DialogPanel extends JPanel {
       return var1;
    }
 
-   private Component n() throws IOException {
+   private Component n() {
       JPanel var1 = new JPanel();
       var1.setPreferredSize(new Dimension(180, 52));
       var1.setLayout(new BoxLayout(var1, 0));
@@ -107,13 +107,13 @@ public class DialogPanel extends JPanel {
       }
 
       if (this.j()) {
-//         try {
+         try {
             this.f = new UnknownButton(new ImageIcon(this.getClass().getResource("/resources/eject.png")));
             this.f.setPressedIcon(new ImageIcon(GamebandColors.getImage("/resources/eject_pressed.png")));
             this.f.setToolTipText(LocaleUtil.getLocalizedString("EJECT"));
-//         } catch (IOException var3) {
-//            this.f = new JButton("Eject");
-//         }
+         } catch (IOException var3) {
+            this.f = new JButton("Eject");
+         }
 
          var1.add(this.f);
       }
@@ -121,14 +121,14 @@ public class DialogPanel extends JPanel {
       return var1;
    }
 
-   private void a(JPanel var1) throws IOException {
-//      try {
+   private void a(JPanel var1) {
+      try {
          this.g = new UnknownButton(new ImageIcon(this.getClass().getResource("/resources/help.png")));
          this.g.setPressedIcon(new ImageIcon(GamebandColors.getImage("/resources/help_pressed.png")));
          this.g.setToolTipText(LocaleUtil.getLocalizedString("HELP"));
-//      } catch (IOException var3) {
-//         this.g = new JButton("Help");
-//      }
+      } catch (IOException var3) {
+         this.g = new JButton("Help");
+      }
 
       this.g.addActionListener(new A(this));
       var1.add(this.g);
