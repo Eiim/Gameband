@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
 
 import javax.swing.JFrame;
 
-import com.codeminders.hidapi.ClassPathLibraryLoader;
+import com.codeminders.hidapi2.ClassPathLibraryLoader;
 import com.nowcomputing.PathUtils;
 
 public class ai extends JFrame implements as {

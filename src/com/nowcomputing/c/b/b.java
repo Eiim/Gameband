@@ -1,7 +1,6 @@
 package com.nowcomputing.c.b;
 
-import com.nowcomputing.randomInterface;
-
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -58,7 +57,7 @@ public class b {
       }
    }
 
-   void a() {
+   void a() throws IOException {
       this.a.a(false);
       com.nowcomputing.c.c.b.a(this.c);
       com.nowcomputing.c.c.b.a(this.h);
@@ -79,7 +78,7 @@ public class b {
       this.b.b();
    }
 
-   public boolean a(InputStream var1, OutputStream var2, long var3) {
+   public boolean a(InputStream var1, OutputStream var2, long var3) throws IOException {
       this.b.a(var1);
       this.a.a(var2);
       this.a();
@@ -163,12 +162,12 @@ public class b {
                }
             }
 
-            if ((long)var6 >= var10 || var6 >= this.p) {
+            if (var6 >= var10 || var6 >= this.p) {
                return false;
             }
 
             this.a.a(var6, var14);
-            var10 += (long)var14;
+            var10 += var14;
             var12 = this.a.b(0);
          }
       }

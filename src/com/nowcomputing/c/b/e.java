@@ -1,6 +1,6 @@
 package com.nowcomputing.c.b;
 
-import com.nowcomputing.randomInterface;
+import java.io.IOException;
 
 class e {
    short[] a;
@@ -16,7 +16,7 @@ class e {
       com.nowcomputing.c.c.b.a(this.a);
    }
 
-   public byte a(com.nowcomputing.c.c.b var1) {
+   public byte a(com.nowcomputing.c.c.b var1) throws IOException {
       int var2 = 1;
 
       do {
@@ -26,7 +26,7 @@ class e {
       return (byte)var2;
    }
 
-   public byte a(com.nowcomputing.c.c.b var1, byte var2) {
+   public byte a(com.nowcomputing.c.c.b var1, byte var2) throws IOException {
       int var3 = 1;
 
       do {

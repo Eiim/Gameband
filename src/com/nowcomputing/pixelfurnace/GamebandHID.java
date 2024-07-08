@@ -1,11 +1,12 @@
 package com.nowcomputing.pixelfurnace;
 
+import java.io.IOException;
+
 import com.codeminders.hidapi.HIDDevice;
 import com.codeminders.hidapi.HIDDeviceInfo;
 import com.codeminders.hidapi.HIDDeviceNotFoundException;
 import com.codeminders.hidapi.HIDManager;
 import com.nowcomputing.Retrier;
-import java.io.IOException;
 
 public class GamebandHID {
    private HIDManager hidManager;
@@ -16,7 +17,7 @@ public class GamebandHID {
          this.gamebandHIDDevice.close();
       }
 
-      this.hidManager = HIDManager.getInstance();
+      this.hidManager = HIDManager.getInstance(); // TODO: check if this needs replaced with the custom HIDManager
 
       try {
          this.gamebandHIDDevice = (HIDDevice)(new Retrier(3, 100)).a(new HandyDandyGamebandOpenyThingy(this));
@@ -226,7 +227,7 @@ public class GamebandHID {
    }
 
    static int CeilDeezNuts(int var0, int var1) {
-      return (int)(Math.ceil((double)var0 / (double)var1) * (double)var1);
+      return (int)(Math.ceil((double)var0 / (double)var1) * var1);
    }
 
    // $FF: synthetic method

@@ -417,7 +417,7 @@ public void actionPerformed(ActionEvent var1) {
    }
 
    public void a(a.AbstractMinecraftLauncher var1) {
-      if (var1 instanceof a.j) {
+      if (var1 instanceof a.OtherLauncher) {
          GamebandPopup.PopupDialog(this, (new String[]{LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TEXT1"), LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TEXT2")}), LocaleUtil.getLocalizedString("OTHER_LAUNCHER_TITLE"), "www.nowcomputing.com/contact");
          this.s.setSelectedIndex(0);
       } else {

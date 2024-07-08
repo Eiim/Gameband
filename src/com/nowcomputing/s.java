@@ -50,7 +50,7 @@ public class s extends Class1 {
 
    }
 
-   private HttpURLConnection c(String var1) {
+   private HttpURLConnection c(String var1) throws IOException {
       logger.log(Level.FINE, "Getting api URL " + var1);
       URL var2 = new URL(var1);
       HttpURLConnection var3 = (HttpURLConnection)var2.openConnection();
@@ -78,7 +78,10 @@ public class s extends Class1 {
          while((var6 = var3.readLine()) != null) {
             var2.append(var6);
          }
-      } finally {
+      } catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
          if (var3 != null) {
             try {
                var3.close();
@@ -128,7 +131,7 @@ public class s extends Class1 {
    }
 
    @Override
-protected InputStream method10(String var1) {
+protected InputStream method10(String var1) throws IOException {
       logger.log(Level.FINE, "Getting URL " + this.i + var1);
       URL var2 = new URL(this.i + var1);
       HttpURLConnection var3 = (HttpURLConnection)var2.openConnection();

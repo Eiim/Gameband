@@ -1,6 +1,6 @@
 package com.nowcomputing.c.b;
 
-import com.nowcomputing.randomInterface;
+import java.io.IOException;
 
 class c {
    short[] a;
@@ -40,7 +40,7 @@ class c {
       this.d.a();
    }
 
-   public int a(com.nowcomputing.c.c.b var1, int var2) {
+   public int a(com.nowcomputing.c.c.b var1, int var2) throws IOException {
       if (var1.a(this.a, 0) == 0) {
          return this.b[var2].a(var1);
       } else {

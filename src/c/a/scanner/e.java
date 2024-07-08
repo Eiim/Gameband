@@ -1,11 +1,12 @@
 package c.a.scanner;
 
+import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 import java.util.Map;
 
 public class e {
-   public static void a(Object var0, Writer var1) {
+   public static void a(Object var0, Writer var1) throws IOException {
       if (var0 == null) {
          var1.write("null");
       } else if (var0 instanceof String) {

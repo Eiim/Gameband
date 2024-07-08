@@ -1,5 +1,6 @@
 package com.nowcomputing.c.c;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 public class b {
@@ -15,7 +16,7 @@ public class b {
       this.c = null;
    }
 
-   public final void b() {
+   public final void b() throws IOException {
       this.b = 0;
       this.a = -1;
 
@@ -25,7 +26,7 @@ public class b {
 
    }
 
-   public final int a(int var1) {
+   public final int a(int var1) throws IOException {
       int var2 = 0;
 
       for(int var3 = var1; var3 != 0; --var3) {
@@ -33,7 +34,7 @@ public class b {
          int var4 = this.b - this.a >>> 31;
          this.b -= this.a & var4 - 1;
          var2 = var2 << 1 | 1 - var4;
-         if ((this.a & -16777216) == 0) {
+         if ((this.a & 0xFF000000) == 0) {
             this.b = this.b << 8 | this.c.read();
             this.a <<= 8;
          }
@@ -42,13 +43,13 @@ public class b {
       return var2;
    }
 
-   public int a(short[] var1, int var2) {
+   public int a(short[] var1, int var2) throws IOException {
       short var3 = var1[var2];
       int var4 = (this.a >>> 11) * var3;
       if ((this.b ^ Integer.MIN_VALUE) < (var4 ^ Integer.MIN_VALUE)) {
          this.a = var4;
          var1[var2] = (short)(var3 + (2048 - var3 >>> 5));
-         if ((this.a & -16777216) == 0) {
+         if ((this.a & 0xFF000000) == 0) {
             this.b = this.b << 8 | this.c.read();
             this.a <<= 8;
          }
@@ -58,7 +59,7 @@ public class b {
          this.a -= var4;
          this.b -= var4;
          var1[var2] = (short)(var3 - (var3 >>> 5));
-         if ((this.a & -16777216) == 0) {
+         if ((this.a & 0xFF000000) == 0) {
             this.b = this.b << 8 | this.c.read();
             this.a <<= 8;
          }

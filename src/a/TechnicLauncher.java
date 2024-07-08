@@ -45,7 +45,7 @@ public boolean isJavaLaunchCommandValid() {
 
    @Override
 public void f() {
-//      try {
+      try {
          String var1 = this.h();
          a(new File(var1, "technic"));
          this.a(new File(var1), "TechnicLauncher.jar");
@@ -75,9 +75,9 @@ public void f() {
                }
             }
          }
-//      } catch (IOException e) {
-//         logger.log(Level.WARNING, "Error updating TechnicLauncher", e);
-//      }
+      } catch (IOException e) {
+         logger.log(Level.WARNING, "Error updating TechnicLauncher", e);
+      }
 
    }
 

@@ -1,10 +1,5 @@
 package com.nowcomputing;
 
-import com.codeminders.hidapi.ClassPathLibraryLoader;
-import com.nowcomputing.pixelfurnace.GBComms;
-import com.nowcomputing.uistuff.ak;
-import com.nowcomputing.uistuff.am;
-import com.nowcomputing.uistuff.MainMenu;
 import java.awt.Cursor;
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +7,19 @@ import java.util.Iterator;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import a.*;
+
+import com.codeminders.hidapi2.ClassPathLibraryLoader;
+import com.nowcomputing.pixelfurnace.GBComms;
+import com.nowcomputing.uistuff.MainMenu;
+import com.nowcomputing.uistuff.ak;
+import com.nowcomputing.uistuff.am;
+
+import a.AbstractMinecraftLauncher;
+import a.FTBLauncher;
+import a.MinecraftEduLauncher;
+import a.MinecraftLauncher;
+import a.TechnicLauncher;
+import a.VoidLauncher;
 
 public class Main {
    private static final Logger logger;
