@@ -5,18 +5,20 @@
 
 package a;
 
-import com.nowcomputing.PathUtils;
-import com.nowcomputing.Main;
-import com.nowcomputing.GamebandConfig;
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.latchedCommandRun;
-import com.nowcomputing.uistuff.am;
 import java.io.File;
 import java.util.logging.Level;
+
 import javax.swing.JFrame;
 
-public class c extends latchedCommandRun {
-    public c(GamebandConfig var1) {
+import com.nowcomputing.GamebandConfig;
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Main;
+import com.nowcomputing.PathUtils;
+import com.nowcomputing.latchedCommandRun;
+import com.nowcomputing.uistuff.am;
+
+public class LauncherStarter extends latchedCommandRun {
+    public LauncherStarter(GamebandConfig var1) {
         super(var1);
         File var2 = PathUtils.getMinecraftPath();
         if (!var2.exists()) {
@@ -25,9 +27,10 @@ public class c extends latchedCommandRun {
 
     }
 
-    public boolean d() {
+    @Override
+	public boolean d() {
         try {
-            FTBLauncher.e var1 = Main.c();
+            AbstractMinecraftLauncher var1 = Main.c();
             var1.f();
             var1.i();
             return true;

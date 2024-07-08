@@ -76,7 +76,7 @@ public void paintComponent(Graphics var1) {
 
    public void a(List var1) {
       if (this.d != 0) {
-         ((Animation)this.c.get(this.d - 1)).g();
+         ((Animation)this.c.get(this.d - 1)).stopAnimation();
          this.d = 0;
       }
 

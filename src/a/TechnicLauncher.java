@@ -2,7 +2,6 @@ package a;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Writer;
 import java.net.URL;
 import java.util.logging.Level;
 
@@ -13,7 +12,6 @@ import com.nowcomputing.latchedCommandRun;
 import com.nowcomputing.randomInterfaceThatDoesNothing;
 import com.nowcomputing.uistuff.GamebandDialog;
 
-import c.a.scanner.c;
 import c.a.scanner.a.b;
 
 public class TechnicLauncher extends AbstractMinecraftLauncher {
@@ -96,8 +94,8 @@ public void f() {
          try {
             String var5 = Utils.getAllFromInputStream(Utils.HttpGet("http://api.technicpack.net/launcher/version/stable4"));
             b var6 = new b();
-            c var7 = (c)var6.a(var5);
-            c var8 = (c)var7.get("url");
+            c.a.scanner.c var7 = (c.a.scanner.c)var6.a(var5);
+            c.a.scanner.c var8 = (c.a.scanner.c)var7.get("url");
             String var9 = (String)var8.get("jar");
             this.c = 0;
             DownloadRunnable var10 = new DownloadRunnable(new URL(var9), var3, (randomInterfaceThatDoesNothing)null);
@@ -121,7 +119,7 @@ public void f() {
          try {
             String var2 = Utils.readFileLazy(var1);
             b var3 = new b();
-            c var4 = (c)var3.a(var2);
+            c.a.scanner.c var4 = (c.a.scanner.c)var3.a(var2);
             String var5 = (String)var4.get("directory");
             if (!"portable".equals(var5)) {
                a(var1, var4);
@@ -136,14 +134,14 @@ public void f() {
    }
 
    private static void b(File var0) {
-      c var1 = new c();
+	   c.a.scanner.c var1 = new c.a.scanner.c();
       a(var0, var1);
    }
 
-   private static void a(File var0, c var1) {
+   private static void a(File var0, c.a.scanner.c var1) {
       var1.put("directory", "portable");
       c.a.scanner.f var2 = new c.a.scanner.f();
-      var1.a((Writer)var2);
+      var1.a(var2);
       Utils.a(var0, var2.toString());
    }
 

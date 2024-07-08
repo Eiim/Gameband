@@ -36,23 +36,23 @@ class Class52 extends Class46 {
       }
    }
 
-   public void method227(List var1) {
+   public void method142(List var1) {
       this.field113 = var1;
       if (this.field112 != null) {
-         this.field112.method227(this.field113);
+         this.field112.method142(this.field113);
       }
 
    }
 
-   public boolean method228() {
+   public boolean method144() {
       return this.field111 == null;
    }
 
-   public boolean method229() {
+   public boolean method145() {
       return this.field112 == null;
    }
 
-   public int method230() {
+   public int method143() {
       int var1 = 1;
 
       for(Class52 var2 = this.field112; var2 != null; var2 = var2.field112) {

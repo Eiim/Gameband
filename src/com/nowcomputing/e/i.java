@@ -1,11 +1,11 @@
 package com.nowcomputing.e;
 
-import com.nowcomputing.Image;
-
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import com.nowcomputing.Image;
 
 public class i extends imageTransition {
    private List h;
@@ -16,7 +16,8 @@ public class i extends imageTransition {
       this.speed = 2;
    }
 
-   protected synchronized void disable() {
+   @Override
+protected synchronized void disable() {
       this.i = new Image(20, 7);
       if (this.startImage != null) {
          this.i.ramImageIn(this.startImage, 20, 7, 0, 0);
@@ -33,10 +34,11 @@ public class i extends imageTransition {
       super.disable();
    }
 
-   public synchronized Image e() {
+   @Override
+public synchronized Image e() {
       this.b(8);
       if (this.h.size() == 0) {
-         this.a(true);
+         this.setBool(true);
       }
 
       return this.i;
@@ -53,9 +55,10 @@ public class i extends imageTransition {
 
    }
 
-   public boolean isEmpty() {
+   @Override
+public boolean isEmpty() {
       if (this.endImage != null) {
-         return !this.g();
+         return !this.getBool();
       } else {
          return false;
       }

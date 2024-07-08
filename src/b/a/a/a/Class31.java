@@ -1,6 +1,7 @@
 package b.a.a.a;
 
 import java.util.List;
+
 import javax.swing.JComponent;
 
 class Class31 extends Class46 {
@@ -8,18 +9,22 @@ class Class31 extends Class46 {
       super(var1);
    }
 
-   public void method103(List var1) {
+   @Override
+public void method142(List var1) {
    }
 
-   public boolean method104() {
+   @Override
+public boolean method144() {
       return true;
    }
 
-   public boolean method105() {
+   @Override
+public boolean method145() {
       return true;
    }
 
-   public int method106() {
+   @Override
+public int method143() {
       return 1;
    }
 }

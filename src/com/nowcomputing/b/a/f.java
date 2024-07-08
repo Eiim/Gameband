@@ -15,6 +15,6 @@ class f implements ChangeListener {
    @Override
 public void stateChanged(ChangeEvent var1) {
       JSpinner var2 = (JSpinner)var1.getSource();
-      CustomDialog.a(this.a).c((Integer)var2.getValue());
+      CustomDialog.a(this.a).setInt((Integer)var2.getValue());
    }
 }

@@ -1,12 +1,11 @@
 package com.nowcomputing.b.a;
 
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.uistuff.GamebandColors;
-
 import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JToolBar;
+
+import com.nowcomputing.uistuff.GamebandColors;
 
 public class l extends JToolBar {
    private CustomDialog a;
@@ -14,7 +13,7 @@ public class l extends JToolBar {
    public l(CustomDialog var1) {
       this.a = var1;
       this.setBackground(GamebandColors.e);
-      this.setBorder(BorderFactory.createLineBorder(LocaleUtil.h.e, 1));
+      this.setBorder(BorderFactory.createLineBorder(GamebandColors.e, 1));
       this.setOrientation(0);
       this.setFloatable(false);
       this.setRollover(false);

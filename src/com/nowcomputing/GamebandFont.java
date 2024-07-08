@@ -7,6 +7,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
+import com.nowcomputing.uistuff.GamebandFonts;
+
 public class GamebandFont {
    private static Font a;
    private static FontMetrics b;
@@ -34,7 +36,7 @@ public class GamebandFont {
 
       int var3 = 1;
       if (b != null) {
-         var3 = (int)Math.floor((double)b.getDescent());
+         var3 = (int)Math.floor(b.getDescent());
       }
 
       BufferedImage var4 = new BufferedImage(var2, var1, 2);
@@ -49,7 +51,7 @@ public class GamebandFont {
    }
 
    static {
-      LocaleUtil.q.a("/resources/gameband.ttf");
+      GamebandFonts.a("/resources/gameband.ttf");
       a = a(8);
    }
 }

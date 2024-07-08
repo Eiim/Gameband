@@ -8,9 +8,11 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.logging.Level;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -22,7 +24,7 @@ public class s extends Class1 {
    private String i;
 
    public s() {
-      super(PathUtils.setMinecraftPath());
+      super(PathUtils.getGamebandPath());
       this.a();
    }
 
@@ -125,7 +127,8 @@ public class s extends Class1 {
       return var3.getLength() != 0 ? (Element)var3.item(0) : null;
    }
 
-   protected InputStream method10(String var1) {
+   @Override
+protected InputStream method10(String var1) {
       logger.log(Level.FINE, "Getting URL " + this.i + var1);
       URL var2 = new URL(this.i + var1);
       HttpURLConnection var3 = (HttpURLConnection)var2.openConnection();

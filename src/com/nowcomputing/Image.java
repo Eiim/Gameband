@@ -50,7 +50,7 @@ public class Image {
    }
 
    public void setImage(Image var1) {
-      this.ramImageInForcefully((Image)var1, 0, 0);
+      this.ramImageInForcefully(var1, 0, 0);
    }
 
    public void ramImageInForcefully(Image image, int var2, int var3) {
@@ -96,7 +96,7 @@ public class Image {
    }
 
    public static Image FromFile(String path) {
-      return FromBufferedImage(o.b(path));
+      return FromBufferedImage(GamebandFont.b(path));
    }
 
    public static Image FromBufferedImage(BufferedImage image) {

@@ -3,7 +3,6 @@ package a;
 import java.awt.Component;
 import java.io.File;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.Iterator;
 import java.util.logging.Level;
 
@@ -16,8 +15,6 @@ import com.nowcomputing.Utils;
 import com.nowcomputing.WindowsVersionComparator;
 import com.nowcomputing.uistuff.GamebandDialog;
 import com.nowcomputing.uistuff.GamebandPopup;
-
-import c.a.scanner.c;
 
 public class MinecraftLauncher extends AbstractMinecraftLauncher {
    public MinecraftLauncher(GamebandConfig var1) {
@@ -136,13 +133,13 @@ public void i() throws IOException {
          File var3 = new File(PathUtils.getMinecraftPath(), "launcher_profiles.json");
          String var4 = Utils.readFile(var3);
          c.a.scanner.a.b var5 = new c.a.scanner.a.b();
-         c var6 = (c)var5.a(var4);
+         c.a.scanner.c var6 = (c.a.scanner.c)var5.a(var4);
          boolean var7 = false;
-         c var8 = (c)var6.get("profiles");
+         c.a.scanner.c var8 = (c.a.scanner.c)var6.get("profiles");
          Iterator var9 = var8.values().iterator();
 
          while(true) {
-            c var11;
+        	c.a.scanner.c var11;
             String var13;
             String var14;
             do {
@@ -150,7 +147,7 @@ public void i() throws IOException {
                   if (!var9.hasNext()) {
                      if (var7) {
                         c.a.scanner.f var18 = new c.a.scanner.f();
-                        var6.a((Writer)var18);
+                        var6.a(var18);
                         Utils.a(var3, var18.toString());
                      }
 
@@ -158,7 +155,7 @@ public void i() throws IOException {
                   }
 
                   Object var10 = var9.next();
-                  var11 = (c)var10;
+                  var11 = (c.a.scanner.c)var10;
                   String var12 = (String)var11.get("name");
                } while(!var11.containsKey("gameDir"));
 

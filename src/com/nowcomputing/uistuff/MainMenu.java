@@ -16,7 +16,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import com.nowcomputing.GamebandConfig;
-import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.Main;
 import com.nowcomputing.Utils;
@@ -256,7 +255,7 @@ public void b() {
    }
 
    // $FF: synthetic method
-   static Image.f e(MainMenu var0) {
+   static GBComms e(MainMenu var0) {
       return var0.g;
    }
 

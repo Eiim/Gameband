@@ -3,6 +3,7 @@ package b.a.a.a;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -21,33 +22,38 @@ final class Class34 extends Class32 implements Class7 {
       this.field75 = var1;
    }
 
-   public Class7 method146(JComponent var1, int var2) {
+   @Override
+public Class7 method24(JComponent var1, int var2) {
       this.method109(var1);
       this.field72.method172(var1, var2);
       return this;
    }
 
-   public Class7 method147(JComponent... var1) {
+   @Override
+public Class7 method23(JComponent... var1) {
       JComponent[] var2 = var1;
       int var3 = var1.length;
 
       for(int var4 = 0; var4 < var3; ++var4) {
          JComponent var5 = var2[var4];
-         this.method146(var5, 1);
+         this.method24(var5, 1);
       }
 
       return this;
    }
 
-   public Class7 a() {
-      return this.method149(1);
+   @Override
+public Class7 method25() {
+      return this.method26(1);
    }
 
-   public Class7 method149(int var1) {
-      return this.method146((JComponent)null, var1);
+   @Override
+public Class7 method26(int var1) {
+      return this.method24((JComponent)null, var1);
    }
 
-   public Class7 method150() {
+   @Override
+public Class7 method65() {
       return this.method151((JLabel)null, 0);
    }
 
@@ -74,7 +80,7 @@ final class Class34 extends Class32 implements Class7 {
    }
 
    int method153(int var1) {
-      return this.method168(var1).method223();
+      return this.method168(var1).c();
    }
 
    void method154(Class16 var1) {
@@ -91,7 +97,7 @@ final class Class34 extends Class32 implements Class7 {
    }
 
    int method155(int var1) {
-      return this.method168(var1).method221();
+      return this.method168(var1).b();
    }
 
    int method156() {
@@ -122,11 +128,11 @@ final class Class34 extends Class32 implements Class7 {
    }
 
    int method158(int var1) {
-      return this.method168(var1).method222();
+      return this.method168(var1).a();
    }
 
    int method159(int var1, int var2, Class25 var3) {
-      return this.method168(var1).method224(var2, var3);
+      return this.method168(var1).a(var2, var3);
    }
 
    int method160() {
@@ -177,7 +183,8 @@ final class Class34 extends Class32 implements Class7 {
       return this.field76.isEmpty() ? null : ((Class37)this.field76.get(0)).method175();
    }
 
-   List b() {
+   @Override
+List method138() {
       return this.field77;
    }
 
@@ -197,7 +204,8 @@ final class Class34 extends Class32 implements Class7 {
       return this.field78;
    }
 
-   int method166(Class6 var1, int var2, int var3, int var4, int var5, int var6, int var7, List var8) {
+   @Override
+int method141(Class6 var1, int var2, int var3, int var4, int var5, int var6, int var7, List var8) {
       int var9 = var2;
       int var10 = 0;
       int var11 = var7 / this.field74;
@@ -257,6 +265,6 @@ final class Class34 extends Class32 implements Class7 {
 
    private Class51 method168(int var1) {
       Class37 var2 = this.method167(var1);
-      return (Class51)(var2 != null ? var2 : field79);
+      return var2 != null ? var2 : field79;
    }
 }

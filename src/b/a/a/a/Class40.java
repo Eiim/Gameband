@@ -15,16 +15,19 @@ class Class40 implements Class4 {
       this.field95 = var2;
    }
 
-   public Class5 method185() {
+   @Override
+public Class5 method14() {
       return (Class5)Class3.method12(this.field97, new Class22(), this.field95, this.field96);
    }
 
-   public Class5 method186() {
+   @Override
+public Class5 method15() {
       return (Class5)Class3.method12(this.field97, new Class18(), this.field95, this.field96);
    }
 
-   public Class7 method187() {
-      return ((Class34)Class3.method12(this.field97, this.method188(), this.field95, this.field96)).method150();
+   @Override
+public Class7 method65() {
+      return ((Class34)Class3.method12(this.field97, this.method188(), this.field95, this.field96)).method65();
    }
 
    private Class34 method188() {

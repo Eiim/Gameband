@@ -49,11 +49,13 @@ public class X extends WindowsVersionComparator {
       return this.f;
    }
 
-   public String toString() {
+   @Override
+public String toString() {
       return this.major + "." + this.minor + "." + this.patch + "." + this.f + (this.beta ? " (beta)" : "");
    }
 
-   public boolean equals(Object var1) {
+   @Override
+public boolean equals(Object var1) {
       if (var1 != null && var1 instanceof X) {
          return super.equals(var1) && this.a((X)var1) == 0;
       } else {
@@ -62,7 +64,7 @@ public class X extends WindowsVersionComparator {
    }
 
    public int a(X var1) {
-      int var2 = super.getMajor(var1);
+      int var2 = super.compareTo(var1);
       if (var2 == 0) {
          if (this.f > var1.e()) {
             return 1;

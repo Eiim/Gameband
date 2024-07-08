@@ -93,7 +93,7 @@ protected Component b() {
       var1.setOpaque(false);
       var1.setBorder(new EmptyBorder(0, 50, 10, 0));
       this.k.setFont(GamebandFonts.B);
-      this.k.setForeground(LocaleUtil.h.b());
+      this.k.setForeground(GamebandColors.b());
       var1.add(this.k);
       return var1;
    }

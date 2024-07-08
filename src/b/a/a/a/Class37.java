@@ -49,7 +49,7 @@ final class Class37 implements Class51 {
 
             while(var1.hasNext()) {
                Class52 var2 = (Class52)var1.next();
-               if (!var2.method228()) {
+               if (!var2.method144()) {
                   JComponent var3 = Class20.method74(var2.method232(), "spanRow() cannot work on a sub-grid where the number of columns is different from the above sub-grid");
                   var2.method231(var3);
                   this.field87.method210(var3);
@@ -147,7 +147,7 @@ final class Class37 implements Class51 {
                var17 += var13;
             }
 
-            if (var15.method228()) {
+            if (var15.method144()) {
                JComponent var18 = var15.method225();
                var9 = Math.max(0, var1.method21(var18, var8, var17, var3, var4));
             }
