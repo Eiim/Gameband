@@ -3,23 +3,23 @@ package com.nowcomputing;
 import java.util.logging.LogManager;
 
 public class V extends LogManager {
-   static V a;
+	static V a;
 
-   public V() {
-      a = this;
-   }
+	public V() {
+		a = this;
+	}
 
-   public void reset() {
-   }
+	public void reset() {
+	}
 
-   private void b() {
-      super.reset();
-   }
+	private void b() {
+		super.reset();
+	}
 
-   public static void a() {
-      if (a != null) {
-         a.b();
-      }
+	public static void a() {
+		if (a != null) {
+			a.b();
+		}
 
-   }
+	}
 }

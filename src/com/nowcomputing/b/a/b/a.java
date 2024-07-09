@@ -8,38 +8,38 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 public abstract class a implements MouseListener, MouseMotionListener {
-   protected com.nowcomputing.b.a.CustomDialog a;
+	protected com.nowcomputing.b.a.CustomDialog a;
 
-   a(com.nowcomputing.b.a.CustomDialog var1) {
-      this.a = var1;
-   }
+	a(com.nowcomputing.b.a.CustomDialog var1) {
+		this.a = var1;
+	}
 
-   public void a() {
-   }
+	public void a() {
+	}
 
-   public abstract Cursor b();
+	public abstract Cursor b();
 
-   public void c() {
-   }
+	public void c() {
+	}
 
-   public void mouseClicked(MouseEvent var1) {
-   }
+	public void mouseClicked(MouseEvent var1) {
+	}
 
-   public void mousePressed(MouseEvent var1) {
-   }
+	public void mousePressed(MouseEvent var1) {
+	}
 
-   public void mouseReleased(MouseEvent var1) {
-   }
+	public void mouseReleased(MouseEvent var1) {
+	}
 
-   public void mouseEntered(MouseEvent var1) {
-   }
+	public void mouseEntered(MouseEvent var1) {
+	}
 
-   public void mouseExited(MouseEvent var1) {
-   }
+	public void mouseExited(MouseEvent var1) {
+	}
 
-   public void mouseDragged(MouseEvent var1) {
-   }
+	public void mouseDragged(MouseEvent var1) {
+	}
 
-   public void mouseMoved(MouseEvent var1) {
-   }
+	public void mouseMoved(MouseEvent var1) {
+	}
 }

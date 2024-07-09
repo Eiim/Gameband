@@ -1,11 +1,11 @@
 package com.nowcomputing.uistuff;
 
 public interface ar {
-   void b();
+	void b();
 
-   void c();
+	void c();
 
-   void d();
+	void d();
 
-   void a();
+	void a();
 }

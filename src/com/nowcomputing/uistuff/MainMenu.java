@@ -26,253 +26,258 @@ import com.nowcomputing.pixelfurnace.GBComms;
 
 import a.LauncherStarter;
 
-public class MainMenu extends JFrame implements BackupLinkListenerInterface, com.nowcomputing.n, resetAction, ActionListener {
-   private static final Logger a = Logger.getLogger(Utils.class.getName());
-   private GamebandConfig b;
-   private latchedCommandRun c;
-   private com.nowcomputing.uistuff.apackage.p d;
-   private M e;
-   private aa f;
-   private GBComms g;
-   private boolean h;
-   private BackupPanel i;
-   private CountDownLatch j = null;
+public class MainMenu extends JFrame
+		implements BackupLinkListenerInterface, com.nowcomputing.n, resetAction, ActionListener {
+	private static final Logger a = Logger.getLogger(Utils.class.getName());
+	private GamebandConfig b;
+	private latchedCommandRun c;
+	private com.nowcomputing.uistuff.apackage.p d;
+	private M e;
+	private aa f;
+	private GBComms g;
+	private boolean h;
+	private BackupPanel i;
+	private CountDownLatch j = null;
 
-   public MainMenu(GamebandConfig config, GBComms gbComms) {
-      this.b = config;
-      this.g = gbComms;
-      this.c = new LauncherStarter(config);
-      this.c.a(this);
-      this.setTitle("Gameband " + WindowsVersionComparator.getImplementationVersion());
-      this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-      this.setResizable(false);
-      this.h();
-      this.o();
-      Insets var3 = this.getInsets();
-      Dimension var4 = new Dimension(800 + var3.left + var3.right, 600 + var3.top + var3.bottom);
-      this.setMinimumSize(var4);
-      this.setMaximumSize(var4);
-      this.setLocationRelativeTo((Component)null);
+	public MainMenu(GamebandConfig config, GBComms gbComms) {
+		this.b = config;
+		this.g = gbComms;
+		this.c = new LauncherStarter(config);
+		this.c.a(this);
+		this.setTitle("Gameband " + WindowsVersionComparator.getImplementationVersion());
+		this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		this.setResizable(false);
+		this.h();
+		this.o();
+		Insets var3 = this.getInsets();
+		Dimension var4 = new Dimension(800 + var3.left + var3.right, 600 + var3.top + var3.bottom);
+		this.setMinimumSize(var4);
+		this.setMaximumSize(var4);
+		this.setLocationRelativeTo((Component) null);
 
-      InputStream var5;
-      try {
-         var5 = com.nowcomputing.uistuff.apackage.p.class.getResourceAsStream("/resources/icon.png");
-         if (var5 != null) {
-            this.setIconImage(ImageIO.read(var5));
-         }
-      } catch (IOException var7) {
-      }
+		InputStream var5;
+		try {
+			var5 = com.nowcomputing.uistuff.apackage.p.class.getResourceAsStream("/resources/icon.png");
+			if (var5 != null) {
+				this.setIconImage(ImageIO.read(var5));
+			}
+		} catch (IOException var7) {
+		}
 
-      this.addWindowListener(new t(this));
+		this.addWindowListener(new t(this));
 
-      try {
-         var5 = BackupPanel.class.getResourceAsStream("/icon.png");
-         if (var5 != null) {
-            this.setIconImage(ImageIO.read(var5));
-         }
-      } catch (IOException var6) {
-      }
+		try {
+			var5 = BackupPanel.class.getResourceAsStream("/icon.png");
+			if (var5 != null) {
+				this.setIconImage(ImageIO.read(var5));
+			}
+		} catch (IOException var6) {
+		}
 
-      LocaleUtil.a(this);
-   }
+		LocaleUtil.a(this);
+	}
 
-   private void h() {
-      this.e = new M();
-      this.i = new BackupPanel(this);
-      this.f = new aa(this.g, this.b);
-      this.j();
-   }
+	private void h() {
+		this.e = new M();
+		this.i = new BackupPanel(this);
+		this.f = new aa(this.g, this.b);
+		this.j();
+	}
 
-   private void i() {
-      this.e.d().removeActionListener(this);
-      this.e.m().removeActionListener(this);
-      this.e.n().removeActionListener(this);
-      this.e.e().removeActionListener(this);
-      this.i.f().removeActionListener(this);
-      this.i.e().removeActionListener(this);
-      this.f.f().removeActionListener(this);
-      this.f.e().removeActionListener(this);
-   }
+	private void i() {
+		this.e.d().removeActionListener(this);
+		this.e.m().removeActionListener(this);
+		this.e.n().removeActionListener(this);
+		this.e.e().removeActionListener(this);
+		this.i.f().removeActionListener(this);
+		this.i.e().removeActionListener(this);
+		this.f.f().removeActionListener(this);
+		this.f.e().removeActionListener(this);
+	}
 
-   private void j() {
-      this.e.d().addActionListener(this);
-      this.e.m().addActionListener(this);
-      this.e.n().addActionListener(this);
-      this.e.e().addActionListener(this);
-      this.i.f().addActionListener(this);
-      this.i.e().addActionListener(this);
-      this.f.f().addActionListener(this);
-      this.f.e().addActionListener(this);
-   }
+	private void j() {
+		this.e.d().addActionListener(this);
+		this.e.m().addActionListener(this);
+		this.e.n().addActionListener(this);
+		this.e.e().addActionListener(this);
+		this.i.f().addActionListener(this);
+		this.i.e().addActionListener(this);
+		this.f.f().addActionListener(this);
+		this.f.e().addActionListener(this);
+	}
 
-   private void k() {
-      this.setVisible(false);
+	private void k() {
+		this.setVisible(false);
 
-      try {
-         if (this.c.d()) {
-            a.log(Level.FINE, "Game finished");
-            this.setVisible(true);
-            this.l();
-         }
-      } finally {
-         this.e.d().setEnabled(true);
-         this.setVisible(true);
-      }
+		try {
+			if (this.c.d()) {
+				a.log(Level.FINE, "Game finished");
+				this.setVisible(true);
+				this.l();
+			}
+		} finally {
+			this.e.d().setEnabled(true);
+			this.setVisible(true);
+		}
 
-   }
+	}
 
-   private void l() {
-      Thread var1 = new Thread(new u(this));
-      var1.start();
-   }
+	private void l() {
+		Thread var1 = new Thread(new u(this));
+		var1.start();
+	}
 
-   private void m() {
-      this.n();
-      this.d = new com.nowcomputing.uistuff.apackage.p(this, this.g);
-      this.d.m().addActionListener(this);
-      this.d.n().addActionListener(this);
-      this.d.f();
-      this.setContentPane(this.d.d());
-      this.validate();
-      this.d.a(true);
-   }
+	private void m() {
+		this.n();
+		this.d = new com.nowcomputing.uistuff.apackage.p(this, this.g);
+		this.d.m().addActionListener(this);
+		this.d.n().addActionListener(this);
+		this.d.f();
+		this.setContentPane(this.d.d());
+		this.validate();
+		this.d.a(true);
+	}
 
-   private void n() {
-      if (!this.h) {
-         this.h = true;
-         this.setCursor(Cursor.getPredefinedCursor(3));
+	private void n() {
+		if (!this.h) {
+			this.h = true;
+			this.setCursor(Cursor.getPredefinedCursor(3));
 
-         try {
-            boolean var1 = Main.a();
-            if (!var1) {
-               GamebandPopup.PopupDialog(this, (new String[]{LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TITLE"), LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TEXT"), LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TEXT_1")}), LocaleUtil.getLocalizedString("ERROR_WINDOW_TITLE"), "www.nowcomputing.com/contact");
-            }
-         } finally {
-            this.setCursor(Cursor.getDefaultCursor());
-         }
+			try {
+				boolean var1 = Main.a();
+				if (!var1) {
+					GamebandPopup.PopupDialog(this,
+							(new String[] { LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TITLE"),
+									LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TEXT"),
+									LocaleUtil.getLocalizedString("GAMEBAND_NOT_DETECTED_TEXT_1") }),
+							LocaleUtil.getLocalizedString("ERROR_WINDOW_TITLE"), "www.nowcomputing.com/contact");
+				}
+			} finally {
+				this.setCursor(Cursor.getDefaultCursor());
+			}
 
-      }
-   }
+		}
+	}
 
-   private void o() {
-      this.setContentPane(this.e);
-      this.e.d().setEnabled(true);
-      this.pack();
-   }
+	private void o() {
+		this.setContentPane(this.e);
+		this.e.d().setEnabled(true);
+		this.pack();
+	}
 
-   private void p() {
-      this.n();
-      this.f.n();
-      this.f.setVisible(true);
-      this.setContentPane(this.f);
-      this.pack();
-   }
+	private void p() {
+		this.n();
+		this.f.n();
+		this.f.setVisible(true);
+		this.setContentPane(this.f);
+		this.pack();
+	}
 
-   @Override
-public void BackupLinkListener() {
-      if (this.c.b() != null && !this.c.b().c()) {
-         this.c.b().b();
-      }
+	@Override
+	public void BackupLinkListener() {
+		if (this.c.b() != null && !this.c.b().c()) {
+			this.c.b().b();
+		}
 
-   }
+	}
 
-   @Override
-public void actionPerformed(ActionEvent var1) {
-      // $FF: Couldn't be decompiled
-   }
+	@Override
+	public void actionPerformed(ActionEvent var1) {
+		// $FF: Couldn't be decompiled
+	}
 
-   private void q() {
-      if (this.d != null) {
-         this.g.a(this.d.k());
-      }
+	private void q() {
+		if (this.d != null) {
+			this.g.a(this.d.k());
+		}
 
-      this.g.setOrientation(this.f.m());
-      this.g.setGamebandTimezone();
-      Main.e();
-   }
+		this.g.setOrientation(this.f.m());
+		this.g.setGamebandTimezone();
+		Main.e();
+	}
 
-   @Override
-public void reset() {
-      a.log(Level.FINE, "GamebandApplication.onLocaleChange()");
-      this.i();
-      this.r();
-      this.j();
-   }
+	@Override
+	public void reset() {
+		a.log(Level.FINE, "GamebandApplication.onLocaleChange()");
+		this.i();
+		this.r();
+		this.j();
+	}
 
-   private void r() {
-      this.e.a();
-      this.i.a();
-      this.f.a();
-   }
+	private void r() {
+		this.e.a();
+		this.i.a();
+		this.f.a();
+	}
 
-   public void e() {
-      if (Boolean.parseBoolean(this.b.getProperty("auto_update", "true"))) {
-         this.j = new CountDownLatch(1);
+	public void e() {
+		if (Boolean.parseBoolean(this.b.getProperty("auto_update", "true"))) {
+			this.j = new CountDownLatch(1);
 
-         try {
-            com.nowcomputing.s var1 = new com.nowcomputing.s();
-            var1.method1("gbupdate.info");
-         } finally {
-            this.j.countDown();
-         }
-      }
+			try {
+				com.nowcomputing.s var1 = new com.nowcomputing.s();
+				var1.method1("gbupdate.info");
+			} finally {
+				this.j.countDown();
+			}
+		}
 
-   }
+	}
 
-   public void f() {
-      this.e.l();
-   }
+	public void f() {
+		this.e.l();
+	}
 
-   @Override
-public void a() {
-   }
+	@Override
+	public void a() {
+	}
 
-   @Override
-public void b() {
-   }
+	@Override
+	public void b() {
+	}
 
-   // $FF: synthetic method
-   static BackupPanel a(MainMenu var0) {
-      return var0.i;
-   }
+	// $FF: synthetic method
+	static BackupPanel a(MainMenu var0) {
+		return var0.i;
+	}
 
-   // $FF: synthetic method
-   static void b(MainMenu var0) {
-      var0.q();
-   }
+	// $FF: synthetic method
+	static void b(MainMenu var0) {
+		var0.q();
+	}
 
-   // $FF: synthetic method
-   static CountDownLatch c(MainMenu var0) {
-      return var0.j;
-   }
+	// $FF: synthetic method
+	static CountDownLatch c(MainMenu var0) {
+		return var0.j;
+	}
 
-   // $FF: synthetic method
-   static boolean d(MainMenu var0) {
-      return var0.h;
-   }
+	// $FF: synthetic method
+	static boolean d(MainMenu var0) {
+		return var0.h;
+	}
 
-   // $FF: synthetic method
-   static boolean a(MainMenu var0, boolean var1) {
-      return var0.h = var1;
-   }
+	// $FF: synthetic method
+	static boolean a(MainMenu var0, boolean var1) {
+		return var0.h = var1;
+	}
 
-   // $FF: synthetic method
-   static GBComms e(MainMenu var0) {
-      return var0.g;
-   }
+	// $FF: synthetic method
+	static GBComms e(MainMenu var0) {
+		return var0.g;
+	}
 
-   // $FF: synthetic method
-   static Logger g() {
-      return a;
-   }
+	// $FF: synthetic method
+	static Logger g() {
+		return a;
+	}
 
-   // $FF: synthetic method
-   static void f(MainMenu var0) {
-      var0.k();
-   }
+	// $FF: synthetic method
+	static void f(MainMenu var0) {
+		var0.k();
+	}
 
-   // $FF: synthetic method
-   static void g(MainMenu var0) {
-      var0.m();
-   }
+	// $FF: synthetic method
+	static void g(MainMenu var0) {
+		var0.m();
+	}
 }

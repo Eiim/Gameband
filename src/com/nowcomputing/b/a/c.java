@@ -5,21 +5,21 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 class c extends MouseAdapter {
-   // $FF: synthetic field
-   final CustomDialog a;
+	// $FF: synthetic field
+	final CustomDialog a;
 
-   c(CustomDialog var1) {
-      this.a = var1;
-   }
+	c(CustomDialog var1) {
+		this.a = var1;
+	}
 
-   public void mouseEntered(MouseEvent var1) {
-      if (this.a.l() != null) {
-         this.a.setCursor(this.a.l().b());
-      }
+	public void mouseEntered(MouseEvent var1) {
+		if (this.a.l() != null) {
+			this.a.setCursor(this.a.l().b());
+		}
 
-   }
+	}
 
-   public void mouseExited(MouseEvent var1) {
-      this.a.setCursor(Cursor.getPredefinedCursor(0));
-   }
+	public void mouseExited(MouseEvent var1) {
+		this.a.setCursor(Cursor.getPredefinedCursor(0));
+	}
 }

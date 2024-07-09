@@ -7,31 +7,32 @@ import java.util.logging.Logger;
 import com.nowcomputing.Utils;
 
 public class G {
-   static final Logger a = Logger.getLogger(Utils.class.getName());
-   private File b = b();
-   private boolean c;
+	static final Logger a = Logger.getLogger(Utils.class.getName());
+	private File b = b();
+	private boolean c;
 
-   public G() {
-      a.log(Level.FINE, "Local Minecraft dir = " + this.b);
-   }
+	public G() {
+		a.log(Level.FINE, "Local Minecraft dir = " + this.b);
+	}
 
-   public boolean a() {
-      return this.c() && (new File(this.b, "saves")).exists();
-   }
+	public boolean a() {
+		return this.c() && (new File(this.b, "saves")).exists();
+	}
 
-   public void a(boolean var1) {
-      this.c = var1;
-   }
+	public void a(boolean var1) {
+		this.c = var1;
+	}
 
-   private boolean c() {
-      return this.b != null && this.b.exists() && this.b.isDirectory();
-   }
+	private boolean c() {
+		return this.b != null && this.b.exists() && this.b.isDirectory();
+	}
 
-   public static File b() {
-    String str2;
-    String str3;
-    String str1 = System.getProperty("user.home", ".");
-    // Below code doesn't work - H.a isn't a thing, not sure what it was supposed to be
+	public static File b() {
+		String str2;
+		String str3;
+		String str1 = System.getProperty("user.home", ".");
+		// Below code doesn't work - H.a isn't a thing, not sure what it was supposed to
+		// be
 //    switch (H.a[S.b().ordinal()]) {
 //      case 1:
 //        return new File(str1, ".minecraft/");
@@ -42,6 +43,6 @@ public class G {
 //      case 3:
 //        return new File(str1, "Library/Application Support/minecraft");
 //    } 
-      return null;
-   }
+		return null;
+	}
 }

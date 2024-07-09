@@ -7,18 +7,18 @@ import java.awt.event.ActionListener;
 import java.util.Locale;
 
 class LanguageListener implements ActionListener {
-   // $FF: synthetic field
-   final Locale a;
-   // $FF: synthetic field
-   final f b;
+	// $FF: synthetic field
+	final Locale a;
+	// $FF: synthetic field
+	final f b;
 
-   LanguageListener(f var1, Locale var2) {
-      this.b = var1;
-      this.a = var2;
-   }
+	LanguageListener(f var1, Locale var2) {
+		this.b = var1;
+		this.a = var2;
+	}
 
-   public void actionPerformed(ActionEvent var1) {
-      LocaleUtil.a(this.a);
-      this.b.c.b();
-   }
+	public void actionPerformed(ActionEvent var1) {
+		LocaleUtil.a(this.a);
+		this.b.c.b();
+	}
 }

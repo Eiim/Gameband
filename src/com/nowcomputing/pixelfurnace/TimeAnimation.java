@@ -8,45 +8,45 @@ import java.text.SimpleDateFormat;
 import java.util.concurrent.ExecutorService;
 
 public class TimeAnimation extends Animation {
-   public TimeAnimation(ExecutorService var1) {
-      super(d(), var1);
-   }
+	public TimeAnimation(ExecutorService var1) {
+		super(d(), var1);
+	}
 
-   public TimeAnimation(GamebandScreen var1, ExecutorService var2) {
-      super(var1.getScreenType(), var2);
-   }
+	public TimeAnimation(GamebandScreen var1, ExecutorService var2) {
+		super(var1.getScreenType(), var2);
+	}
 
-   public void a(TimeDisplay var1) {
-      if (var1 == TimeDisplay.TWELVEHOUR) {
-         this.setDateFormat((short)0);
-      } else if (var1 == TimeDisplay.TWENTYFOURHOUR) {
-         this.setDateFormat((short)1);
-      }
+	public void a(TimeDisplay var1) {
+		if (var1 == TimeDisplay.TWELVEHOUR) {
+			this.setDateFormat((short) 0);
+		} else if (var1 == TimeDisplay.TWENTYFOURHOUR) {
+			this.setDateFormat((short) 1);
+		}
 
-   }
+	}
 
-   public TimeDisplay b() {
-      return this.getDateFormat() == 0 ? TimeDisplay.TWELVEHOUR : TimeDisplay.TWENTYFOURHOUR;
-   }
+	public TimeDisplay b() {
+		return this.getDateFormat() == 0 ? TimeDisplay.TWELVEHOUR : TimeDisplay.TWENTYFOURHOUR;
+	}
 
-   public GamebandScreen getScreen() {
-      if (this.screen == null) {
-         this.screen = new GamebandScreen();
-         this.screen.c((short)3000);
-      }
+	public GamebandScreen getScreen() {
+		if (this.screen == null) {
+			this.screen = new GamebandScreen();
+			this.screen.c((short) 3000);
+		}
 
-      this.screen.d(this.j());
-      if (this.j() == 0) {
-         this.screen.setPauseDuration((int)1000);
-      }
+		this.screen.d(this.j());
+		if (this.j() == 0) {
+			this.screen.setPauseDuration((int) 1000);
+		}
 
-      this.screen.setScreenType(this.getDateFormat());
-      return this.screen;
-   }
+		this.screen.setScreenType(this.getDateFormat());
+		return this.screen;
+	}
 
-   public static short d() {
-      SimpleDateFormat var0 = (SimpleDateFormat)DateFormat.getTimeInstance(3, LocaleUtil.a());
-      String var1 = var0.toPattern();
-      return (short)(var1.equals("h:mm a") ? 0 : 1);
-   }
+	public static short d() {
+		SimpleDateFormat var0 = (SimpleDateFormat) DateFormat.getTimeInstance(3, LocaleUtil.a());
+		String var1 = var0.toPattern();
+		return (short) (var1.equals("h:mm a") ? 0 : 1);
+	}
 }

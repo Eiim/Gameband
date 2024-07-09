@@ -1,5 +1,5 @@
 package com.nowcomputing;
 
 public interface randomInterfaceThatDoesNothing {
-   void a(long var1);
+	void a(long var1);
 }

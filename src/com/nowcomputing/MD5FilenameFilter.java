@@ -5,11 +5,11 @@ import java.io.FilenameFilter;
 
 class MD5FilenameFilter implements FilenameFilter {
 
-   MD5FilenameFilter() {
+	MD5FilenameFilter() {
 
-   }
+	}
 
-   public boolean accept(File var1, String var2) {
-      return !var2.endsWith(".MD5");
-   }
+	public boolean accept(File var1, String var2) {
+		return !var2.endsWith(".MD5");
+	}
 }

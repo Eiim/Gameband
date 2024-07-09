@@ -1,9 +1,9 @@
 package com.nowcomputing;
 
 public interface randomInterface {
-   void a();
+	void a();
 
-   void b();
+	void b();
 
-   boolean c();
+	boolean c();
 }

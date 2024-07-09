@@ -16,112 +16,114 @@ import com.nowcomputing.randomInterfaceThatDoesNothing;
 import com.nowcomputing.uistuff.GamebandDialog;
 
 public class VoidLauncher extends AbstractMinecraftLauncher {
-   private int c;
+	private int c;
 
-   public VoidLauncher(GamebandConfig var1) {
-      super(var1);
-   }
+	public VoidLauncher(GamebandConfig var1) {
+		super(var1);
+	}
 
-   @Override
-public String getDisplayName() {
-      return "VoidLauncher";
-   }
+	@Override
+	public String getDisplayName() {
+		return "VoidLauncher";
+	}
 
-   @Override
-public String getSupportURL() {
-      return "http://voidlauncherforums.voidswrath.com";
-   }
+	@Override
+	public String getSupportURL() {
+		return "http://voidlauncherforums.voidswrath.com";
+	}
 
-   @Override
-public boolean setLaunchCMD() throws IOException {
-      this.config.setProperty("launch_cmd", "java -jar VoidLauncher.jar --gameband_dir=void");
-      return true;
-   }
+	@Override
+	public boolean setLaunchCMD() throws IOException {
+		this.config.setProperty("launch_cmd", "java -jar VoidLauncher.jar --gameband_dir=void");
+		return true;
+	}
 
-   @Override
-public boolean isJavaLaunchCommandValid() {
-	  try {
-	      String[] var1 = this.buildJavaCommand();
-	      return var1 != null && var1[2].equals("VoidLauncher.jar");
-	  } catch(IOException e) {
-          return false;
-      }
-   }
+	@Override
+	public boolean isJavaLaunchCommandValid() {
+		try {
+			String[] var1 = this.buildJavaCommand();
+			return var1 != null && var1[2].equals("VoidLauncher.jar");
+		} catch (IOException e) {
+			return false;
+		}
+	}
 
-   @Override
-public void f() {
-      File var1 = new File(this.h());
-      if (!var1.exists()) {
-         var1.mkdirs();
-      }
+	@Override
+	public void f() {
+		File var1 = new File(this.h());
+		if (!var1.exists()) {
+			var1.mkdirs();
+		}
 
-      File var2 = new File(var1, "VoidLauncher.jar");
-      if (!var2.exists()) {
-         this.a(var2);
-      } else {
-         X var3 = this.m();
-         X var4 = this.l();
-         if (var3.a(var4) < 0) {
-            this.a(var2);
-         }
-      }
+		File var2 = new File(var1, "VoidLauncher.jar");
+		if (!var2.exists()) {
+			this.a(var2);
+		} else {
+			X var3 = this.m();
+			X var4 = this.l();
+			if (var3.a(var4) < 0) {
+				this.a(var2);
+			}
+		}
 
-   }
+	}
 
-   private X l() {
-      try {
-         InputStream var1 = Utils.HttpGet("http://voidswrath.com/release/releases/version.txt");
-         BufferedReader var2 = new BufferedReader(new InputStreamReader(var1));
-         String var3 = var2.readLine();
-         return new X(var3);
-      } catch (IOException var4) {
-         var4.printStackTrace();
-         return new X(0, 0, 0, 0);
-      }
-   }
+	private X l() {
+		try {
+			InputStream var1 = Utils.HttpGet("http://voidswrath.com/release/releases/version.txt");
+			BufferedReader var2 = new BufferedReader(new InputStreamReader(var1));
+			String var3 = var2.readLine();
+			return new X(var3);
+		} catch (IOException var4) {
+			var4.printStackTrace();
+			return new X(0, 0, 0, 0);
+		}
+	}
 
-   private X m() {
-      try {
-         File var1 = new File(this.h(), "void/VoidLauncher/jarversion");
-         if (var1.exists()) {
-            String var2 = Utils.readFileLazy(var1);
-            return new X(var2);
-         }
-      } catch (Exception var3) {
-         logger.log(Level.WARNING, "Error getting launcher version void/VoidLauncher/jarversion", var3);
-      }
+	private X m() {
+		try {
+			File var1 = new File(this.h(), "void/VoidLauncher/jarversion");
+			if (var1.exists()) {
+				String var2 = Utils.readFileLazy(var1);
+				return new X(var2);
+			}
+		} catch (Exception var3) {
+			logger.log(Level.WARNING, "Error getting launcher version void/VoidLauncher/jarversion", var3);
+		}
 
-      return new X(0, 0, 0, 0);
-   }
+		return new X(0, 0, 0, 0);
+	}
 
-   public void a(File var1) {
-      GamebandDialog var2 = new GamebandDialog("Getting the latest Launcher", "This won't take long...", "", false);
-      var2.setVisible(true);
+	public void a(File var1) {
+		GamebandDialog var2 = new GamebandDialog("Getting the latest Launcher", "This won't take long...", "", false);
+		var2.setVisible(true);
 
-      try {
-         this.c = 0;
-         DownloadRunnable var3 = new DownloadRunnable(new URL("http://vl4.voidswrath.com/release/releases/linux/VoidLauncher.jar"), var1, (randomInterfaceThatDoesNothing)null);
-         var3.a(new n(this, var3, var2));
-         var3.run();
-         var2.c();
-      } catch (Exception var4) {
-         logger.log(Level.WARNING, "Error getting launcher", var4);
-      }
+		try {
+			this.c = 0;
+			DownloadRunnable var3 = new DownloadRunnable(
+					new URL("http://vl4.voidswrath.com/release/releases/linux/VoidLauncher.jar"), var1,
+					(randomInterfaceThatDoesNothing) null);
+			var3.a(new n(this, var3, var2));
+			var3.run();
+			var2.c();
+		} catch (Exception var4) {
+			logger.log(Level.WARNING, "Error getting launcher", var4);
+		}
 
-   }
+	}
 
-   @Override
-public boolean g() {
-      return (new File(this.h(), "VoidLauncher.jar")).exists();
-   }
+	@Override
+	public boolean g() {
+		return (new File(this.h(), "VoidLauncher.jar")).exists();
+	}
 
-   // $FF: synthetic method
-   static int a(VoidLauncher var0, long var1) {
-      return var0.c = (int)(var0.c + var1);
-   }
+	// $FF: synthetic method
+	static int a(VoidLauncher var0, long var1) {
+		return var0.c = (int) (var0.c + var1);
+	}
 
-   // $FF: synthetic method
-   static int a(VoidLauncher var0) {
-      return var0.c;
-   }
+	// $FF: synthetic method
+	static int a(VoidLauncher var0) {
+		return var0.c;
+	}
 }
