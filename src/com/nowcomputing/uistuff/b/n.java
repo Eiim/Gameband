@@ -15,7 +15,7 @@ import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.TimeDisplay;
 import com.nowcomputing.Utils;
-import com.nowcomputing.a.duality;
+import com.nowcomputing.a.Duality;
 import com.nowcomputing.pixelfurnace.Animation;
 import com.nowcomputing.pixelfurnace.TimeAnimation;
 import com.nowcomputing.uistuff.GamebandColors;
@@ -83,7 +83,7 @@ public class n extends e implements ActionListener {
 		this.a.h().b(var4);
 		this.a.i().a(var4);
 		this.a.i().b(new Image(20, 7));
-		this.h.a(var4, duality.a, 3000, 0);
+		this.h.a(var4, Duality.a, 3000, 0);
 		super.d();
 	}
 

@@ -2,7 +2,7 @@ package com.nowcomputing.uistuff.b;
 
 import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.a.duality;
+import com.nowcomputing.a.Duality;
 import com.nowcomputing.pixelfurnace.Animation;
 import com.nowcomputing.pixelfurnace.FreeSpaceAnimation;
 import com.nowcomputing.uistuff.apackage.t;
@@ -34,7 +34,7 @@ public class d extends e {
 		var3.gentlyCoerceImageIntoHole(var2, var2.getWidth() - 20, 0, 20, 7, 0, 0);
 		this.a.i().a(var3);
 		this.a.i().b(new Image(20, 7));
-		this.g.a(var1, duality.b, 1000, 20, true);
+		this.g.a(var1, Duality.b, 1000, 20, true);
 		super.d();
 	}
 }

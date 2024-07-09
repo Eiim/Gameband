@@ -6,7 +6,7 @@ import com.nowcomputing.AnimatedImage;
 import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.a.ImagePlayer;
-import com.nowcomputing.e.Transition;
+import com.nowcomputing.e.TransitionType;
 import com.nowcomputing.pixelfurnace.Animation;
 import com.nowcomputing.pixelfurnace.RawAnimation;
 import com.nowcomputing.uistuff.apackage.t;
@@ -20,7 +20,7 @@ public class a extends e {
 		this.a = var2;
 		this.g = new ImagePlayer();
 		var2.a(this.g);
-		this.b().b(com.nowcomputing.e.c.animateRight(Transition.none));
+		this.b().b(com.nowcomputing.e.c.animateRight(TransitionType.none));
 		var2.i().b(new Image(20, 7));
 		this.i();
 		this.f();
@@ -46,6 +46,6 @@ public class a extends e {
 	}
 
 	@Override
-	public void a(Transition var1) {
+	public void a(TransitionType var1) {
 	}
 }

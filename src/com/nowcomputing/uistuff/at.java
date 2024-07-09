@@ -1,14 +1,14 @@
 package com.nowcomputing.uistuff;
 
 import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.resetAction;
+import com.nowcomputing.ResetAction;
 
-public abstract class at extends ImagePanel implements resetAction {
+public abstract class at extends ImagePanel implements ResetAction {
 	protected ar c;
 
 	protected at(String var1) {
 		this.setName(var1);
-		LocaleUtil.a((resetAction) this);
+		LocaleUtil.a((ResetAction) this);
 	}
 
 	public void a(ar var1) {

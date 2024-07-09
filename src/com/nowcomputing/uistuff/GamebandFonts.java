@@ -2,7 +2,7 @@ package com.nowcomputing.uistuff;
 
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.Utils;
-import com.nowcomputing.resetAction;
+import com.nowcomputing.ResetAction;
 
 import java.awt.Font;
 import java.awt.FontFormatException;
@@ -148,7 +148,7 @@ public class GamebandFonts {
 	}
 
 	static {
-		LocaleUtil.a((resetAction) (new r()));
+		LocaleUtil.a((ResetAction) (new r()));
 		b();
 	}
 }

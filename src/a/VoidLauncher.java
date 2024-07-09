@@ -12,7 +12,7 @@ import com.nowcomputing.DownloadRunnable;
 import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.Utils;
 import com.nowcomputing.X;
-import com.nowcomputing.randomInterfaceThatDoesNothing;
+import com.nowcomputing.UnknownLongConsumer;
 import com.nowcomputing.uistuff.GamebandDialog;
 
 public class VoidLauncher extends AbstractMinecraftLauncher {
@@ -102,7 +102,7 @@ public class VoidLauncher extends AbstractMinecraftLauncher {
 			this.c = 0;
 			DownloadRunnable var3 = new DownloadRunnable(
 					new URL("http://vl4.voidswrath.com/release/releases/linux/VoidLauncher.jar"), var1,
-					(randomInterfaceThatDoesNothing) null);
+					(UnknownLongConsumer) null);
 			var3.a(new n(this, var3, var2));
 			var3.run();
 			var2.c();

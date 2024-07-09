@@ -23,7 +23,7 @@ import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.Utils;
 import com.nowcomputing.a.Direction;
-import com.nowcomputing.e.Transition;
+import com.nowcomputing.e.TransitionType;
 import com.nowcomputing.pixelfurnace.Animation;
 import com.nowcomputing.pixelfurnace.DateScreen;
 import com.nowcomputing.pixelfurnace.FreeSpaceAnimation;
@@ -201,8 +201,8 @@ public class t extends JPanel implements MouseListener, MouseMotionListener {
 			case 16:
 				boolean var7 = false;
 				GamebandScreen var8 = var6.getScreen();
-				Transition var9 = com.nowcomputing.e.c.getTransition(var8.i());
-				var7 = var9 == Transition.scroll;
+				TransitionType var9 = com.nowcomputing.e.c.getTransition(var8.i());
+				var7 = var9 == TransitionType.scroll;
 				com.nowcomputing.uistuff.b.m var10 = new com.nowcomputing.uistuff.b.m(this, (ImageAnimation) var6,
 						var7);
 				this.c(var10);

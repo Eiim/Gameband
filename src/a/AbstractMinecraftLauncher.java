@@ -17,7 +17,7 @@ import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.OSDetectionIsHard;
 import com.nowcomputing.PathUtils;
 import com.nowcomputing.Utils;
-import com.nowcomputing.latchedCommandRun;
+import com.nowcomputing.LatchedCommandRun;
 
 public abstract class AbstractMinecraftLauncher {
 	protected static final Logger logger = Logger.getLogger(Utils.class.getName());
@@ -48,7 +48,7 @@ public abstract class AbstractMinecraftLauncher {
 				}
 			}
 
-			latchedCommandRun.a(var1, this.h(), this.k());
+			LatchedCommandRun.a(var1, this.h(), this.k());
 		} catch (Exception var3) {
 			throw new IOException("Error launching '" + Utils.arrayWithPrefix(var1, " ") + "' : " + var3);
 		}

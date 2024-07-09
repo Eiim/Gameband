@@ -1,6 +1,6 @@
 package com.nowcomputing;
 
-class z implements randomInterfaceThatDoesNothing {
+class z implements UnknownLongConsumer {
 	// $FF: synthetic field
 	final MinecraftDownloader a;
 

@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.nowcomputing.e.Transition;
+import com.nowcomputing.e.TransitionType;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
@@ -22,7 +22,7 @@ public class GBComms {
 	private GbData data = new GbData();
 	private List<Animation> animations = new ArrayList<>();
 	private GamebandHID gbHID = new GamebandHID();
-	private Transition transition;
+	private TransitionType transition;
 	private static final ExecutorService threadPool = Executors.newCachedThreadPool();
 	private boolean g;
 
@@ -59,7 +59,7 @@ public class GBComms {
 		this.data.setTimezoneChange(timeZone.nextTransition(currentTime) / 1000L);
 	}
 
-	public void a(Transition var1) {
+	public void a(TransitionType var1) {
 		this.transition = var1;
 		Iterator var2 = this.animations.iterator();
 
@@ -72,7 +72,7 @@ public class GBComms {
 
 	}
 
-	public Transition c() {
+	public TransitionType c() {
 		return this.transition;
 	}
 

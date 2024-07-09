@@ -5,9 +5,9 @@ import java.util.logging.Level;
 
 class m extends Thread {
 	// $FF: synthetic field
-	final latchedCommandRun a;
+	final LatchedCommandRun a;
 
-	m(latchedCommandRun var1) {
+	m(LatchedCommandRun var1) {
 		this.a = var1;
 	}
 
@@ -32,12 +32,12 @@ class m extends Thread {
 				}
 			}
 		} catch (RuntimeException var7) {
-			latchedCommandRun.logger.log(Level.WARNING, "Error preparing backupService.", var7);
+			LatchedCommandRun.logger.log(Level.WARNING, "Error preparing backupService.", var7);
 		} catch (Exception var8) {
-			latchedCommandRun.logger.log(Level.WARNING, "Error preparing backupService.", var8);
+			LatchedCommandRun.logger.log(Level.WARNING, "Error preparing backupService.", var8);
 		} finally {
-			latchedCommandRun.a(this.a).countDown();
-			latchedCommandRun.logger.log(Level.FINE, "BackgroundThread exiting");
+			LatchedCommandRun.a(this.a).countDown();
+			LatchedCommandRun.logger.log(Level.FINE, "BackgroundThread exiting");
 		}
 
 	}

@@ -2,14 +2,14 @@ package com.nowcomputing.e;
 
 import com.nowcomputing.LocaleUtil;
 
-public enum Transition {
+public enum TransitionType {
 	none(0, "TRANSITION_NONE"), scroll(1, "TRANSITION_SCROLL"), dissolve(2, "TRANSITION_DISSOLVE"),
 	rain(3, "TRANSITION_RAIN");
 
 	private int e;
 	private String f;
 
-	Transition(int var3, String var4) {
+	TransitionType(int var3, String var4) {
 		this.e = var3;
 		this.f = var4;
 	}

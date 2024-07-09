@@ -20,17 +20,17 @@ import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.Main;
 import com.nowcomputing.Utils;
 import com.nowcomputing.WindowsVersionComparator;
-import com.nowcomputing.latchedCommandRun;
-import com.nowcomputing.resetAction;
+import com.nowcomputing.LatchedCommandRun;
+import com.nowcomputing.ResetAction;
 import com.nowcomputing.pixelfurnace.GBComms;
 
 import a.LauncherStarter;
 
 public class MainMenu extends JFrame
-		implements BackupLinkListenerInterface, com.nowcomputing.n, resetAction, ActionListener {
+		implements BackupLinkListenerInterface, com.nowcomputing.n, ResetAction, ActionListener {
 	private static final Logger a = Logger.getLogger(Utils.class.getName());
 	private GamebandConfig b;
-	private latchedCommandRun c;
+	private LatchedCommandRun c;
 	private com.nowcomputing.uistuff.apackage.p d;
 	private M e;
 	private aa f;

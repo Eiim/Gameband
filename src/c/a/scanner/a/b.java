@@ -225,10 +225,10 @@ public class b {
 
 	private List b(a var1) {
 		if (var1 == null) {
-			return new c.a.scanner.dingusList();
+			return new c.a.scanner.DingusList();
 		} else {
 			List var2 = var1.b();
-			return (List) (var2 == null ? new c.a.scanner.dingusList() : var2);
+			return (List) (var2 == null ? new c.a.scanner.DingusList() : var2);
 		}
 	}
 }

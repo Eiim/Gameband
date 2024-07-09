@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JComboBox;
 
-import com.nowcomputing.e.Transition;
+import com.nowcomputing.e.TransitionType;
 
 class c implements ActionListener {
 	// $FF: synthetic field
@@ -21,7 +21,7 @@ class c implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent var1) {
 		JComboBox var2 = (JComboBox) var1.getSource();
-		Transition var3 = (Transition) var2.getSelectedItem();
+		TransitionType var3 = (TransitionType) var2.getSelectedItem();
 		this.a.e();
 		this.a.g().a(var3);
 		this.a.d(true);

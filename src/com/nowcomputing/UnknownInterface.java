@@ -1,6 +1,6 @@
 package com.nowcomputing;
 
-public interface randomInterface {
+public interface UnknownInterface {
 	void a();
 
 	void b();

@@ -6,13 +6,13 @@ public class g extends Transition {
 	private Image image;
 	private int e;
 	private int f;
-	private duality g;
+	private Duality g;
 	private int h;
 	private int i;
 	private int j;
 	private boolean k;
 
-	public void a(String var1, duality var2, int var3, int var4, boolean var5) {
+	public void a(String var1, Duality var2, int var3, int var4, boolean var5) {
 		this.image = Image.FromFile(var1);
 		this.g = var2;
 		this.h = var3;
@@ -20,7 +20,7 @@ public class g extends Transition {
 		this.k = var5;
 	}
 
-	public void a(Image var1, duality var2, int var3, int var4) {
+	public void a(Image var1, Duality var2, int var3, int var4) {
 		this.image = var1;
 		this.g = var2;
 		this.h = var3;
@@ -29,7 +29,7 @@ public class g extends Transition {
 
 	protected void disable() {
 		super.disable();
-		if (this.g != duality.a && !this.k) {
+		if (this.g != Duality.a && !this.k) {
 			this.e = this.image.getWidth();
 			this.f = 20;
 		} else {
@@ -53,11 +53,11 @@ public class g extends Transition {
 	}
 
 	public Image e() {
-		if (this.g == duality.a && this.f == 0) {
+		if (this.g == Duality.a && this.f == 0) {
 			if (--this.j > 0) {
 				return this.image;
 			}
-		} else if (this.g == duality.b && this.f == 20 - this.image.getWidth() && --this.j > 0) {
+		} else if (this.g == Duality.b && this.f == 20 - this.image.getWidth() && --this.j > 0) {
 			return this.a(this.image, this.f, 0);
 		}
 

@@ -1,5 +1,5 @@
 package com.nowcomputing;
 
-public interface resetAction {
+public interface ResetAction {
 	void reset();
 }

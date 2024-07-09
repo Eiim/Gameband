@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class Class1 implements randomInterfaceThatDoesNothing {
+public abstract class Class1 implements UnknownLongConsumer {
 	static final Logger logger = Logger.getLogger(Utils.class.getName());
 	protected File field2;
 	protected File field3;

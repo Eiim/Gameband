@@ -1,10 +1,10 @@
 package a;
 
 import com.nowcomputing.DownloadRunnable;
-import com.nowcomputing.randomInterfaceThatDoesNothing;
+import com.nowcomputing.UnknownLongConsumer;
 import com.nowcomputing.uistuff.GamebandDialog;
 
-class n implements randomInterfaceThatDoesNothing {
+class n implements UnknownLongConsumer {
 	// $FF: synthetic field
 	final DownloadRunnable a;
 	// $FF: synthetic field

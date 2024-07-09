@@ -10,15 +10,15 @@ import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class latchedCommandRun {
+public abstract class LatchedCommandRun {
 	protected static final Logger logger = Logger.getLogger(Utils.class.getName());
 	protected GamebandConfig config;
-	protected randomInterface randomInterface;
+	protected UnknownInterface randomInterface;
 	private Thread thread;
 	private CountDownLatch latch = new CountDownLatch(1);
 	protected List list = new ArrayList();
 
-	public latchedCommandRun(GamebandConfig config) {
+	public LatchedCommandRun(GamebandConfig config) {
 		this.config = config;
 		this.a();
 	}
@@ -32,13 +32,13 @@ public abstract class latchedCommandRun {
 		this.thread.start();
 	}
 
-	public randomInterface b() {
+	public UnknownInterface b() {
 		return this.randomInterface;
 	}
 
-	protected randomInterface c() {
+	protected UnknownInterface c() {
 		Object var1 = null;
-		return (randomInterface) var1;
+		return (UnknownInterface) var1;
 	}
 
 	public abstract boolean d();
@@ -80,7 +80,7 @@ public abstract class latchedCommandRun {
 	}
 
 	// $FF: synthetic method
-	static CountDownLatch a(latchedCommandRun var0) {
+	static CountDownLatch a(LatchedCommandRun var0) {
 		return var0.latch;
 	}
 }

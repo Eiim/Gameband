@@ -2,7 +2,7 @@ package com.nowcomputing.uistuff.b;
 
 import javax.swing.border.Border;
 
-import com.nowcomputing.e.Transition;
+import com.nowcomputing.e.TransitionType;
 import com.nowcomputing.pixelfurnace.Animation;
 import com.nowcomputing.uistuff.apackage.t;
 
@@ -28,6 +28,6 @@ public class c extends e {
 	}
 
 	@Override
-	public void a(Transition var1) {
+	public void a(TransitionType var1) {
 	}
 }

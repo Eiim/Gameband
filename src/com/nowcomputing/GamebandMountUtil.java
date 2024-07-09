@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * 
  * @deprecated no use, as far as I can tell
  */
-public class gamebandMountUtil {
+public class GamebandMountUtil {
 	public static final Logger logger = Logger.getLogger(Utils.class.getName());
 
 	public static void a(boolean var0) {

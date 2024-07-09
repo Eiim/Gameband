@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 import com.nowcomputing.AnimatedImage;
 import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.e.Transition;
+import com.nowcomputing.e.TransitionType;
 import com.nowcomputing.pixelfurnace.Animation;
 import com.nowcomputing.pixelfurnace.GBComms;
 import com.nowcomputing.pixelfurnace.UnusedInterface;
@@ -141,7 +141,7 @@ public abstract class e extends JPanel implements UnusedInterface {
 		return this.f;
 	}
 
-	public void a(Transition var1) {
+	public void a(TransitionType var1) {
 		this.b().a(com.nowcomputing.e.c.animateRight(var1));
 		this.b().b(com.nowcomputing.e.c.animateLeft(var1));
 	}

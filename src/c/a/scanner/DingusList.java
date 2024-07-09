@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class dingusList extends ArrayList implements b, d, List {
+public class DingusList extends ArrayList implements b, d, List {
 	public static void a(List var0, Writer var1) throws IOException {
 		if (var0 == null) {
 			var1.write("null");

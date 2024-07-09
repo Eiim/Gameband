@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.Utils;
-import com.nowcomputing.e.Transition;
+import com.nowcomputing.e.TransitionType;
 import com.nowcomputing.uistuff.GamebandColors;
 import com.nowcomputing.uistuff.GamebandFonts;
 
@@ -30,8 +30,8 @@ public class a extends JPanel {
 		var3.setFont(GamebandFonts.v);
 		var3.setForeground(Color.WHITE);
 		var3.setBounds(27, 76, 166, 25);
-		Transition[] var4 = new Transition[] { Transition.scroll, Transition.dissolve, Transition.rain,
-				Transition.none };
+		TransitionType[] var4 = new TransitionType[] { TransitionType.scroll, TransitionType.dissolve, TransitionType.rain,
+				TransitionType.none };
 		this.b = new JComboBox(var4);
 		this.b.setSelectedItem(var1.g().c());
 		this.add(this.b);
@@ -42,7 +42,7 @@ public class a extends JPanel {
 		JButton var5 = this.a(LocaleUtil.getLocalizedString("PREVIEW"), 156);
 		var5.addActionListener(new d(this, var1));
 		this.c = this.a(LocaleUtil.getLocalizedString("SAVE_TO_GAMEBAND"), 208);
-		this.c.addActionListener(new saveButtonAction(this, var1));
+		this.c.addActionListener(new SaveButtonAction(this, var1));
 	}
 
 	private JButton a(String var1, int var2) {

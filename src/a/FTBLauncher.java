@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import com.nowcomputing.DownloadRunnable;
 import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.Utils;
-import com.nowcomputing.randomInterfaceThatDoesNothing;
+import com.nowcomputing.UnknownLongConsumer;
 import com.nowcomputing.uistuff.GamebandDialog;
 
 public class FTBLauncher extends AbstractMinecraftLauncher {
@@ -89,7 +89,7 @@ public class FTBLauncher extends AbstractMinecraftLauncher {
 				this.c = 0;
 				DownloadRunnable var4 = new DownloadRunnable(
 						new URL("http://ftb.cursecdn.com/FTB2/launcher/FTB_Launcher.jar"), var2,
-						(randomInterfaceThatDoesNothing) null);
+						(UnknownLongConsumer) null);
 				var4.a(new b(this, var4, var3));
 				var4.run();
 				var3.c();

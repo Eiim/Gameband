@@ -1,12 +1,12 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.resetAction;
+import com.nowcomputing.ResetAction;
 
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
-final class an implements resetAction {
+final class an implements ResetAction {
 	public void reset() {
 		LookAndFeelInfo[] var1 = UIManager.getInstalledLookAndFeels();
 		int var2 = var1.length;

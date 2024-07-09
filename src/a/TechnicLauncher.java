@@ -8,8 +8,8 @@ import java.util.logging.Level;
 import com.nowcomputing.DownloadRunnable;
 import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.Utils;
-import com.nowcomputing.latchedCommandRun;
-import com.nowcomputing.randomInterfaceThatDoesNothing;
+import com.nowcomputing.LatchedCommandRun;
+import com.nowcomputing.UnknownLongConsumer;
 import com.nowcomputing.uistuff.GamebandDialog;
 
 import c.a.scanner.a.b;
@@ -62,7 +62,7 @@ public class TechnicLauncher extends AbstractMinecraftLauncher {
 				var2[0] = var3;
 			}
 
-			latchedCommandRun.a(var2, var1, false);
+			LatchedCommandRun.a(var2, var1, false);
 			File var4 = new File(var1 + File.separatorChar + "technic", "temp.jar");
 			if (var4.exists()) {
 				File var5 = new File(var1, "TechnicLauncher.jar");
@@ -107,7 +107,7 @@ public class TechnicLauncher extends AbstractMinecraftLauncher {
 				String var9 = (String) var8.get("jar");
 				this.c = 0;
 				DownloadRunnable var10 = new DownloadRunnable(new URL(var9), var3,
-						(randomInterfaceThatDoesNothing) null);
+						(UnknownLongConsumer) null);
 				var10.a(new l(this, var10, var4));
 				var10.run();
 				var4.c();

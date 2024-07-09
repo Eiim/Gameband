@@ -2,7 +2,7 @@ package com.nowcomputing.uistuff.b;
 
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.a.Direction;
-import com.nowcomputing.e.Transition;
+import com.nowcomputing.e.TransitionType;
 import com.nowcomputing.pixelfurnace.RawAnimation;
 import com.nowcomputing.uistuff.apackage.t;
 
@@ -15,6 +15,6 @@ public class l extends k {
 	}
 
 	@Override
-	public void a(Transition var1) {
+	public void a(TransitionType var1) {
 	}
 }

@@ -14,10 +14,10 @@ import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.Main;
 import com.nowcomputing.PathUtils;
-import com.nowcomputing.latchedCommandRun;
+import com.nowcomputing.LatchedCommandRun;
 import com.nowcomputing.uistuff.am;
 
-public class LauncherStarter extends latchedCommandRun {
+public class LauncherStarter extends LatchedCommandRun {
 	public LauncherStarter(GamebandConfig var1) {
 		super(var1);
 		File var2 = PathUtils.getMinecraftPath();

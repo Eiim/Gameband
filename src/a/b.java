@@ -7,9 +7,9 @@ package a;
 
 import com.nowcomputing.uistuff.GamebandDialog;
 import com.nowcomputing.DownloadRunnable;
-import com.nowcomputing.randomInterfaceThatDoesNothing;
+import com.nowcomputing.UnknownLongConsumer;
 
-class b implements randomInterfaceThatDoesNothing {
+class b implements UnknownLongConsumer {
 	final DownloadRunnable a;
 	final GamebandDialog b;
 	final FTBLauncher c;

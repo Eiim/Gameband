@@ -11,7 +11,7 @@ import javax.swing.JRadioButton;
 import com.nowcomputing.Image;
 import com.nowcomputing.LocaleUtil;
 import com.nowcomputing.TimeDisplay;
-import com.nowcomputing.a.duality;
+import com.nowcomputing.a.Duality;
 import com.nowcomputing.pixelfurnace.Animation;
 import com.nowcomputing.pixelfurnace.DateScreen;
 import com.nowcomputing.uistuff.GamebandColors;
@@ -70,7 +70,7 @@ public class b extends e implements ActionListener {
 		this.a.h().b(var3);
 		this.a.i().a(var3);
 		this.a.i().b(new Image(20, 7));
-		this.g.a(var3, duality.a, 3000, 20);
+		this.g.a(var3, Duality.a, 3000, 20);
 		super.d();
 	}
 

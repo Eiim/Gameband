@@ -103,7 +103,7 @@ public class LocaleUtil {
 			Iterator var2 = list.iterator();
 
 			while (var2.hasNext()) {
-				resetAction var3 = (resetAction) var2.next();
+				ResetAction var3 = (ResetAction) var2.next();
 				var3.reset();
 			}
 
@@ -119,7 +119,7 @@ public class LocaleUtil {
 		dateFormat = DateFormat.getDateInstance(2, locale);
 	}
 
-	public static void a(resetAction var0) {
+	public static void a(ResetAction var0) {
 		list.add(var0);
 	}
 
