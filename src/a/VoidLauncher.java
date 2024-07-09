@@ -12,11 +12,11 @@ import com.nowcomputing.DownloadRunnable;
 import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.Utils;
 import com.nowcomputing.X;
-import com.nowcomputing.UnknownLongConsumer;
+import com.nowcomputing.DownloadProgress;
 import com.nowcomputing.uistuff.GamebandDialog;
 
 public class VoidLauncher extends AbstractMinecraftLauncher {
-	private int c;
+	private int progress;
 
 	public VoidLauncher(GamebandConfig var1) {
 		super(var1);
@@ -99,11 +99,11 @@ public class VoidLauncher extends AbstractMinecraftLauncher {
 		var2.setVisible(true);
 
 		try {
-			this.c = 0;
+			this.progress = 0;
 			DownloadRunnable var3 = new DownloadRunnable(
 					new URL("http://vl4.voidswrath.com/release/releases/linux/VoidLauncher.jar"), var1,
-					(UnknownLongConsumer) null);
-			var3.a(new n(this, var3, var2));
+					(DownloadProgress) null);
+			var3.a(new VoidDownloadProgress(this, var3, var2));
 			var3.run();
 			var2.c();
 		} catch (Exception var4) {
@@ -118,12 +118,12 @@ public class VoidLauncher extends AbstractMinecraftLauncher {
 	}
 
 	// $FF: synthetic method
-	static int a(VoidLauncher var0, long var1) {
-		return var0.c = (int) (var0.c + var1);
+	static int increaseProgress(VoidLauncher var0, long var1) {
+		return var0.progress = (int) (var0.progress + var1);
 	}
 
 	// $FF: synthetic method
-	static int a(VoidLauncher var0) {
-		return var0.c;
+	static int getProgress(VoidLauncher var0) {
+		return var0.progress;
 	}
 }

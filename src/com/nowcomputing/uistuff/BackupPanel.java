@@ -95,7 +95,7 @@ public class BackupPanel extends DialogPanel {
 		this.o = new JPanel();
 		this.o.setOpaque(false);
 		this.a.add(this.o);
-		this.p.setBackground(GamebandColors.k);
+		this.p.setBackground(GamebandColors.BACKUP_CANCEL_BG);
 		this.p.setText(LocaleUtil.getLocalizedString("BACKUP_CANCEL_BUTTON"));
 		this.p.addActionListener(new BackupButtonListener(this));
 		this.o.setVisible(true);

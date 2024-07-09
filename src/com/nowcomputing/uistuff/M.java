@@ -43,7 +43,7 @@ public class M extends DialogPanel {
 	protected Component b() {
 		JPanel var1 = new JPanel();
 		var1.setLayout(new BorderLayout());
-		var1.setBackground(GamebandColors.a);
+		var1.setBackground(GamebandColors.NEAR_BLACK);
 		var1.add(this.c(), "North");
 		var1.add(this.o(), "Center");
 		var1.add(this.p(), "South");

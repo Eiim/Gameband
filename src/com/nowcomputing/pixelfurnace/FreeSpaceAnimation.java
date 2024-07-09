@@ -19,7 +19,7 @@ public class FreeSpaceAnimation extends Animation {
 	}
 
 	public void a(long var1) {
-		NumberFormat var3 = NumberFormat.getInstance(LocaleUtil.a());
+		NumberFormat var3 = NumberFormat.getInstance(LocaleUtil.getLocale());
 		var3.setMaximumFractionDigits(1);
 		long var4 = var1 / 1024L / 1024L;
 		if (var4 > 999L) {

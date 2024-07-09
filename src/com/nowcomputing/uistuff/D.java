@@ -29,7 +29,7 @@ public class D extends at {
 		var1.setLayout(new BoxLayout(var1, 1));
 		var1.setBorder(new EmptyBorder(100, 0, 0, 0));
 		C var2 = new C(LocaleUtil.getLocalizedString("IMPORT_DATA_HEADING"), 420, "center");
-		am.a(var1, var2, GamebandFonts.i, GamebandColors.a());
+		am.a(var1, var2, GamebandFonts.PLAIN_26, GamebandColors.a());
 		var2.setAlignmentX(0.5F);
 		var1.add(Box.createVerticalStrut(20));
 		C var3 = new C(LocaleUtil.getLocalizedString("IMPORT_DATA_DESC_1"), 420, "center");

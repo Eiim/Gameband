@@ -32,14 +32,14 @@ public class b extends e implements ActionListener {
 		var3.setActionCommand(TimeDisplay.normal.a());
 		var3.setOpaque(false);
 		var3.setFont(GamebandFonts.u);
-		var3.setForeground(GamebandColors.m);
+		var3.setForeground(GamebandColors.ASSORTED_FG);
 		var3.setBounds(278, 6, 120, 20);
 		this.add(var3);
 		JRadioButton var4 = new JRadioButton(TimeDisplay.crackhead.a());
 		var4.setActionCommand(TimeDisplay.crackhead.a());
 		var4.setOpaque(false);
 		var4.setFont(GamebandFonts.u);
-		var4.setForeground(GamebandColors.m);
+		var4.setForeground(GamebandColors.ASSORTED_FG);
 		var4.setBounds(278, 24, 120, 20);
 		this.add(var4);
 		if (var2.getDateFormat() == 2) {
@@ -62,7 +62,7 @@ public class b extends e implements ActionListener {
 
 	@Override
 	public void d() {
-		SimpleDateFormat var1 = new SimpleDateFormat(this.a.b().b(), LocaleUtil.a());
+		SimpleDateFormat var1 = new SimpleDateFormat(this.a.b().b(), LocaleUtil.getLocale());
 		var1.setTimeZone(LocaleUtil.e());
 		String var2 = var1.format(new Date());
 		this.a(this.e.d().c());

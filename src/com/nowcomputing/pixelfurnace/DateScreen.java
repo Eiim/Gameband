@@ -45,7 +45,7 @@ public class DateScreen extends Animation {
 	}
 
 	public static short getDefaultDateFormat() {
-		SimpleDateFormat var0 = (SimpleDateFormat) DateFormat.getDateInstance(3, LocaleUtil.a());
+		SimpleDateFormat var0 = (SimpleDateFormat) DateFormat.getDateInstance(3, LocaleUtil.getLocale());
 		String var1 = var0.toPattern();
 		return (short) (var1.equals("M/d/yy") ? 2 : 3);
 	}

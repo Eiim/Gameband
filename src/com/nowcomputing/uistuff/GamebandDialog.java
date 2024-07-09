@@ -72,8 +72,8 @@ public class GamebandDialog extends JFrame {
 		var1.setOpaque(false);
 		JLabel var2 = new JLabel(this.str1);
 		var2.setHorizontalAlignment(0);
-		am.a(var1, var2, GamebandFonts.i, Color.white, 0, 0, 800, 43);
-		var2.setFont(GamebandFonts.i);
+		am.a(var1, var2, GamebandFonts.PLAIN_26, Color.white, 0, 0, 800, 43);
+		var2.setFont(GamebandFonts.PLAIN_26);
 		this.d = new JLabel(this.str2);
 		this.d.setHorizontalAlignment(0);
 		am.a(var1, this.d, GamebandFonts.k, Color.white, 0, 45, 800, 43);
@@ -83,7 +83,7 @@ public class GamebandDialog extends JFrame {
 		this.progressBar.setBorder(BorderFactory.createEmptyBorder());
 		am.a(var1, this.progressBar, GamebandFonts.p, GamebandColors.a(), 136, 114, 534, 24);
 		if (this.k) {
-			this.cancelButton.setBackground(GamebandColors.k);
+			this.cancelButton.setBackground(GamebandColors.BACKUP_CANCEL_BG);
 			this.cancelButton.addActionListener(new GamebandDialogCancelListener(this));
 			am.a(var1, this.cancelButton, GamebandFonts.q, Color.white, 550, 152, 120, 32);
 		}

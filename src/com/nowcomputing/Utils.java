@@ -95,7 +95,7 @@ public class Utils {
 		try {
 			if (var0.exists()) {
 				var0.setWritable(true);
-				if (b() == OSDetectionIsHard.osx) {
+				if (OS.getOS() == OS.OSX) {
 					ProcessBuilder var4 = new ProcessBuilder("chflags", "-R", "nouchg", var0.getPath());
 					var4.start();
 				}
@@ -463,11 +463,16 @@ public class Utils {
 				&& !var0.startsWith("00:03:FF") && !var0.startsWith("00:50:56") && !var0.startsWith("00:0C:29")
 				&& !var0.startsWith("00:05:69");
 	}
-
-	public static OSDetectionIsHard b() {
+	
+	/**
+	 * @deprecated
+	 * Use OS.getOS() instead
+	 */
+	@Deprecated
+	public static OS getOS() {
 		String var0 = System.getProperty("os.name").toLowerCase();
 
-		for (OSDetectionIsHard var4 : OSDetectionIsHard.values()) {
+		for (OS var4 : OS.values()) {
 			String[] var5 = var4.b();
 			int var6 = var5.length;
 
@@ -479,7 +484,7 @@ public class Utils {
 			}
 		}
 
-		return OSDetectionIsHard.unknown;
+		return OS.UNKNOWN;
 	}
 
 	public static short[] a(byte[] var0) {
@@ -571,7 +576,7 @@ public class Utils {
 
 	public static String e() {
 		String var0 = WindowsVersionComparator.getImplementationVersion().toString();
-		if (b() == OSDetectionIsHard.windows) {
+		if (OS.getOS() == OS.WINDOWS) {
 			var0 = var0 + '|' + g();
 		} else {
 			var0 = var0 + '|' + System.getProperty("os.name");
@@ -653,13 +658,13 @@ public class Utils {
 		try {
 			String var1 = var0.getCanonicalPath();
 			ProcessBuilder var2;
-			if (b() == OSDetectionIsHard.windows) {
+			if (OS.getOS() == OS.WINDOWS) {
 				var2 = new ProcessBuilder(new String[] { "attrib", "+H", var1 });
 				var2.start();
-			} else if (b() == OSDetectionIsHard.osx) {
+			} else if (getOS() == OS.OSX) {
 				var2 = new ProcessBuilder(new String[] { "chflags", "hidden", var1 });
 				var2.start();
-			} else if (b() == OSDetectionIsHard.linux) {
+			} else if (getOS() == OS.LINUX) {
 				var2 = new ProcessBuilder(new String[] { "fatattr", "+h", var1 });
 				var2.start();
 			}
@@ -670,7 +675,7 @@ public class Utils {
 	}
 
 	public static void lsregisterShenanigans() throws IOException {
-		if (b() == OSDetectionIsHard.osx) {
+		if (OS.getOS() == OS.OSX) {
 			String var0 = null;
 			if ((new File(
 					"/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"))

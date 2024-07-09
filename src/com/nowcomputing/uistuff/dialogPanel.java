@@ -30,7 +30,7 @@ public class DialogPanel extends JPanel {
 	private String k;
 
 	public DialogPanel() {
-		this.setBackground(GamebandColors.a);
+		this.setBackground(GamebandColors.NEAR_BLACK);
 		this.setLayout(new BorderLayout());
 	}
 
@@ -53,7 +53,7 @@ public class DialogPanel extends JPanel {
 
 	protected Component g() {
 		this.c = new JPanel();
-		this.c.setBackground(GamebandColors.b);
+		this.c.setBackground(GamebandColors.DARKER_GRAY);
 		this.c.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, GamebandColors.a(800, 1)));
 		this.c.setLayout(new BorderLayout());
 		this.c.add(this.m(), "West");

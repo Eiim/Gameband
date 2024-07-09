@@ -49,7 +49,7 @@ public class a extends JPanel {
 		JButton var3 = new JButton("<html><center>" + var1);
 		this.add(var3);
 		var3.setFont(GamebandFonts.v);
-		var3.setBackground(GamebandColors.j);
+		var3.setBackground(GamebandColors.BUTTON_BG);
 		var3.setForeground(GamebandColors.o);
 		var3.setBounds(22, var2, 146, 40);
 		return var3;

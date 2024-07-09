@@ -85,7 +85,7 @@ public class LocaleUtil {
 		return var1;
 	}
 
-	public static Locale a() {
+	public static Locale getLocale() {
 		if (locale == null) {
 			setLocale();
 		}
@@ -99,7 +99,7 @@ public class LocaleUtil {
 			setDateStyle();
 			ResourceBundle.clearCache();
 			ClassLoader var1 = Utils.a(PathUtils.getLibPath().getPath());
-			resourceBundle = ResourceBundle.getBundle("translations", a(), var1);
+			resourceBundle = ResourceBundle.getBundle("translations", getLocale(), var1);
 			Iterator var2 = list.iterator();
 
 			while (var2.hasNext()) {
@@ -130,7 +130,7 @@ public class LocaleUtil {
 					loader = Utils.a(PathUtils.getLibPath().getPath());
 				}
 
-				resourceBundle = ResourceBundle.getBundle("translations", a(), loader);
+				resourceBundle = ResourceBundle.getBundle("translations", getLocale(), loader);
 			} catch (Exception var1) {
 				logger.log(Level.FINE, "Error getting translations", var1);
 			}

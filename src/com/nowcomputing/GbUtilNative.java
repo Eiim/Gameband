@@ -13,18 +13,19 @@ public class GbUtilNative {
 	private static final String[] linuxGBUtil = new String[] { "libgbutil_jni_64.so", "libgbutil_jni_32.so" };
 
 	public static boolean loadNativeLibrary() {
-		switch (p.a[Utils.b().ordinal()]) {
-		case 1: {
+		switch (OS.getOS()) {
+		case WINDOWS: {
 			return GbUtilNative.loadNativeLibrary(windowsGBUtil);
 		}
-		case 2: {
+		case OSX: {
 			return GbUtilNative.loadNativeLibrary(macGBUtil);
 		}
-		case 3: {
+		case LINUX: {
 			return GbUtilNative.loadNativeLibrary(linuxGBUtil);
 		}
+		default:
+			return false;
 		}
-		return false;
 	}
 
 	private static boolean loadNativeLibrary(String[] paths) {

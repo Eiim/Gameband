@@ -14,7 +14,7 @@ public class e extends Transition {
 	private boolean i;
 
 	public e(Direction var1, boolean var2) {
-		this.h = Direction.left;
+		this.h = Direction.LEFT;
 		this.h = var1;
 		this.i = var2;
 	}
@@ -23,7 +23,7 @@ public class e extends Transition {
 		super.disable();
 		int n = this.image.getWidth();
 		int n2 = this.image.getHeight();
-		this.e = this.h == Direction.left || this.h == Direction.right ? (this.i ? 20 + n + 1 : (n < 20 ? 21 : n + 1))
+		this.e = this.h == Direction.LEFT || this.h == Direction.RIGHT ? (this.i ? 20 + n + 1 : (n < 20 ? 21 : n + 1))
 				: (this.i ? 7 + n2 + 1 : (n2 < 7 ? 8 : n2 + 1));
 		switch (com.nowcomputing.a.f.a[this.h.ordinal()]) {
 		case 1: {

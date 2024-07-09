@@ -78,7 +78,7 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
 
 	public CustomDialog(com.nowcomputing.b.FrameDingus var1, JFrame var2, AnimatedImage var3) {
 		super(var2, true);
-		this.c = new com.nowcomputing.uistuff.n(GamebandColors.f, GamebandColors.a, 1);
+		this.c = new com.nowcomputing.uistuff.n(GamebandColors.STACK_GRAY, GamebandColors.NEAR_BLACK, 1);
 		this.d = new ArrayDeque();
 		this.e = new ArrayDeque();
 		this.m = new n();
@@ -370,7 +370,7 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
 		var2.add(this.F(), "After");
 		var2.add(this.G(), "Last");
 		var2.addMouseListener(new CustomMouseAdapter(this));
-		var2.setBackground(com.nowcomputing.uistuff.GamebandColors.d);
+		var2.setBackground(com.nowcomputing.uistuff.GamebandColors.GRAY);
 		this.getContentPane().add(var2);
 		this.pack();
 		int var3 = this.f.getHeight();
@@ -394,11 +394,11 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
 	private JPanel D() {
 		JPanel var1 = new JPanel();
 		var1.setLayout(new BoxLayout(var1, 1));
-		var1.setBackground(GamebandColors.d);
+		var1.setBackground(GamebandColors.GRAY);
 		var1.setBorder(new EmptyBorder(0, 33, 0, 0));
 		var1.add(Box.createHorizontalStrut(49));
 		this.l = new com.nowcomputing.b.a.b.f(this);
-		this.l.setBackground(GamebandColors.e);
+		this.l.setBackground(GamebandColors.DARKISH_GRAY);
 		JPanel var2 = new JPanel(new BorderLayout());
 		var2.add(this.l, "Center");
 		var1.add(var2);
@@ -408,7 +408,7 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
 	private JPanel E() {
 		JPanel var1 = new JPanel();
 		var1.addMouseListener(new c(this));
-		var1.setBackground(GamebandColors.f);
+		var1.setBackground(GamebandColors.STACK_GRAY);
 		var1.setLayout((LayoutManager) null);
 		var1.add(this.c);
 		this.c.setOpaque(true);
@@ -540,7 +540,7 @@ public class CustomDialog extends JDialog implements ActionListener, MouseListen
 		this.s = new ImageIcon(this.getClass().getResource("/resources/play.png"));
 		this.t = new ImageIcon(this.getClass().getResource("/resources/pause.png"));
 		this.n = this.a("/resources/play.png", 37, 37);
-		this.n.setBackground(GamebandColors.f);
+		this.n.setBackground(GamebandColors.STACK_GRAY);
 		this.n.setFocusable(false);
 		this.n.addActionListener(new j(this));
 		var5.add(this.n);

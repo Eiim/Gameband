@@ -1,7 +1,7 @@
 package com.nowcomputing.e;
 
 public enum Direction {
-	a("LEFT", 0), b("RIGHT", 1), c("UP", 2), d("DOWN", 3);
+	LEFT("LEFT", 0), RIGHT("RIGHT", 1), UP("UP", 2), DOWN("DOWN", 3);
 
 	Direction(String text, int index) {
 
@@ -14,6 +14,6 @@ public enum Direction {
 	}
 
 	static {
-		e = new Direction[] { a, b, c, d };
+		e = new Direction[] { LEFT, RIGHT, UP, DOWN };
 	}
 }

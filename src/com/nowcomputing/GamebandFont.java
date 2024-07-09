@@ -51,7 +51,7 @@ public class GamebandFont {
 	}
 
 	static {
-		GamebandFonts.a("/resources/gameband.ttf");
+		GamebandFonts.loadFont("/resources/gameband.ttf");
 		a = a(8);
 	}
 }

@@ -45,13 +45,13 @@ public class MinecraftDownloader {
 	public Severity a() {
 		c.a.scanner.c var1 = b();
 		if (var1 != null) {
-			switch (Utils.b()) {
-			case windows:
+			switch (OS.getOS()) {
+			case WINDOWS:
 				return this.a(var1) ? Severity.normal : Severity.none;
-			case osx:
+			case OSX:
 				return this.c(var1) ? Severity.normal : Severity.none;
-			case linux:
-			case unknown:
+			case LINUX:
+			case UNKNOWN:
 				return this.b(var1) ? Severity.normal : Severity.none;
 			}
 		}
@@ -117,15 +117,15 @@ public class MinecraftDownloader {
 	public void d() throws IOException {
 		c.a.scanner.c var1 = b();
 		if (var1 != null) {
-			switch (Utils.b()) {
-			case windows:
+			switch (Utils.getOS()) {
+			case WINDOWS:
 				this.e(var1);
 				break;
-			case osx:
+			case OSX:
 				this.d(var1);
 				break;
-			case linux:
-			case unknown:
+			case LINUX:
+			case UNKNOWN:
 				this.f(var1);
 				break;
 			default:
@@ -177,8 +177,8 @@ public class MinecraftDownloader {
 
 	public void a(String var1, String var2, String var3) throws IOException {
 		log.log(Level.INFO, "Downloading " + var2);
-		this.o = new DownloadRunnable(new URL(var1), new File(var2), new z(this));
-		this.k = this.o.a();
+		this.o = new DownloadRunnable(new URL(var1), new File(var2), new MinecraftDownloadProgress(this));
+		this.k = this.o.getDownloadSize();
 		this.o.run();
 		if (!this.o.b()) {
 			throw this.o.c();

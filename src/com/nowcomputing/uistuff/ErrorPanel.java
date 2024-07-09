@@ -51,7 +51,7 @@ public class ErrorPanel extends JDialog {
 		var7.setBorder(new EmptyBorder(120, 0, 0, 0));
 		this.a = new C(var1, 500, "center");
 		this.a.setAlignmentX(0.5F);
-		am.a(var7, this.a, GamebandFonts.i, Color.white);
+		am.a(var7, this.a, GamebandFonts.PLAIN_26, Color.white);
 		var7.add(Box.createVerticalStrut(20));
 		this.b = new C(var2, 500, "center");
 		this.b.setAlignmentX(0.5F);

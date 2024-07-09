@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.nowcomputing.GamebandConfig;
-import com.nowcomputing.OSDetectionIsHard;
+import com.nowcomputing.OS;
 import com.nowcomputing.PathUtils;
 import com.nowcomputing.Utils;
 import com.nowcomputing.LatchedCommandRun;
@@ -55,13 +55,13 @@ public abstract class AbstractMinecraftLauncher {
 	}
 
 	public static String j() {
-		switch (OSDetectionIsHard.getOS()) {
-		case windows:
+		switch (OS.getOS()) {
+		case WINDOWS:
 			String var0 = System.getProperty("os.arch");
 			File var1 = new File(PathUtils.getMinecraftPath(), "runtime");
 			File var2 = new File(var1, var0.contains("x86") ? "jre-x32" : "jre-x64");
 			return getJavaPath(var2.getAbsoluteFile());
-		case osx:
+		case OSX:
 			if (MinecraftLauncher.isOSVersionCompatible()) {
 				return getJavaPath(new File(PathUtils.getMinecraftPath(), "Minecraft.app/Contents/runtime/jre-x64"));
 			}

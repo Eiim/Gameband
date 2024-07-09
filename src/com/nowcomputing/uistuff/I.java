@@ -71,7 +71,7 @@ public class i extends at implements ActionListener, MouseListener {
 		this.add(Box.createVerticalStrut(30));
 		this.a(LocaleUtil.getLocalizedString("LEFT_OR_RIGHT"), GamebandFonts.k, GamebandColors.a());
 		this.a(LocaleUtil.getLocalizedString("ORIENTATION_1"), GamebandFonts.k, Color.WHITE);
-		this.a(LocaleUtil.getLocalizedString("ORIENTATION_2"), GamebandFonts.m, Color.WHITE);
+		this.a(LocaleUtil.getLocalizedString("ORIENTATION_2"), GamebandFonts.ITALIC_14, Color.WHITE);
 		this.add(Box.createVerticalStrut(10));
 		this.g();
 		this.add(Box.createVerticalStrut(25));

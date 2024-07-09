@@ -9,13 +9,13 @@ import com.nowcomputing.DownloadRunnable;
 import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.Utils;
 import com.nowcomputing.LatchedCommandRun;
-import com.nowcomputing.UnknownLongConsumer;
+import com.nowcomputing.DownloadProgress;
 import com.nowcomputing.uistuff.GamebandDialog;
 
 import c.a.scanner.a.b;
 
 public class TechnicLauncher extends AbstractMinecraftLauncher {
-	private int c;
+	private int progress;
 
 	public TechnicLauncher(GamebandConfig var1) {
 		super(var1);
@@ -105,10 +105,10 @@ public class TechnicLauncher extends AbstractMinecraftLauncher {
 				c.a.scanner.c var7 = (c.a.scanner.c) var6.a(var5);
 				c.a.scanner.c var8 = (c.a.scanner.c) var7.get("url");
 				String var9 = (String) var8.get("jar");
-				this.c = 0;
+				this.progress = 0;
 				DownloadRunnable var10 = new DownloadRunnable(new URL(var9), var3,
-						(UnknownLongConsumer) null);
-				var10.a(new l(this, var10, var4));
+						(DownloadProgress) null);
+				var10.a(new TechnicDownloadProgress(this, var10, var4));
 				var10.run();
 				var4.c();
 			} catch (Exception var11) {
@@ -160,12 +160,12 @@ public class TechnicLauncher extends AbstractMinecraftLauncher {
 	}
 
 	// $FF: synthetic method
-	static int a(TechnicLauncher var0, long var1) {
-		return var0.c = (int) (var0.c + var1);
+	static int increaseProgress(TechnicLauncher var0, long var1) {
+		return var0.progress = (int) (var0.progress + var1);
 	}
 
 	// $FF: synthetic method
-	static int a(TechnicLauncher var0) {
-		return var0.c;
+	static int getProgress(TechnicLauncher var0) {
+		return var0.progress;
 	}
 }

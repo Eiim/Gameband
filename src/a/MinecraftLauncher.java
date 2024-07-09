@@ -8,7 +8,7 @@ import java.util.logging.Level;
 
 import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.MinecraftDownloader;
-import com.nowcomputing.OSDetectionIsHard;
+import com.nowcomputing.OS;
 import com.nowcomputing.PathUtils;
 import com.nowcomputing.Severity;
 import com.nowcomputing.Utils;
@@ -32,8 +32,8 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
 			return null;
 		}
 		if (this.validateJavaLaunchCommand(stringArray)) {
-			switch (i.a[Utils.b().ordinal()]) {
-			case 1: {
+			switch (OS.getOS()) {
+			case WINDOWS: {
 				File file = new File(PathUtils.getMinecraftPath(), ".mc.exe");
 				if (!file.exists()) {
 					logger.log(Level.FINE, "File .mc.exe not found");
@@ -57,7 +57,7 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
 						"--workDir", ".", "--lockDir", file.getParent() };
 				break;
 			}
-			case 2: {
+			case OSX: {
 				if (!MinecraftLauncher.isOSVersionCompatible())
 					break;
 				File file = PathUtils.getMinecraftPath();
@@ -204,7 +204,7 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
 	}
 
 	private boolean n() {
-		if (Utils.b() == OSDetectionIsHard.windows) {
+		if (OS.getOS() == OS.WINDOWS) {
 			String[] var1 = this.buildJavaCommand();
 			File var2 = new File(var1[0]);
 			if (!var2.exists()) {

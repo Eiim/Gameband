@@ -50,7 +50,7 @@ public class f extends JPanel {
 		JPanel var2 = new JPanel();
 		var2.setBounds(78, 62, 644, 486);
 		var2.setLayout((LayoutManager) null);
-		var2.setBackground(GamebandColors.r);
+		var2.setBackground(GamebandColors.SCROLL_PANEL_BG);
 		this.add(var2);
 		this.a(var2);
 		JPanel var3 = new JPanel();

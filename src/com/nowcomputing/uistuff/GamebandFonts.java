@@ -1,9 +1,5 @@
 package com.nowcomputing.uistuff;
 
-import com.nowcomputing.LocaleUtil;
-import com.nowcomputing.Utils;
-import com.nowcomputing.ResetAction;
-
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
@@ -14,23 +10,26 @@ import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.nowcomputing.LocaleUtil;
+import com.nowcomputing.Utils;
+
 public class GamebandFonts {
 	public static final Logger logger = Logger.getLogger(Utils.class.getName());
 	private static String[] langs = new String[] { "en", "es", "fr", "de", "it", "pt" };
-	private static boolean E = false;
-	private static boolean F = false;
+	private static boolean gotham_loaded = false;
+	private static boolean osaka_loaded = false;
 	public static final Font b = new Font("SanSerif", 0, 16);
 	public static final Font c = new Font("SanSerif", 0, 14);
-	public static Font d;
-	public static Font e;
-	public static Font f;
-	public static Font g;
-	public static Font h;
-	public static Font i;
+	public static Font PLAIN_17;
+	public static Font PLAIN_16;
+	public static Font PLAIN_14;
+	public static Font PLAIN_12;
+	public static Font PLAIN_10;
+	public static Font PLAIN_26;
 	public static Font j;
 	public static Font k;
-	public static Font l;
-	public static Font m;
+	public static Font BOLD_16;
+	public static Font ITALIC_14;
 	public static Font n;
 	public static Font o;
 	public static Font p;
@@ -48,29 +47,29 @@ public class GamebandFonts {
 	public static Font B;
 	public static Font C;
 
-	public static Font a(int var0, int var1) {
-		String var2 = LocaleUtil.a().getLanguage();
-		if (var2.equals("ja")) {
-			if (!F) {
-				a(".lib/osaka.unicode.ttf");
-				F = true;
+	public static Font getFont(int style, int size) {
+		String langCode = LocaleUtil.getLocale().getLanguage();
+		if (langCode.equals("ja")) {
+			if (!osaka_loaded) {
+				loadFont(".lib/osaka.unicode.ttf");
+				osaka_loaded = true;
 			}
 
-			return new Font("osaka_unicode", 0, var1);
-		} else if (a(langs, var2)) {
-			if (!E) {
-				a("/resources/Gotham-Book.otf");
-				E = true;
+			return new Font("osaka_unicode", Font.PLAIN, size);
+		} else if (arrayContains(langs, langCode)) {
+			if (!gotham_loaded) {
+				loadFont("/resources/Gotham-Book.otf");
+				gotham_loaded = true;
 			}
 
-			return new Font("Gotham Book", var0, var1);
+			return new Font("Gotham Book", style, size);
 		} else {
-			return new Font("SanSerif", 0, var1 - 2);
+			return new Font("SanSerif", Font.PLAIN, size - 2);
 		}
 	}
 
-	public static void a(String var0) {
-		Object var1 = null;
+	public static void loadFont(String var0) {
+		InputStream var1 = null;
 
 		try {
 			File var2 = new File(var0);
@@ -80,7 +79,7 @@ public class GamebandFonts {
 				var1 = GamebandFonts.class.getResourceAsStream(var0);
 			}
 
-			Font var3 = Font.createFont(0, (InputStream) var1);
+			Font var3 = Font.createFont(0, var1);
 			GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(var3);
 			logger.log(Level.FINER, "Loaded font " + var0);
 		} catch (FontFormatException var14) {
@@ -90,65 +89,58 @@ public class GamebandFonts {
 		} finally {
 			try {
 				if (var1 != null) {
-					((InputStream) var1).close();
+					var1.close();
 				}
-			} catch (IOException var13) {
-			}
-
+			} catch (IOException var13) {} // TODO: handle exception?
 		}
 
 	}
 
-	private static boolean a(String[] var0, String var1) {
-		String[] var2 = var0;
-		int var3 = var0.length;
-
-		for (int var4 = 0; var4 < var3; ++var4) {
-			String var5 = var2[var4];
-			if (var5.equals(var1)) {
+	private static boolean arrayContains(String[] arr, String val) {
+		for (String s : arr) {
+			if (s.equals(val)) {
 				return true;
 			}
 		}
-
 		return false;
 	}
 
-	private static void b() {
-		d = a(0, 17);
-		e = a(0, 16);
-		f = a(0, 14);
-		g = a(0, 12);
-		h = a(0, 10);
-		i = a(0, 26);
-		j = d;
-		k = e;
-		l = a(1, 16);
-		m = a(2, 14);
-		n = f;
-		o = g;
-		p = e;
-		q = g;
-		r = g;
-		s = g;
-		t = e;
-		u = f;
-		v = f;
-		w = e;
-		x = f;
-		y = e;
-		z = h;
-		A = f;
-		B = g;
-		C = f;
+	private static void setupAllFonts() {
+		PLAIN_17 = getFont(Font.PLAIN, 17);
+		PLAIN_16 = getFont(Font.PLAIN, 16);
+		PLAIN_14 = getFont(Font.PLAIN, 14);
+		PLAIN_12 = getFont(Font.PLAIN, 12);
+		PLAIN_10 = getFont(Font.PLAIN, 10);
+		PLAIN_26 = getFont(Font.PLAIN, 26);
+		j = PLAIN_17;
+		k = PLAIN_16;
+		BOLD_16 = getFont(Font.BOLD, 16);
+		ITALIC_14 = getFont(Font.ITALIC, 14);
+		n = PLAIN_14;
+		o = PLAIN_12;
+		p = PLAIN_16;
+		q = PLAIN_12;
+		r = PLAIN_12;
+		s = PLAIN_12;
+		t = PLAIN_16;
+		u = PLAIN_14;
+		v = PLAIN_14;
+		w = PLAIN_16;
+		x = PLAIN_14;
+		y = PLAIN_16;
+		z = PLAIN_10;
+		A = PLAIN_14;
+		B = PLAIN_12;
+		C = PLAIN_14;
 	}
 
 	// $FF: synthetic method
 	static void a() {
-		b();
+		setupAllFonts();
 	}
 
 	static {
-		LocaleUtil.a((ResetAction) (new r()));
-		b();
+		LocaleUtil.a((new r()));
+		setupAllFonts();
 	}
 }

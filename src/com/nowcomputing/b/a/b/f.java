@@ -18,7 +18,7 @@ public class f extends JToolBar implements ActionListener {
 
 	public f(com.nowcomputing.b.a.CustomDialog var1) {
 		this.b = var1;
-		this.setBorder(BorderFactory.createLineBorder(GamebandColors.e, 1));
+		this.setBorder(BorderFactory.createLineBorder(GamebandColors.DARKISH_GRAY, 1));
 		this.setOrientation(1);
 		this.setFloatable(false);
 		this.setRollover(false);

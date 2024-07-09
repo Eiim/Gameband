@@ -13,11 +13,11 @@ import java.util.logging.Level;
 import com.nowcomputing.DownloadRunnable;
 import com.nowcomputing.GamebandConfig;
 import com.nowcomputing.Utils;
-import com.nowcomputing.UnknownLongConsumer;
+import com.nowcomputing.DownloadProgress;
 import com.nowcomputing.uistuff.GamebandDialog;
 
 public class FTBLauncher extends AbstractMinecraftLauncher {
-	private int c;
+	private int progress;
 
 	public FTBLauncher(GamebandConfig config) {
 		super(config);
@@ -86,11 +86,11 @@ public class FTBLauncher extends AbstractMinecraftLauncher {
 			var3.setVisible(true);
 
 			try {
-				this.c = 0;
+				this.progress = 0;
 				DownloadRunnable var4 = new DownloadRunnable(
 						new URL("http://ftb.cursecdn.com/FTB2/launcher/FTB_Launcher.jar"), var2,
-						(UnknownLongConsumer) null);
-				var4.a(new b(this, var4, var3));
+						(DownloadProgress) null);
+				var4.a(new FTBDownloadProgress(this, var4, var3));
 				var4.run();
 				var3.c();
 			} catch (Exception var5) {
@@ -106,12 +106,12 @@ public class FTBLauncher extends AbstractMinecraftLauncher {
 	}
 
 	// $FF: synthetic method
-	static int a(a.FTBLauncher var0, long var1) {
-		return var0.c = (int) (var0.c + var1);
+	static int increaseProgress(a.FTBLauncher var0, long var1) {
+		return var0.progress = (int) (var0.progress + var1);
 	}
 
 	// $FF: synthetic method
-	static int a(a.FTBLauncher var0) {
-		return var0.c;
+	static int getProgress(a.FTBLauncher var0) {
+		return var0.progress;
 	}
 }

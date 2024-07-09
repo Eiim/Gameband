@@ -24,7 +24,7 @@ public class ag extends at {
 		var1.setBorder(new EmptyBorder(180, 0, 0, 0));
 		JLabel var2 = new JLabel(LocaleUtil.getLocalizedString("NO_REG_HEADING"));
 		var2.setAlignmentX(0.5F);
-		am.a(var1, var2, GamebandFonts.i, GamebandColors.a());
+		am.a(var1, var2, GamebandFonts.PLAIN_26, GamebandColors.a());
 		var1.add(Box.createVerticalStrut(10));
 		JLabel var3 = new JLabel(LocaleUtil.getLocalizedString("NO_REG_1"));
 		var3.setAlignmentX(0.5F);

@@ -48,7 +48,7 @@ public class p {
 		this.b = var2;
 		JPanel var3 = new JPanel();
 		var3.setLayout(new BorderLayout());
-		var3.setBackground(GamebandColors.a);
+		var3.setBackground(GamebandColors.NEAR_BLACK);
 		this.a((Container) var3);
 		this.b();
 		var2.a(false);
@@ -84,7 +84,7 @@ public class p {
 	private void a(JPanel var1) {
 		var1.setLayout(new BorderLayout());
 		this.j = new JLayeredPane();
-		this.j.setBackground(GamebandColors.a);
+		this.j.setBackground(GamebandColors.NEAR_BLACK);
 		var1.add(this.j);
 		this.j.setOpaque(false);
 		this.j.setLayout(new BoxLayout(this.j, 0));

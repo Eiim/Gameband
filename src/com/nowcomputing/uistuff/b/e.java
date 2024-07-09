@@ -34,14 +34,14 @@ public abstract class e extends JPanel implements UnusedInterface {
 		this.f = new JPanel();
 		this.e = var1;
 		this.setName(var2);
-		this.setBackground(GamebandColors.l);
+		this.setBackground(GamebandColors.ANIM_BUTTON_BG);
 		this.setLayout((LayoutManager) null);
 		JPanel var3 = this.k();
 		var3.setBounds(16, 5, 104, 39);
 		JLabel var4 = new JLabel(var2);
 		var4.setVerticalAlignment(1);
 		var4.setFont(GamebandFonts.t);
-		var4.setForeground(GamebandColors.m);
+		var4.setForeground(GamebandColors.ASSORTED_FG);
 		var4.setBounds(144, 14, 140, 50);
 		this.add(var4);
 	}
@@ -50,7 +50,7 @@ public abstract class e extends JPanel implements UnusedInterface {
 		ImageIcon var1 = new ImageIcon(this.getClass().getResource("/resources/delete_screen.png"));
 		this.d = new JButton(var1);
 		this.d.setToolTipText(LocaleUtil.getLocalizedString("DELETE_MENU"));
-		this.d.setBackground(GamebandColors.l);
+		this.d.setBackground(GamebandColors.ANIM_BUTTON_BG);
 		this.d.setBounds(420, 13, 20, 24);
 		this.add(this.d);
 		this.d.addActionListener(new f(this));
@@ -65,7 +65,7 @@ public abstract class e extends JPanel implements UnusedInterface {
 		this.c = new JCheckBox(LocaleUtil.getLocalizedString("ENABLED_BUTTON"));
 		this.add(this.c);
 		this.c.setFont(GamebandFonts.u);
-		this.c.setForeground(GamebandColors.m);
+		this.c.setForeground(GamebandColors.ASSORTED_FG);
 		this.c.setBounds(420, 15, 100, 20);
 		this.c.setOpaque(false);
 		this.c.setSelected(true);
@@ -76,7 +76,7 @@ public abstract class e extends JPanel implements UnusedInterface {
 		ImageIcon var1 = new ImageIcon(this.getClass().getResource("/resources/edit.png"));
 		JButton var2 = new JButton(var1);
 		var2.setToolTipText(LocaleUtil.getLocalizedString("EDIT_BUTTON"));
-		var2.setBackground(GamebandColors.l);
+		var2.setBackground(GamebandColors.ANIM_BUTTON_BG);
 		var2.setBounds(360, 14, 20, 24);
 		this.add(var2);
 		var2.addActionListener(new h(this));

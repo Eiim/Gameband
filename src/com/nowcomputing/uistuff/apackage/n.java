@@ -9,22 +9,22 @@ class n {
 
 	static {
 		try {
-			a[Direction.up.ordinal()] = 1;
+			a[Direction.UP.ordinal()] = 1;
 		} catch (NoSuchFieldError var4) {
 		}
 
 		try {
-			a[Direction.down.ordinal()] = 2;
+			a[Direction.DOWN.ordinal()] = 2;
 		} catch (NoSuchFieldError var3) {
 		}
 
 		try {
-			a[Direction.left.ordinal()] = 3;
+			a[Direction.LEFT.ordinal()] = 3;
 		} catch (NoSuchFieldError var2) {
 		}
 
 		try {
-			a[Direction.right.ordinal()] = 4;
+			a[Direction.RIGHT.ordinal()] = 4;
 		} catch (NoSuchFieldError var1) {
 		}
 

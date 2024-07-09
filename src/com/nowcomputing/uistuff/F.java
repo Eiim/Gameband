@@ -25,15 +25,15 @@ public class f extends at {
 		this.setLayout(new BoxLayout(this, 1));
 		this.setBorder(new EmptyBorder(175, 246, 0, 0));
 		C var1 = new C(LocaleUtil.getLocalizedString("CHOOSE_LANGUAGE_HEADING"), 240);
-		am.a(this, var1, GamebandFonts.i, GamebandColors.a());
+		am.a(this, var1, GamebandFonts.PLAIN_26, GamebandColors.a());
 		var1.setAlignmentX(0.0F);
 		this.add(Box.createVerticalStrut(8));
 		C var2 = new C(LocaleUtil.getLocalizedString("CHOOSE_LANGUAGE_1"), 240);
-		am.a(this, var2, GamebandFonts.l, Color.WHITE);
+		am.a(this, var2, GamebandFonts.BOLD_16, Color.WHITE);
 		var2.setAlignmentX(0.0F);
 		this.add(Box.createVerticalStrut(3));
 		C var3 = new C(LocaleUtil.getLocalizedString("CHOOSE_LANGUAGE_2"), 240);
-		am.a(this, var3, GamebandFonts.m, Color.WHITE);
+		am.a(this, var3, GamebandFonts.ITALIC_14, Color.WHITE);
 		var3.setAlignmentX(0.0F);
 		this.add(Box.createVerticalStrut(30));
 		this.add(this.d());
@@ -56,7 +56,7 @@ public class f extends at {
 
 	private Component a(Locale var1) {
 		JButton var2 = new JButton(var1.getDisplayLanguage(var1));
-		if (var1.getDisplayLanguage().equals(LocaleUtil.a().getDisplayLanguage())) {
+		if (var1.getDisplayLanguage().equals(LocaleUtil.getLocale().getDisplayLanguage())) {
 			var2.setBackground(GamebandColors.e());
 			var2.setForeground(GamebandColors.f());
 		} else {

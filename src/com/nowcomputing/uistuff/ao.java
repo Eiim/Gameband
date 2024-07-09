@@ -23,7 +23,7 @@ public class ao extends at {
 		var1.setBorder(new EmptyBorder(175, 0, 0, 0));
 		C var2 = new C(LocaleUtil.getLocalizedString("WELCOME_TO_GAMEBAND"), 300, "center");
 		var2.setAlignmentX(0.5F);
-		am.a(var1, var2, GamebandFonts.i, GamebandColors.a());
+		am.a(var1, var2, GamebandFonts.PLAIN_26, GamebandColors.a());
 		var1.add(Box.createVerticalStrut(10));
 		C var3 = new C(LocaleUtil.getLocalizedString("WELCOME_1"), 300, "center");
 		var3.setAlignmentX(0.5F);

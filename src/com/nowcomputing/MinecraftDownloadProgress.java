@@ -1,14 +1,14 @@
 package com.nowcomputing;
 
-class z implements UnknownLongConsumer {
+class MinecraftDownloadProgress implements DownloadProgress {
 	// $FF: synthetic field
 	final MinecraftDownloader a;
 
-	z(MinecraftDownloader var1) {
+	MinecraftDownloadProgress(MinecraftDownloader var1) {
 		this.a = var1;
 	}
 
-	public void a(long var1) {
+	public void addProgress(long var1) {
 		if (MinecraftDownloader.b(this.a) != null) {
 			MinecraftDownloader.c(this.a, var1);
 			int var3 = (int) ((float) MinecraftDownloader.c(this.a) / (float) MinecraftDownloader.d(this.a) * 100.0F);

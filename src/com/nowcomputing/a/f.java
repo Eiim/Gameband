@@ -7,22 +7,22 @@ class f {
 
 	static {
 		try {
-			a[Direction.left.ordinal()] = 1;
+			a[Direction.LEFT.ordinal()] = 1;
 		} catch (NoSuchFieldError var4) {
 		}
 
 		try {
-			a[Direction.right.ordinal()] = 2;
+			a[Direction.RIGHT.ordinal()] = 2;
 		} catch (NoSuchFieldError var3) {
 		}
 
 		try {
-			a[Direction.up.ordinal()] = 3;
+			a[Direction.UP.ordinal()] = 3;
 		} catch (NoSuchFieldError var2) {
 		}
 
 		try {
-			a[Direction.down.ordinal()] = 4;
+			a[Direction.DOWN.ordinal()] = 4;
 		} catch (NoSuchFieldError var1) {
 		}
 

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class Class1 implements UnknownLongConsumer {
+public abstract class Class1 implements DownloadProgress {
 	static final Logger logger = Logger.getLogger(Utils.class.getName());
 	protected File field2;
 	protected File field3;
@@ -179,7 +179,7 @@ public abstract class Class1 implements UnknownLongConsumer {
 	protected abstract InputStream method10(String var1) throws IOException;
 
 	@Override
-	public void a(long var1) {
+	public void addProgress(long var1) {
 		this.field6 += var1;
 		if (this.field4 != null) {
 			int var3 = (int) ((float) this.field6 / (float) this.field5 * 100.0F);

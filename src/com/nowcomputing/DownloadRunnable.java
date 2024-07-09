@@ -12,34 +12,34 @@ import java.util.concurrent.CountDownLatch;
 public class DownloadRunnable implements Runnable { // this might be a bad name, just trying to fix errors here
 	private InputStream a;
 	private File b;
-	private UnknownLongConsumer c;
+	private DownloadProgress c;
 	private CountDownLatch d = new CountDownLatch(1);
 	private IOException e;
 	private boolean f;
 	private boolean g;
-	private int h;
+	private int downloadSize;
 
-	public DownloadRunnable(InputStream var1, File var2, UnknownLongConsumer var3) {
+	public DownloadRunnable(InputStream var1, File var2, DownloadProgress var3) {
 		this.a = var1;
 		this.b = var2;
 		this.c = var3;
 	}
 
-	public DownloadRunnable(URL var1, File var2, UnknownLongConsumer var3) throws IOException {
+	public DownloadRunnable(URL var1, File var2, DownloadProgress var3) throws IOException {
 		this.b = var2;
 		this.c = var3;
 		HttpURLConnection var4 = (HttpURLConnection) var1.openConnection();
 		var4.setDoInput(true);
-		this.h = var4.getContentLength();
+		this.downloadSize = var4.getContentLength();
 		this.a = var4.getInputStream();
 	}
 
-	public void a(UnknownLongConsumer var1) {
+	public void a(DownloadProgress var1) {
 		this.c = var1;
 	}
 
-	public int a() {
-		return this.h;
+	public int getDownloadSize() {
+		return this.downloadSize;
 	}
 
 	public boolean b() {
@@ -75,7 +75,7 @@ public class DownloadRunnable implements Runnable { // this might be a bad name,
 				if (var16 > 0) {
 					var1.write(var2, 0, var16);
 					if (this.c != null) {
-						this.c.a((long) var16);
+						this.c.addProgress((long) var16);
 					}
 				}
 			}

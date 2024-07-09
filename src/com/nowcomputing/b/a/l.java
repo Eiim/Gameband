@@ -12,8 +12,8 @@ public class l extends JToolBar {
 
 	public l(CustomDialog var1) {
 		this.a = var1;
-		this.setBackground(GamebandColors.e);
-		this.setBorder(BorderFactory.createLineBorder(GamebandColors.e, 1));
+		this.setBackground(GamebandColors.DARKISH_GRAY);
+		this.setBorder(BorderFactory.createLineBorder(GamebandColors.DARKISH_GRAY, 1));
 		this.setOrientation(0);
 		this.setFloatable(false);
 		this.setRollover(false);

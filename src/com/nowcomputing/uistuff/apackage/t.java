@@ -88,7 +88,7 @@ public class t extends JPanel implements MouseListener, MouseMotionListener {
 	public void a(String var1, Direction var2, boolean var3) {
 		if (var1 != null && !var1.equals("")) {
 			Object var4;
-			if (var2 == Direction.left) {
+			if (var2 == Direction.LEFT) {
 				this.d();
 				ImageAnimation var5 = new ImageAnimation(GBComms.getThreadPool());
 				Image var6;

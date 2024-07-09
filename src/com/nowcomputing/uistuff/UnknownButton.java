@@ -23,7 +23,7 @@ public class UnknownButton extends JButton {
 	public void paintComponent(Graphics var1) {
 		ImageIcon var2 = this.getModel().isPressed() ? (ImageIcon) this.getPressedIcon() : (ImageIcon) this.getIcon();
 		var1.drawImage(var2.getImage(), (this.getWidth() - var2.getImage().getWidth((ImageObserver) null)) / 2,
-				(this.getHeight() - var2.getImage().getHeight((ImageObserver) null)) / 2, GamebandColors.b,
+				(this.getHeight() - var2.getImage().getHeight((ImageObserver) null)) / 2, GamebandColors.DARKER_GRAY,
 				(ImageObserver) null);
 	}
 }

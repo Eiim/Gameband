@@ -261,7 +261,7 @@ public class aa extends DialogPanel implements ActionListener {
 	}
 
 	private int u() {
-		Locale var1 = LocaleUtil.a();
+		Locale var1 = LocaleUtil.getLocale();
 		String var2 = var1.getDisplayName(var1);
 
 		for (int var3 = 0; var3 < this.k.length; ++var3) {
@@ -304,7 +304,7 @@ public class aa extends DialogPanel implements ActionListener {
 		JTextField var2 = new JTextField();
 		var2.setText(var1);
 		var2.setEditable(false);
-		var2.setBackground(GamebandColors.a);
+		var2.setBackground(GamebandColors.NEAR_BLACK);
 		var2.setForeground(GamebandColors.b());
 		var2.setFont(GamebandFonts.B);
 		var2.setBorder((Border) null);
