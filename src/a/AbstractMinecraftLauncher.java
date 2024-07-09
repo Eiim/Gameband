@@ -112,7 +112,7 @@ public abstract class AbstractMinecraftLauncher {
         return false;
     }
 
-    public String[] buildJavaCommand() {
+    public String[] buildJavaCommand() throws IOException {
         String var1 = this.config.getProperty("launch_cmd", "java -jar launcher.jar --workDir .");
         return var1.split(" ");
     }

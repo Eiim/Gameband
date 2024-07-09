@@ -23,7 +23,7 @@ public class MinecraftLauncher extends AbstractMinecraftLauncher {
 
    @Override
 public String[] buildJavaCommand() {
-      String[] stringArray = super.buildJavaCommand();
+      String[] stringArray = buildJavaCommand();
       if (this.validateJavaLaunchCommand(stringArray)) {
          switch (i.a[Utils.b().ordinal()]) {
             case 1: {

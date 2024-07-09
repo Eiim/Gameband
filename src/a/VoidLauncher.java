@@ -40,8 +40,12 @@ public boolean setLaunchCMD() throws IOException {
 
    @Override
 public boolean isJavaLaunchCommandValid() {
-      String[] var1 = this.buildJavaCommand();
-      return var1 != null && var1[2].equals("VoidLauncher.jar");
+	  try {
+	      String[] var1 = this.buildJavaCommand();
+	      return var1 != null && var1[2].equals("VoidLauncher.jar");
+	  } catch(IOException e) {
+          return false;
+      }
    }
 
    @Override

@@ -39,8 +39,12 @@ public boolean setLaunchCMD() throws IOException {
 
    @Override
 public boolean isJavaLaunchCommandValid() {
-      String[] var1 = this.buildJavaCommand();
-      return var1 != null && var1.length > 4 && var1[4].equals("TechnicLauncher.jar");
+    try {
+	   String[] var1 = this.buildJavaCommand();
+       return var1 != null && var1.length > 4 && var1[4].equals("TechnicLauncher.jar");
+	} catch (IOException e) {
+		return false;
+	}
    }
 
    @Override
@@ -109,7 +113,7 @@ public void f() {
 
    }
 
-   private static void a(File var0) {
+   private static void a(File var0) throws IOException {
       if (!var0.exists()) {
          var0.mkdirs();
       }
@@ -133,12 +137,12 @@ public void f() {
 
    }
 
-   private static void b(File var0) {
+   private static void b(File var0) throws IOException {
 	   c.a.scanner.c var1 = new c.a.scanner.c();
       a(var0, var1);
    }
 
-   private static void a(File var0, c.a.scanner.c var1) {
+   private static void a(File var0, c.a.scanner.c var1) throws IOException {
       var1.put("directory", "portable");
       c.a.scanner.f var2 = new c.a.scanner.f();
       var1.a(var2);

@@ -8,12 +8,8 @@ class Animating implements Runnable {
       this.animation = animation;
    }
 
-   public void run() {
-      try {
-         Thread.sleep(500L);
-      } catch (InterruptedException var2) {
-      }
-
-      com.nowcomputing.e.e.a(this.animation, true);
+   @Override
+public void run() {
+      animation.Animating.startTimer();
    }
 }

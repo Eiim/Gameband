@@ -43,7 +43,7 @@ public class p {
    private JFrame i;
    private JLayeredPane j;
 
-   public p(JFrame var1, GBComms var2) throws IOException {
+   public p(JFrame var1, GBComms var2) {
       this.i = var1;
       this.b = var2;
       JPanel var3 = new JPanel();
@@ -63,7 +63,7 @@ public class p {
       this.h.setVisible(false);
    }
 
-   public void b() throws IOException {
+   public void b() {
       this.d().removeAll();
       DialogPanel var1 = new DialogPanel();
       var1.a(LocaleUtil.getLocalizedString("PIXELFURNACE"));

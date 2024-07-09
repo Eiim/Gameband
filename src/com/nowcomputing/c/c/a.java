@@ -1,5 +1,7 @@
 package com.nowcomputing.c.c;
 
+import java.io.IOException;
+
 public class a {
    short[] a;
    int b;
@@ -13,7 +15,7 @@ public class a {
       com.nowcomputing.c.c.b.a(this.a);
    }
 
-   public int a(b var1) {
+   public int a(b var1) throws IOException {
       int var2 = 1;
 
       for(int var3 = this.b; var3 != 0; --var3) {
@@ -23,7 +25,7 @@ public class a {
       return var2 - (1 << this.b);
    }
 
-   public int b(b var1) {
+   public int b(b var1) throws IOException {
       int var2 = 1;
       int var3 = 0;
 
@@ -37,7 +39,7 @@ public class a {
       return var3;
    }
 
-   public static int a(short[] var0, int var1, b var2, int var3) {
+   public static int a(short[] var0, int var1, b var2, int var3) throws IOException {
       int var4 = 1;
       int var5 = 0;
 

@@ -34,7 +34,7 @@ public class FTBLauncher extends AbstractMinecraftLauncher {
     }
 
     @Override
-	public String[] buildJavaCommand() {
+	public String[] buildJavaCommand() throws IOException {
         String[] var1 = super.buildJavaCommand();
         if (Utils.arrContains(var1, "--cache-dir")) {
             this.config.setProperty("launch_cmd", "java -jar FTB_Launcher.jar --dynamic-dir FTB --pack-dir FTB --skip-first");
@@ -62,8 +62,12 @@ public class FTBLauncher extends AbstractMinecraftLauncher {
 
     @Override
 	public boolean isJavaLaunchCommandValid() {
-        String[] var1 = this.buildJavaCommand();
-        return var1 != null && var1[2].equals("FTB_Launcher.jar");
+		try {
+			String[] var1 = this.buildJavaCommand();
+			return var1 != null && var1[2].equals("FTB_Launcher.jar");
+		} catch (IOException e) {
+			return false;
+		}
     }
 
     @Override

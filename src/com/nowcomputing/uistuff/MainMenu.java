@@ -24,6 +24,8 @@ import com.nowcomputing.latchedCommandRun;
 import com.nowcomputing.resetAction;
 import com.nowcomputing.pixelfurnace.GBComms;
 
+import a.LauncherStarter;
+
 public class MainMenu extends JFrame implements BackupLinkListenerInterface, com.nowcomputing.n, resetAction, ActionListener {
    private static final Logger a = Logger.getLogger(Utils.class.getName());
    private GamebandConfig b;
@@ -39,7 +41,7 @@ public class MainMenu extends JFrame implements BackupLinkListenerInterface, com
    public MainMenu(GamebandConfig config, GBComms gbComms) {
       this.b = config;
       this.g = gbComms;
-     // this.c = new com.nowcomputing.uistuff.c(var1); // not my problem
+      this.c = new LauncherStarter(config);
       this.c.a(this);
       this.setTitle("Gameband " + WindowsVersionComparator.getImplementationVersion());
       this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);

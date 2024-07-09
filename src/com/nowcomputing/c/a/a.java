@@ -1,5 +1,6 @@
 package com.nowcomputing.c.a;
 
+import java.io.IOException;
 import java.io.OutputStream;
 
 public class a {
@@ -19,12 +20,12 @@ public class a {
       this.d = 0;
    }
 
-   public void a(OutputStream var1) {
+   public void a(OutputStream var1) throws IOException {
       this.a();
       this.e = var1;
    }
 
-   public void a() {
+   public void a() throws IOException {
       this.b();
       this.e = null;
    }
@@ -37,7 +38,7 @@ public class a {
 
    }
 
-   public void b() {
+   public void b() throws IOException {
       int var1 = this.b - this.d;
       if (var1 != 0) {
          this.e.write(this.a, this.d, var1);
@@ -49,7 +50,7 @@ public class a {
       }
    }
 
-   public void a(int var1, int var2) {
+   public void a(int var1, int var2) throws IOException {
       int var3 = this.b - var1 - 1;
       if (var3 < 0) {
          var3 += this.c;
@@ -68,7 +69,7 @@ public class a {
 
    }
 
-   public void a(byte var1) {
+   public void a(byte var1) throws IOException {
       this.a[this.b++] = var1;
       if (this.b >= this.c) {
          this.b();
